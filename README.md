@@ -67,19 +67,6 @@ I enjoy turning ideas into useful command-line tools, documenting what I learn, 
 ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)
 ![OWASP](https://img.shields.io/badge/OWASP-222222?style=flat-square&logo=owasp&logoColor=white)
 
-## Selected Projects
-
-A few repositories from my open-source workspace:
-
-| Project | Overview |
-|---|---|
-| [Hacker-Ai](https://github.com/arcticfox-cyber/Hacker-Ai) | AI-focused cybersecurity assistant project |
-| [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | GitHub discovery and search utility |
-| [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Username-based OSINT search project |
-| [Hexstrike-Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Cybersecurity research toolkit repository |
-| [GLM-5](https://github.com/arcticfox-cyber/GLM-5) | AI model and related project resources |
-
-[**Browse all public repositories →**](https://github.com/arcticfox-cyber?tab=repositories)
 
 ## Repository Dashboard
 
