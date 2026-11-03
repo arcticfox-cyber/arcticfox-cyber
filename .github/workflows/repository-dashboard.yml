@@ -11,13 +11,20 @@ on:
 permissions:
   contents: write
 
+# Prevent overlapping dashboard runs from racing to update main.
+concurrency:
+  group: repository-dashboard-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   update-dashboard:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout profile repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Generate repository dashboard and chart
         env:
@@ -178,14 +185,41 @@ jobs:
           print("Generated repository-language-chart.svg")
           PY
 
-      - name: Commit dashboard updates
+      - name: Commit and safely push dashboard updates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add README.md repository-language-chart.svg
-          if ! git diff --cached --quiet; then
-            git commit -m "Update automatic repository dashboard"
-            git push
-          else
+
+          if git diff --cached --quiet; then
             echo "No dashboard changes."
+            exit 0
           fi
+
+          git commit -m "Update automatic repository dashboard"
+
+          # Rebase onto the latest main before pushing. Retry if main changes
+          # again between the fetch and push; never force-push over remote work.
+          for attempt in 1 2 3; do
+            echo "Push attempt $attempt/3"
+
+            git fetch origin +refs/heads/main:refs/remotes/origin/main
+
+            if ! git rebase origin/main; then
+              git rebase --abort || true
+              echo "Could not rebase cleanly. Stopping to protect remote changes."
+              exit 1
+            fi
+
+            if git push origin HEAD:main; then
+              echo "Dashboard updates pushed successfully."
+              exit 0
+            fi
+
+            echo "Push rejected; fetching the newest main and retrying."
+            sleep 2
+          done
+
+          echo "Push failed after 3 safe attempts."
+          exit 1
