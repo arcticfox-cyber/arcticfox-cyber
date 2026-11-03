@@ -8,7 +8,7 @@
 
 ### RED TEAM · OFFENSIVE SECURITY · OSINT · SECURITY RESEARCH
 
-<img src="./assets/arctic-fox-banner.svg" width="100%" alt="ARCTIC FOX Cybersecurity Banner">
+<img src="./assets/arctic-fox-banner.svg" width="100%" alt="ARCTIC FOX Cybersecurity Banner">\n\n<p align="center"><i>Independent Security Research · Open-Source Tool Development · Ethical Security Testing</i></p>
 
 [![GitHub](https://img.shields.io/badge/GitHub-arcticfox--cyber-181717?style=for-the-badge&logo=github)](https://github.com/arcticfox-cyber)
 [![YouTube](https://img.shields.io/badge/YouTube-ARCTIC%20FOX-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@arcticfox-cyber)
@@ -30,7 +30,7 @@ I enjoy exploring security technologies, researching vulnerabilities, developing
 - 🤝 **Collaboration:** Open-source security tools and educational research projects
 - 📺 **YouTube:** [@arcticfox-cyber](https://www.youtube.com/@arcticfox-cyber)
 
-## 🎯 Core Focus
+## 🧭 What I Work On\n\n- Building practical command-line utilities and automation for security research.\n- Exploring reconnaissance, OSINT workflows, and information gathering.\n- Learning and testing web, network, and Linux security in authorized labs.\n- Documenting experiments and sharing useful open-source projects.\n\n## 🎯 Core Focus
 
 | Area | Interests |
 |---|---|
@@ -68,12 +68,12 @@ I enjoy exploring security technologies, researching vulnerabilities, developing
 ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
 ![OWASP](https://img.shields.io/badge/OWASP-000000?style=for-the-badge&logo=owasp&logoColor=white)
 
-## 🚀 Featured Projects
+## 🚀 Featured Projects\n\nA selection of public repositories from the ARCTIC FOX workspace:
 
 | Project | Description |
 |---|---|
 | [Hacker-Ai](https://github.com/arcticfox-cyber/Hacker-Ai) | AI-focused cybersecurity project |
-| [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Public repository and OSINT-related project |
+| [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Username-search / OSINT project repository |
 | [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | GitHub search project |
 | [Hexstrike-Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Public security research repository |
 | [GLM-5](https://github.com/arcticfox-cyber/GLM-5) | Open-source project repository |
@@ -104,7 +104,7 @@ The dashboard below is generated from my public repositories. It refreshes autom
 
 <!-- REPOSITORY-DASHBOARD:END -->
 
-## 🧠 Mathematics & Computer Science
+## 📌 Explore More\n\n- [All public repositories](https://github.com/arcticfox-cyber?tab=repositories)\n- [Profile activity](https://github.com/arcticfox-cyber?tab=overview)\n- [YouTube channel](https://www.youtube.com/@arcticfox-cyber)\n\n## 🧠 Mathematics & Computer Science
 
 `Mathematics` · `Algebra` · `Number Systems` · `Binary` · `Boolean Algebra` · `Logic Gates` · `Statistics` · `Probability` · `Discrete Mathematics` · `Algorithms` · `Data Structures` · `Bitwise Operations` · `Computer Architecture` · `Problem Solving`
 
