@@ -1,12 +1,13 @@
 <div align="center">
 
-<img src="./assets/arctic-fox-banner.svg" width="100%" alt="ARCTIC FOX — Red Team and Security Research">
-
-<br>
 
 <img src="https://raw.githubusercontent.com/arcticfox-cyber/GLM-5/main/arcticfox.png" width="118" alt="ARCTIC FOX logo">
 
 # ARCTIC FOX
+
+<img src="./assets/arctic-fox-banner.svg" width="100%" alt="ARCTIC FOX — Red Team and Security Research">
+
+<br>
 
 **RED TEAMING · OFFENSIVE SECURITY · OSINT · TOOL DEVELOPMENT**
 
