@@ -1,112 +1,93 @@
-<!-- ARCTIC FOX PROFILE README -->
-
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/arcticfox-cyber/GLM-5/main/arcticfox.png" width="170" alt="ARCTIC FOX logo">
+<img src="./assets/arctic-fox-banner.svg" width="100%" alt="ARCTIC FOX — Red Team and Security Research">
 
-<img src="./assets/arctic-signal-graph.svg" width="100%" alt="ARCTIC FOX Signal Graph">
+<br>
+
+<img src="https://raw.githubusercontent.com/arcticfox-cyber/GLM-5/main/arcticfox.png" width="118" alt="ARCTIC FOX logo">
 
 # ARCTIC FOX
 
-### RED TEAM · OFFENSIVE SECURITY · OSINT · SECURITY RESEARCH
+**RED TEAMING · OFFENSIVE SECURITY · OSINT · TOOL DEVELOPMENT**
 
-<img src="./assets/arctic-fox-banner.svg" width="100%" alt="ARCTIC FOX Cybersecurity Banner">
+*Independent security researcher focused on building practical open-source tools and learning through hands-on security research.*
 
-<p align="center"><i>Independent Security Research · Open-Source Tool Development · Ethical Security Testing</i></p>
-
-[![GitHub](https://img.shields.io/badge/GitHub-arcticfox--cyber-181717?style=for-the-badge&logo=github)](https://github.com/arcticfox-cyber)
-[![YouTube](https://img.shields.io/badge/YouTube-ARCTIC%20FOX-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@arcticfox-cyber)
+[![GitHub](https://img.shields.io/badge/GitHub-arcticfox--cyber-181717?style=flat-square&logo=github)](https://github.com/arcticfox-cyber)
+[![YouTube](https://img.shields.io/badge/YouTube-ARCTIC%20FOX-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@arcticfox-cyber)
+![Profile Views](https://komarev.com/ghpvc/?username=arcticfox-cyber&style=flat-square&color=9e1b1b&label=PROFILE+VIEWS)
 
 </div>
 
 ---
 
+## About
+
+I explore cybersecurity through practical projects, experimentation, and continuous learning. My interests include Red Team methodology, offensive security, OSINT, Linux, and Python-based security automation.
+
+I enjoy turning ideas into useful command-line tools, documenting what I learn, and sharing projects with the open-source community.
+
+| | |
+|---|---|
+| **Primary interests** | Red Teaming, Offensive Security, OSINT |
+| **Building with** | Python, Bash, Linux |
+| **Currently learning** | Active Directory security, malware analysis, exploit development, threat intelligence |
+| **Collaboration** | Open-source security tools, research, and automation |
+
+## Focus Areas
+
 <div align="center">
 
-# 🔻 OPERATOR PROFILE
+| RED TEAM | OSINT & RECON | SECURITY ENGINEERING |
+|:---:|:---:|:---:|
+| Adversary simulation | Information gathering | Python automation |
+| Authorized testing | Digital footprint research | CLI tool development |
+| Security assessment | Recon workflows | Linux environments |
 
 </div>
 
-## 👨‍💻 About Me
+## Technologies & Tools
 
-I'm an independent cybersecurity researcher interested in Red Teaming, Offensive Security, Ethical Hacking, Penetration Testing, OSINT, and cybersecurity tool development.
+**Languages & scripting**
 
-I enjoy exploring security technologies, researching vulnerabilities, developing Python-based tools, automating workflows, working with Linux environments, and contributing to open-source projects.
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-222222?style=flat-square&logo=gnubash&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
-- 🔴 **Focus:** Red Teaming & Offensive Security
-- 🌱 **Learning:** Active Directory Security, Malware Analysis, Exploit Development & Threat Intelligence
-- 🐍 **Development:** Python, Bash, Linux & Security Automation
-- 🔬 **Research:** OSINT, Vulnerability Research & Security Analysis
-- 🤝 **Collaboration:** Open-source security tools and educational research projects
-- 📺 **YouTube:** [@arcticfox-cyber](https://www.youtube.com/@arcticfox-cyber)
+**Platforms & workflow**
 
-## 🧭 RESEARCH & DEVELOPMENT
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat-square&logo=kalilinux&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 
-- Building practical command-line utilities and automation for security research.
-- Exploring reconnaissance, OSINT workflows, and information gathering.
-- Learning and testing web, network, and Linux security in authorized labs.
-- Documenting experiments and sharing useful open-source projects.
+**Security tools I explore**
 
-## 🎯 SECURITY DOMAINS
+![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=flat-square&logo=burpsuite&logoColor=white)
+![Nmap](https://img.shields.io/badge/Nmap-214478?style=flat-square)
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)
+![OWASP](https://img.shields.io/badge/OWASP-222222?style=flat-square&logo=owasp&logoColor=white)
 
-| Area | Interests |
+## Selected Projects
+
+A few repositories from my open-source workspace:
+
+| Project | Overview |
 |---|---|
-| 🔴 Red Team | Red Team Operations & Adversary Simulation |
-| ⚔️ Offensive Security | Ethical Hacking & Penetration Testing |
-| 🔍 OSINT | Reconnaissance & Information Gathering |
-| 🛡️ Security Research | Vulnerability Research & Threat Intelligence |
-| 🐍 Development | Python Tools, Bash Scripting & Automation |
-| 🐧 Linux | Linux Administration & Command-Line Workflows |
-| 🌐 Network Security | Network Fundamentals & Security Assessment |
+| [Hacker-Ai](https://github.com/arcticfox-cyber/Hacker-Ai) | AI-focused cybersecurity assistant project |
+| [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | GitHub discovery and search utility |
+| [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Username-based OSINT search project |
+| [Hexstrike-Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Cybersecurity research toolkit repository |
+| [GLM-5](https://github.com/arcticfox-cyber/GLM-5) | AI model and related project resources |
 
-## 🛠️ TECHNOLOGY STACK
+[**Browse all public repositories →**](https://github.com/arcticfox-cyber?tab=repositories)
 
-**Programming**
+## Repository Dashboard
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-121011?style=for-the-badge&logo=gnubash&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-**Platforms & Development**
-
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
-**Security Research Tools**
-
-![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)
-![Nmap](https://img.shields.io/badge/Nmap-214478?style=for-the-badge)
-![Metasploit](https://img.shields.io/badge/Metasploit-2596CD?style=for-the-badge)
-![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
-![OWASP](https://img.shields.io/badge/OWASP-000000?style=for-the-badge&logo=owasp&logoColor=white)
-
-## 🚀 SELECTED PROJECTS
-
-A selection of public repositories from the ARCTIC FOX workspace:
-
-| Project | Description |
-|---|---|
-| [Hacker-Ai](https://github.com/arcticfox-cyber/Hacker-Ai) | AI-focused cybersecurity project |
-| [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Username-search / OSINT project repository |
-| [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | GitHub search project |
-| [Hexstrike-Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Public security research repository |
-| [GLM-5](https://github.com/arcticfox-cyber/GLM-5) | Open-source project repository |
-| [All repositories](https://github.com/arcticfox-cyber?tab=repositories) | Browse all public projects |
-
----
-
-## 📊 LIVE REPOSITORY INTELLIGENCE
-
-The dashboard below is generated from my public repositories. It refreshes automatically every day and whenever this profile repository is updated.
+A generated overview of my public repositories. The dashboard is refreshed by GitHub Actions on its scheduled run and when this profile repository is updated.
 
 <div align="center">
 
-<img src="./repository-language-chart.svg" width="100%" alt="Repository language distribution chart">
+<img src="./repository-language-chart.svg" width="88%" alt="Repository language overview">
 
 </div>
 
@@ -123,81 +104,27 @@ The dashboard below is generated from my public repositories. It refreshes autom
 
 <!-- REPOSITORY-DASHBOARD:END -->
 
+## Beyond Security
+
+I also enjoy the foundations behind computing: algorithms, data structures, discrete mathematics, probability, Boolean logic, binary systems, and problem-solving.
+
+## Let's Connect
+
 <div align="center">
 
-## 🧭 EXPLORE THE ARCTIC FOX UNIVERSE
+[![GitHub](https://img.shields.io/badge/Explore%20my%20work-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/arcticfox-cyber)
+[![YouTube](https://img.shields.io/badge/Watch%20on-YouTube-CC0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@arcticfox-cyber)
 
-<table>
-<tr>
-<td align="center" width="33%">
-<a href="https://github.com/arcticfox-cyber?tab=repositories">
-<img src="https://img.shields.io/badge/01-ALL%20PROJECTS-151515?style=for-the-badge&logo=github&logoColor=white" alt="All Projects">
-</a>
-<br><sub>Browse tools, experiments and open-source work</sub>
-</td>
-<td align="center" width="33%">
-<a href="https://github.com/arcticfox-cyber?tab=overview">
-<img src="https://img.shields.io/badge/02-PROFILE%20ACTIVITY-650000?style=for-the-badge&logo=github&logoColor=white" alt="Profile Activity">
-</a>
-<br><sub>Explore contributions and development activity</sub>
-</td>
-<td align="center" width="33%">
-<a href="https://www.youtube.com/@arcticfox-cyber">
-<img src="https://img.shields.io/badge/03-YOUTUBE-CC0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube">
-</a>
-<br><sub>Videos, demonstrations and cybersecurity content</sub>
-</td>
-</tr>
-</table>
+**Open to meaningful collaboration on open-source cybersecurity projects and research.**
 
 </div>
 
 ---
 
-## 🧠 MATHEMATICS & COMPUTER SCIENCE
+<sub>**Disclaimer:** Projects and content are intended for education, authorized security testing, and ethical research. Always obtain permission before assessing systems or networks.</sub>
 
 <div align="center">
 
-| **MATHEMATICS** | **COMPUTER SCIENCE** | **CORE CONCEPTS** |
-|:---:|:---:|:---:|
-| Algebra | Algorithms | Binary & Number Systems |
-| Statistics | Data Structures | Boolean Algebra |
-| Probability | Computer Architecture | Logic Gates |
-| Discrete Mathematics | Problem Solving | Bitwise Operations |
-
-</div>
-
-<sub>Building strong fundamentals in logic, computation, and analytical problem-solving.</sub>
-
-## 🎯 MISSION OBJECTIVES
-
-- Develop practical open-source cybersecurity tools.
-- Improve Red Team and penetration-testing knowledge.
-- Explore security research and defensive analysis.
-- Build useful Python automation projects.
-- Contribute to the cybersecurity community.
-
-## 🤝 OPEN-SOURCE COLLABORATION
-
-Open to collaboration on open-source Red Team tools, cybersecurity automation, Python projects, OSINT research, penetration-testing education, and security tooling.
-
-## 🌐 ESTABLISH CONNECTION
-
-<div align="center">
-
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/arcticfox-cyber)
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@arcticfox-cyber)
-
-</div>
-
-## ⚠️ Disclaimer
-
-All projects and research are intended for education, authorized security testing, and ethical cybersecurity research. Always obtain permission before testing systems or networks.
-
-<div align="center">
-
-**ARCTIC FOX**
-
-*THINK · RESEARCH · BUILD · SECURE*
+**ARCTIC FOX** · *Think clearly. Research responsibly. Build useful tools.*
 
 </div>
