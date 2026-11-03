@@ -40,21 +40,6 @@ A quick starting point for exploring the Arctic Fox project portfolio.
 
 <div align="center">
 
-<a href="https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=arcticfox-cyber&repo=Arctic-Fox-GitHub-Search-v3.0&theme=github_dark&hide_border=true" alt="Arctic Fox GitHub Search">
-</a>
-<a href="https://github.com/arcticfox-cyber/Hacker-Ai">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=arcticfox-cyber&repo=Hacker-Ai&theme=github_dark&hide_border=true" alt="Hacker AI">
-</a>
-<a href="https://github.com/arcticfox-cyber/Hexstrike-Uncensored">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=arcticfox-cyber&repo=Hexstrike-Uncensored&theme=github_dark&hide_border=true" alt="Hexstrike Uncensored">
-</a>
-<a href="https://github.com/arcticfox-cyber/Sherlock">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=arcticfox-cyber&repo=Sherlock&theme=github_dark&hide_border=true" alt="Sherlock">
-</a>
-
-</div>
-
 | Project | What it does |
 |:---|:---|
 | [Arctic Fox GitHub Search](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | Explore public GitHub profiles and repositories from the terminal. |
@@ -62,6 +47,8 @@ A quick starting point for exploring the Arctic Fox project portfolio.
 | [Hexstrike Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Cybersecurity-focused toolkit; review its documentation and authorization requirements before use. |
 | [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Username-based OSINT searches across supported public websites. |
 | [GLM-5](https://github.com/arcticfox-cyber/GLM-5) | Community-maintained GLM-5 project resources; official model details and weights are linked to Z.ai. |
+
+</div>
 
 **Want to help?** Open an issue with a reproducible bug report, suggest a focused improvement, or contribute a tested pull request. Please read each repository's license and contribution guidance first.
 
