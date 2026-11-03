@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a reproducible problem in an Arctic Fox project
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please search existing issues first. Never include passwords, tokens, private data, or details about systems you are not authorized to test."
+  - type: input
+    id: project-version
+    attributes:
+      label: Project version or commit
+      placeholder: "e.g. v1.0.0 or commit SHA"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "OS, runtime version, relevant dependencies"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide a minimal, safe reproduction in an environment you own or are authorized to test.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and logs
+      description: Remove credentials, tokens, IPs, and personal information before posting.
+    validations:
+      required: true
