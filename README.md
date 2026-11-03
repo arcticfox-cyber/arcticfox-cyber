@@ -4,6 +4,8 @@
 
 <img src="https://raw.githubusercontent.com/arcticfox-cyber/GLM-5/main/arcticfox.png" width="170" alt="ARCTIC FOX logo">
 
+<img src="./assets/arctic-signal-graph.svg" width="100%" alt="ARCTIC FOX Signal Graph">
+
 # ARCTIC FOX
 
 ### RED TEAM · OFFENSIVE SECURITY · OSINT · SECURITY RESEARCH
