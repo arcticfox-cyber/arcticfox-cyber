@@ -119,29 +119,6 @@ A practical toolkit spanning development, Linux environments, reconnaissance, we
 ![Markdown](https://img.shields.io/badge/Markdown-222222?style=flat-square&logo=markdown&logoColor=white)
 
 
-## Repository Dashboard
-
-A generated overview of my public repositories. The dashboard is refreshed by GitHub Actions on its scheduled run and when this profile repository is updated.
-
-<div align="center">
-
-<img src="./repository-language-chart.svg" width="88%" alt="Repository language overview">
-
-</div>
-
-<!-- REPOSITORY-DASHBOARD:START -->
-
-| Repository | Description | Language | Stars | Forks |
-|:---|:---|:---:|---:|---:|
-| [introduction_arcticfox-cyber](https://github.com/arcticfox-cyber/introduction_arcticfox-cyber) | 🦊 Discover Arctic Fox — Cybersecurity, Ethical Hacking, Security Tools &amp; Open Source. Think Deeper. Build Smarter. Stay Secure. 🔐 | Other | ⭐ 2 | 🍴 0 |
-| [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | 🦊 Arctic Fox GitHub Search v3.0 – A powerful GitHub search tool for discovering repositories, users, and developers quickly and efficiently.  | Other | ⭐ 2 | 🍴 0 |
-| [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Sherlock is a powerful OSINT tool that helps you find social media accounts across multiple platforms using just a username. It automates username searches on hundreds of websites, making it useful for digital investigations, cybersecurity research, and online identity discovery. | Other | ⭐ 2 | 🍴 0 |
-| [GLM-5](https://github.com/arcticfox-cyber/GLM-5) | GLM-5 is an advanced 753B parameter open-weights AI model designed for programming and complex logic. | Other | ⭐ 1 | 🍴 0 |
-| [Hacker-Ai](https://github.com/arcticfox-cyber/Hacker-Ai) | 🦊 AI-powered cybersecurity assistant for ethical hacking, penetration testing, security research, and automated security workflows. Built for security enthusiasts and professionals.  | Other | ⭐ 1 | 🍴 0 |
-| [Hexstrike-Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Powerful uncensored cybersecurity toolkit for advanced security research and ethical hacking. 🔥 | Other | ⭐ 1 | 🍴 0 |
-
-<!-- REPOSITORY-DASHBOARD:END -->
-
 ## Beyond Security
 
 I also enjoy the foundations behind computing: algorithms, data structures, discrete mathematics, probability, Boolean logic, binary systems, and problem-solving.
