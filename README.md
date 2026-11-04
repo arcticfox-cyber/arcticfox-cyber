@@ -18,7 +18,7 @@
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/arcticfox-cyber/arcticfox-cyber/main/assets/running-arctic-fox.svg" width="100%" alt="Animated Arctic Fox running across the profile">
+  <img src="https://raw.githubusercontent.com/arcticfox-cyber/arcticfox-cyber/main/assets/snow-white-arctic-fox.svg" width="100%" alt="Animated Arctic Fox running across the profile">
 </div>
 
 ## 🦊 About Me
@@ -56,7 +56,7 @@ Cybersecurity developer exploring **ethical hacking, OSINT, Linux, and security 
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/arcticfox-cyber/arcticfox-cyber/main/assets/running-arctic-fox.svg" width="100%" alt="Animated Arctic Fox running across the profile">
+  <img src="https://raw.githubusercontent.com/arcticfox-cyber/arcticfox-cyber/main/assets/snow-white-arctic-fox.svg" width="100%" alt="Animated Arctic Fox running across the profile">
 </div>
 
 ## 🚀 Projects
@@ -85,7 +85,7 @@ Cybersecurity developer exploring **ethical hacking, OSINT, Linux, and security 
 </picture>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/arcticfox-cyber/arcticfox-cyber/main/assets/running-arctic-fox.svg" width="100%" alt="Animated Arctic Fox running across the profile">
+  <img src="https://raw.githubusercontent.com/arcticfox-cyber/arcticfox-cyber/main/assets/snow-white-arctic-fox.svg" width="100%" alt="Animated Arctic Fox running across the profile">
 </div>
 
 <sub>🦊 Think clearly · Research responsibly · Build useful tools</sub>
