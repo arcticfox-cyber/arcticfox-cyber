@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="arctic-fox-logo.png" width="100%" alt="Arctic Fox Cyber Banner">
+</p>
+
 # Hi, I'm Arctic Fox 🦊
 
 **Cybersecurity Developer | Ethical Hacking | OSINT**
