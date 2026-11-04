@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:1d4ed8,100:38bdf8&height=180&section=header&text=ARCTIC%20FOX&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=38" width="100%" alt="Animated Arctic Fox header">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ffffff,100:ffffff&height=180&section=header&text=ARCTIC%20FOX&fontSize=48&fontColor=000000&animation=fadeIn&fontAlignY=38" width="100%" alt="Animated Arctic Fox header">
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=900&color=38BDF8&center=true&vCenter=true&width=600&lines=Cybersecurity+Developer;Ethical+Hacking+%7C+OSINT;Building+Open-Source+Security+Tools" alt="Animated typing text"></a>
 
