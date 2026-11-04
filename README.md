@@ -40,7 +40,7 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
 
 **OSINT & Reconnaissance**
 <p>
-  <img src="https://img.shields.io/badge/Amass- attack_surface_mapping-6A5ACD?style=flat-square" alt="Amass" />
+  <img src="https://img.shields.io/badge/Amass-Attack_Surface_Mapping-6A5ACD?style=flat-square" alt="Amass" />
   <img src="https://img.shields.io/badge/Subfinder-Subdomain_Discovery-2E8B57?style=flat-square" alt="Subfinder" />
   <img src="https://img.shields.io/badge/theHarvester-OSINT-444444?style=flat-square" alt="theHarvester" />
   <img src="https://img.shields.io/badge/Maltego-Link_Analysis-1E90FF?style=flat-square" alt="Maltego" />
