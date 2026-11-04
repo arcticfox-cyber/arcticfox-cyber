@@ -21,31 +21,30 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
 
 **Penetration Testing & Web Security**
 <p>
-  <img src="https://img.shields.io/badge/Nmap-Network_Scanning-214478?style=flat-square" alt="Nmap" />
-  <img src="https://img.shields.io/badge/Burp_Suite-Web_Security-FF6633?style=flat-square&logo=burpsuite&logoColor=white" alt="Burp Suite" />
-  <img src="https://img.shields.io/badge/Metasploit-Penetration_Testing-2596CD?style=flat-square" alt="Metasploit" />
-  <img src="https://img.shields.io/badge/OWASP_ZAP-Web_Security-00549E?style=flat-square" alt="OWASP ZAP" />
-  <img src="https://img.shields.io/badge/Nuclei-Vulnerability_Scanning-5B4BDB?style=flat-square" alt="Nuclei" />
-  <img src="https://img.shields.io/badge/ffuf-Web_Fuzzing-333333?style=flat-square" alt="ffuf" />
-  <img src="https://img.shields.io/badge/SQLmap-SQL_Injection_Testing-CC3333?style=flat-square" alt="SQLmap" />
+  <img src="https://img.shields.io/badge/-Nmap-214478?style=for-the-badge&logo=nmap&logoColor=white" alt="Nmap" />
+  <img src="https://img.shields.io/badge/-Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white" alt="Burp Suite" />
+  <img src="https://img.shields.io/badge/-Metasploit-2596CD?style=for-the-badge&logo=metasploit&logoColor=white" alt="Metasploit" />
+  <img src="https://img.shields.io/badge/-OWASP_ZAP-00549E?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP ZAP" />
+  <img src="https://img.shields.io/badge/-Nuclei-5B4BDB?style=for-the-badge&logo=probot&logoColor=white" alt="Nuclei" />
+  <img src="https://img.shields.io/badge/-ffuf-333333?style=for-the-badge&logo=go&logoColor=white" alt="ffuf" />
+  <img src="https://img.shields.io/badge/-SQLmap-CC3333?style=for-the-badge&logo=databricks&logoColor=white" alt="SQLmap" />
 </p>
 
 **Network Analysis & Digital Forensics**
 <p>
-  <img src="https://img.shields.io/badge/Wireshark-Packet_Analysis-1679A7?style=flat-square&logo=wireshark&logoColor=white" alt="Wireshark" />
-  <img src="https://img.shields.io/badge/Ghidra-Reverse_Engineering-BB2025?style=flat-square" alt="Ghidra" />
-  <img src="https://img.shields.io/badge/Autopsy-Digital_Forensics-333333?style=flat-square" alt="Autopsy" />
-  <img src="https://img.shields.io/badge/Volatility-Memory_Forensics-5C6BC0?style=flat-square" alt="Volatility" />
+  <img src="https://img.shields.io/badge/-Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" alt="Wireshark" />
+  <img src="https://img.shields.io/badge/-Ghidra-BB2025?style=for-the-badge&logo=gnuemacs&logoColor=white" alt="Ghidra" />
+  <img src="https://img.shields.io/badge/-Autopsy-333333?style=for-the-badge&logo=files&logoColor=white" alt="Autopsy" />
+  <img src="https://img.shields.io/badge/-Volatility-5C6BC0?style=for-the-badge&logo=linux&logoColor=white" alt="Volatility" />
 </p>
 
 **OSINT & Reconnaissance**
 <p>
-  <img src="https://img.shields.io/badge/Amass-Attack_Surface_Mapping-6A5ACD?style=flat-square" alt="Amass" />
-  <img src="https://img.shields.io/badge/Subfinder-Subdomain_Discovery-2E8B57?style=flat-square" alt="Subfinder" />
-  <img src="https://img.shields.io/badge/theHarvester-OSINT-444444?style=flat-square" alt="theHarvester" />
-  <img src="https://img.shields.io/badge/Maltego-Link_Analysis-1E90FF?style=flat-square" alt="Maltego" />
+  <img src="https://img.shields.io/badge/-Amass-6A5ACD?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Amass" />
+  <img src="https://img.shields.io/badge/-Subfinder-2E8B57?style=for-the-badge&logo=search&logoColor=white" alt="Subfinder" />
+  <img src="https://img.shields.io/badge/-theHarvester-444444?style=for-the-badge&logo=googlechrome&logoColor=white" alt="theHarvester" />
+  <img src="https://img.shields.io/badge/-Maltego-1E90FF?style=for-the-badge&logo=networkx&logoColor=white" alt="Maltego" />
 </p>
-
 ## Projects
 
 - [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) — My GitHub search project
