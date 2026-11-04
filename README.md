@@ -40,10 +40,6 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ghidra_logo.svg" height="42" alt="Ghidra logo" />
 </p>
 
-**OSINT & Reconnaissance**
-<p align="left">
-  <img src="https://cdn.simpleicons.org/maltego/1E90FF" height="42" alt="Maltego logo" />
-</p>
 
 ## Projects
 
