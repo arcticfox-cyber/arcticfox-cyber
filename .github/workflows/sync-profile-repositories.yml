@@ -1,0 +1,102 @@
+name: Sync profile repositories
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-repository-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+      - name: Generate repository sections
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 <<'PY'
+          import json, os, urllib.request
+
+          username = "arcticfox-cyber"
+          headers = {
+              "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}",
+              "X-GitHub-Api-Version": "2022-11-28",
+              "User-Agent": "profile-repository-sync",
+          }
+          repos, page = [], 1
+          while True:
+              url = (f"https://api.github.com/users/{username}/repos"
+                     f"?type=owner&sort=updated&direction=desc&per_page=100&page={page}")
+              req = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  batch = json.load(response)
+              repos.extend(batch)
+              if len(batch) < 100:
+                  break
+              page += 1
+
+          repos = [r for r in repos if not r.get("private", False)
+                   and not r.get("fork", False) and not r.get("archived", False)
+                   and r["name"].lower() != username.lower()]
+
+          def clean(value):
+              return " ".join((value or "").replace("|", "\\|").split())
+
+          featured = sorted(repos, key=lambda r: (
+              r.get("stargazers_count", 0), r.get("updated_at", "")), reverse=True)[:5]
+          featured_rows = ["| Project | Description |", "|:---|:---|"]
+          for r in featured:
+              featured_rows.append(
+                  f'| [{r["name"]}](https://github.com/{username}/{r["name"]}) '
+                  f'| {clean(r.get("description")) or "No description provided."} |')
+
+          dashboard_rows = [
+              "| Repository | Description | Language | Stars | Forks |",
+              "|:---|:---|:---:|---:|---:|",
+          ]
+          for r in sorted(repos, key=lambda x: x.get("updated_at", ""), reverse=True):
+              dashboard_rows.append(
+                  f'| [{r["name"]}](https://github.com/{username}/{r["name"]}) '
+                  f'| {clean(r.get("description")) or "No description provided."} '
+                  f'| {clean(r.get("language")) or "Other"} '
+                  f'| ⭐ {r.get("stargazers_count", 0)} | 🍴 {r.get("forks_count", 0)} |')
+          if not repos:
+              dashboard_rows.append("| No public repositories found | — | — | 0 | 0 |")
+
+          with open("README.md", encoding="utf-8") as f:
+              readme = f.read()
+          for start_marker, end_marker, rows in [
+              ("<!-- FEATURED-REPOSITORIES:START -->",
+               "<!-- FEATURED-REPOSITORIES:END -->", featured_rows),
+              ("<!-- REPOSITORY-DASHBOARD:START -->",
+               "<!-- REPOSITORY-DASHBOARD:END -->", dashboard_rows),
+          ]:
+              start, end = readme.find(start_marker), readme.find(end_marker)
+              if start < 0 or end <= start:
+                  raise SystemExit(f"Missing README markers: {start_marker}")
+              pos = start + len(start_marker)
+              readme = readme[:pos] + "\n\n" + "\n".join(rows) + "\n\n" + readme[end:]
+          with open("README.md", "w", encoding="utf-8") as f:
+              f.write(readme)
+          print(f"Generated profile sections for {len(repos)} public repositories.")
+          PY
+      - name: Commit changes if needed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "Profile README is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: automatically sync public repositories"
+          git push
