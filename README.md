@@ -38,16 +38,11 @@ I enjoy turning ideas into useful command-line tools, documenting what I learn, 
 
 A quick starting point for exploring the Arctic Fox project portfolio.
 
-<div align="center">
+<!-- FEATURED-REPOSITORIES:START -->
 
-| Project | What it does |
-|:---|:---|
-| [Arctic Fox GitHub Search](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | Explore public GitHub profiles and repositories from the terminal. |
-| [Hexstrike Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Cybersecurity-focused toolkit; review its documentation and authorization requirements before use. |
-| [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Username-based OSINT searches across supported public websites. |
-| [GLM-5](https://github.com/arcticfox-cyber/GLM-5) | Community-maintained GLM-5 project resources; official model details and weights are linked to Z.ai. |
+_This list is automatically synced from your public GitHub repositories._
 
-</div>
+<!-- FEATURED-REPOSITORIES:END -->
 
 **Want to help?** Open an issue with a reproducible bug report, suggest a focused improvement, or contribute a tested pull request. Please read each repository's license and contribution guidance first.
 
@@ -59,17 +54,10 @@ The table below is automatically updated by GitHub Actions with repository descr
 
 | Repository | Description | Language | Stars | Forks |
 |:---|:---|:---:|---:|---:|
-| [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Sherlock is a powerful OSINT tool that helps you find social media accounts across multiple platforms using just a username. It automates username searches on hundreds of websites, making it useful for digital investigations, cybersecurity research, and online identity discovery. | Python | ⭐ 2 | 🍴 0 |
-| [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) | A powerful privacy-focused anonymity tool designed to enhance online privacy and protect user identity. | Shell | ⭐ 2 | 🍴 0 |
-| [Arctic-Fox-Uninstaller](https://github.com/arcticfox-cyber/Arctic-Fox-Uninstaller) | A powerful Kali Linux GUI uninstaller featuring package removal. | Python | ⭐ 2 | 🍴 0 |
-| [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | 🦊 Arctic Fox GitHub Search v3.0 – A powerful GitHub search tool for discovering repositories, users, and developers quickly and efficiently.  | Python | ⭐ 2 | 🍴 0 |
-| [Hexstrike-Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Powerful uncensored cybersecurity toolkit for advanced security research and ethical hacking. 🔥 | Other | ⭐ 2 | 🍴 0 |
-| [GLM-5](https://github.com/arcticfox-cyber/GLM-5) | GLM-5 is an advanced 753B parameter open-weights AI model designed for programming and complex logic. | Other | ⭐ 2 | 🍴 0 |
-| [introduction_arcticfox-cyber](https://github.com/arcticfox-cyber/introduction_arcticfox-cyber) | 🦊 Discover Arctic Fox — Cybersecurity, Ethical Hacking, Security Tools &amp; Open Source. Think Deeper. Build Smarter. Stay Secure. 🔐 | Other | ⭐ 2 | 🍴 0 |
+<!-- REPOSITORY-DASHBOARD:ROWS -->
 
 <!-- REPOSITORY-DASHBOARD:END -->
 
-![Repository language chart](./repository-language-chart.svg)
 
 ## Focus Areas
 
