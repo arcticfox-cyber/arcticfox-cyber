@@ -1,44 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="150" viewBox="0 0 960 150" role="img" aria-labelledby="t">
-<title id="t">Snow-white Arctic fox running through a winter breeze</title>
-<defs>
- <linearGradient id="coat" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#ffffff"/><stop offset=".55" stop-color="#f5fbff"/><stop offset="1" stop-color="#dceaf7"/></linearGradient>
- <linearGradient id="shadow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#dceafa"/><stop offset="1" stop-color="#a9c2d9"/></linearGradient>
- <linearGradient id="ice" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b9e6ff" stop-opacity="0"/><stop offset=".5" stop-color="#b9e6ff" stop-opacity=".8"/><stop offset="1" stop-color="#b9e6ff" stop-opacity="0"/></linearGradient>
-</defs>
-<path d="M0 125 Q180 110 340 125 T680 125 T960 125" fill="none" stroke="url(#ice)" stroke-width="3"/>
-<g fill="#c8e7fb" opacity=".8"><circle cx="95" cy="35" r="3"/><circle cx="285" cy="22" r="2"/><circle cx="690" cy="38" r="3"/><circle cx="840" cy="25" r="2"/></g>
-<g>
- <animateTransform attributeName="transform" type="translate" values="-190 0;970 0" dur="9s" repeatCount="indefinite"/>
- <g transform="translate(0 8)" stroke="#8da8c0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-  <!-- huge silky white plume tail -->
-  <path d="M63 70 C35 35 12 29 2 39 C9 53 11 83 38 98 C57 109 78 89 83 73Z" fill="url(#coat)">
-   <animateTransform attributeName="transform" type="rotate" values="0 65 76;8 65 76;0 65 76;-7 65 76;0 65 76" dur=".55s" repeatCount="indefinite"/>
-  </path>
-  <path d="M7 40 Q29 39 48 60 Q27 53 17 72 Q16 52 7 40Z" fill="#e4f1fb" stroke="none"/>
-  <!-- fluffy body and chest -->
-  <ellipse cx="111" cy="72" rx="49" ry="27" fill="url(#coat)"/>
-  <path d="M74 75 Q105 105 143 76 Q129 105 98 99Z" fill="#e7f2fb" stroke="none"/>
-  <path d="M143 61 Q158 39 181 47 L194 67 Q177 83 151 80Z" fill="url(#coat)"/>
-  <!-- ears -->
-  <path d="M159 49 L161 17 Q178 27 181 51Z" fill="url(#coat)"/>
-  <path d="M181 51 L202 26 Q208 45 198 65Z" fill="url(#coat)"/>
-  <path d="M166 42 L166 27 L175 46Z M188 49 L201 34 L196 55Z" fill="#c6dced" stroke="none"/>
-  <!-- face and muzzle -->
-  <path d="M178 62 Q202 53 220 65 Q209 79 184 76Z" fill="#ffffff"/>
-  <path d="M214 64 Q222 62 225 68 Q221 74 215 70Z" fill="#34495e" stroke="none"/>
-  <circle cx="181" cy="57" r="3.2" fill="#24384b" stroke="none"/>
-  <path d="M185 83 Q198 89 208 81" fill="none" stroke="#9db4c9" stroke-width="1.5"/>
-  <!-- running legs, alternating stride -->
-  <g fill="url(#shadow)">
-   <path d="M85 91 L77 117 L66 125"><animateTransform attributeName="transform" type="rotate" values="30 85 91;-27 85 91;30 85 91" dur=".36s" repeatCount="indefinite"/></path>
-   <path d="M139 91 L149 116 L161 122"><animateTransform attributeName="transform" type="rotate" values="-27 139 91;30 139 91;-27 139 91" dur=".36s" repeatCount="indefinite"/></path>
-  </g>
-  <g fill="#f8fcff">
-   <path d="M99 94 L91 121 L79 129"><animateTransform attributeName="transform" type="rotate" values="-32 99 94;30 99 94;-32 99 94" dur=".36s" repeatCount="indefinite"/></path>
-   <path d="M127 94 L137 121 L149 128"><animateTransform attributeName="transform" type="rotate" values="30 127 94;-32 127 94;30 127 94" dur=".36s" repeatCount="indefinite"/></path>
-  </g>
-  <path d="M66 125 L58 128 M161 122 L169 125 M79 129 L72 132 M149 128 L157 131" fill="none" stroke="#536b82" stroke-width="3.2"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="180" viewBox="0 0 960 180" role="img" aria-labelledby="t">
+<title id="t">Snow-white Arctic fox sprinting across snow</title>
+<defs><linearGradient id="f" x2=".2" y2="1"><stop stop-color="#fff"/><stop offset=".7" stop-color="#f2f8ff"/><stop offset="1" stop-color="#d9e8f6"/></linearGradient><linearGradient id="q" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#d8e7f5"/></linearGradient></defs>
+<path d="M0 153 Q240 139 480 153 T960 153" fill="none" stroke="#c5e5fa" stroke-width="3"/>
+<g fill="#c5e5fa"><circle cx="100" cy="30" r="3"/><circle cx="740" cy="45" r="3"/><circle cx="870" cy="75" r="2"/></g>
+<g><animateTransform attributeName="transform" type="translate" values="-570 0;1000 0" dur="11s" repeatCount="indefinite"/>
+<g stroke="#91a9bf" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+<!-- very full plume tail -->
+<path d="M218 100 C169 42 89 42 72 75 C55 110 106 153 159 149 C197 146 224 123 237 101 Q224 112 218 100Z" fill="url(#q)"/>
+<path d="M78 76 Q130 74 169 120 Q122 100 101 134 Q94 100 78 76Z" fill="#e5f0fa" stroke="none"/>
+<!-- long fox torso -->
+<path d="M205 91 C250 60 337 60 396 80 Q437 95 436 118 Q394 146 313 139 Q237 134 205 106Z" fill="url(#f)"/>
+<path d="M248 112 Q320 151 399 119 Q367 151 296 143Z" fill="#e5f0fa" stroke="none"/>
+<!-- neck and angular fox head -->
+<path d="M370 91 Q391 53 429 51 Q461 52 482 78 L520 94 Q496 112 461 108 Q418 117 387 119Z" fill="url(#f)"/>
+<!-- two clearly pointed ears -->
+<path d="M410 66 L407 10 Q439 25 447 65Z" fill="#fff"/>
+<path d="M452 66 L490 20 Q502 52 481 83Z" fill="#fff"/>
+<path d="M417 49 L416 24 L435 56Z M463 59 L487 34 L474 69Z" fill="#cbddec" stroke="none"/>
+<!-- long tapered muzzle, nose and eye -->
+<path d="M477 81 Q514 74 551 94 L514 111 Q484 113 462 99Z" fill="#fff"/>
+<path d="M546 91 Q555 91 558 97 Q554 104 547 100Z" fill="#27394a" stroke="none"/>
+<ellipse cx="463" cy="77" rx="4" ry="5" fill="#27394a" stroke="none"/>
+<path d="M461 69 Q474 63 486 72" fill="none" stroke="#8da6bc" stroke-width="2"/>
+<!-- four clearly separate running legs -->
+<g fill="url(#f)">
+<path d="M268 126 Q258 145 241 159 L220 165 Q212 172 224 174 L251 167 Q273 150 284 132"><animateTransform attributeName="transform" type="rotate" values="25 278 130;-22 278 130;25 278 130" dur=".42s" repeatCount="indefinite"/></path>
+<path d="M326 135 Q341 148 354 160 L375 164 Q383 171 371 174 L344 168 Q323 154 312 139"><animateTransform attributeName="transform" type="rotate" values="-24 325 138;24 325 138;-24 325 138" dur=".42s" repeatCount="indefinite"/></path>
+<path d="M405 120 Q421 133 436 144 L458 145 Q466 152 454 156 L427 154 Q405 140 394 126"><animateTransform attributeName="transform" type="rotate" values="-26 404 124;24 404 124;-26 404 124" dur=".42s" repeatCount="indefinite"/></path>
+<path d="M424 113 Q441 124 454 133 L476 130 Q486 136 474 143 L447 145 Q424 134 413 120"><animateTransform attributeName="transform" type="rotate" values="25 424 117;-25 424 117;25 424 117" dur=".42s" repeatCount="indefinite"/></path>
 </g>
-</svg>
+<path d="M222 171 L211 175 M373 171 L384 175 M455 153 L466 153 M474 140 L485 140" fill="none" stroke="#536b80" stroke-width="4"/>
+<animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur=".42s" repeatCount="indefinite"/>
+</g></g></svg>
