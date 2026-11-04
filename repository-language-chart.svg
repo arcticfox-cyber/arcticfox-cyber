@@ -1,9 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="170" viewBox="0 0 1000 170">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="254" viewBox="0 0 1000 254">
 <rect width="100%" height="100%" rx="16" fill="#0d1117"/>
 <text x="35" y="42" fill="#ff4545" font-size="25" font-family="Arial" font-weight="bold">REPOSITORY LANGUAGES</text>
-<text x="35" y="72" fill="#c9d1d9" font-size="14" font-family="Arial">Public repositories: 6</text>
+<text x="35" y="72" fill="#c9d1d9" font-size="14" font-family="Arial">Public repositories: 8</text>
 <text x="35" y="123" fill="#e6edf3" font-size="15" font-family="Arial">Other</text>
 <rect x="230" y="105" width="500" height="17" rx="8" fill="#30363d"/>
 <rect x="230" y="105" width="500" height="17" rx="8" fill="#ff3030"/>
-<text x="750" y="119" fill="#e6edf3" font-size="14" font-family="Arial">6 repos</text>
+<text x="750" y="119" fill="#e6edf3" font-size="14" font-family="Arial">5 repos</text>
+<text x="35" y="171" fill="#e6edf3" font-size="15" font-family="Arial">Python</text>
+<rect x="230" y="153" width="500" height="17" rx="8" fill="#30363d"/>
+<rect x="230" y="153" width="200" height="17" rx="8" fill="#ff3030"/>
+<text x="750" y="167" fill="#e6edf3" font-size="14" font-family="Arial">2 repos</text>
+<text x="35" y="219" fill="#e6edf3" font-size="15" font-family="Arial">Shell</text>
+<rect x="230" y="201" width="500" height="17" rx="8" fill="#30363d"/>
+<rect x="230" y="201" width="100" height="17" rx="8" fill="#ff3030"/>
+<text x="750" y="215" fill="#e6edf3" font-size="14" font-family="Arial">1 repos</text>
 </svg>
