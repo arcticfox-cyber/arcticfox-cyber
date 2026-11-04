@@ -17,6 +17,10 @@
 
 </div>
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/arcticfox-cyber/arcticfox-cyber/main/assets/running-arctic-fox.svg" width="100%" alt="Animated Arctic Fox running across the profile">
+</div>
+
 ## 🦊 About Me
 
 Cybersecurity developer exploring **ethical hacking, OSINT, Linux, and security automation**. I build practical open-source tools and learn by creating.
@@ -51,6 +55,10 @@ Cybersecurity developer exploring **ethical hacking, OSINT, Linux, and security 
   </picture>
 </div>
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/arcticfox-cyber/arcticfox-cyber/main/assets/running-arctic-fox.svg" width="100%" alt="Animated Arctic Fox running across the profile">
+</div>
+
 ## 🚀 Projects
 
 <!-- FEATURED-REPOSITORIES:START -->
@@ -75,6 +83,10 @@ Cybersecurity developer exploring **ethical hacking, OSINT, Linux, and security 
   <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:dbeafe,25:93c5fd,55:c4b5fd,80:67e8f9,100:e0f2fe&height=170&section=header&text=ARCTIC%20FOX&fontSize=34&fontColor=172554&animation=twinkling&fontAlignY=55&desc=SECURITY%20%7C%20RESEARCH%20%7C%20OPEN%20SOURCE&descSize=13&descAlignY=75&descColor=1e3a8a">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:dbeafe,25:93c5fd,55:c4b5fd,80:67e8f9,100:e0f2fe&height=170&section=header&text=ARCTIC%20FOX&fontSize=34&fontColor=172554&animation=twinkling&fontAlignY=55&desc=SECURITY%20%7C%20RESEARCH%20%7C%20OPEN%20SOURCE&descSize=13&descAlignY=75&descColor=1e3a8a" width="100%" alt="Animated Arctic Fox gradient footer banner">
 </picture>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/arcticfox-cyber/arcticfox-cyber/main/assets/running-arctic-fox.svg" width="100%" alt="Animated Arctic Fox running across the profile">
+</div>
 
 <sub>🦊 Think clearly · Research responsibly · Build useful tools</sub>
 
