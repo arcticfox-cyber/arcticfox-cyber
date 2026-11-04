@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="96" viewBox="0 0 900 96" role="img" aria-labelledby="title">
+  <title id="title">Animated running Arctic fox</title>
+  <defs>
+    <linearGradient id="fur" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ffd166"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+  </defs>
+  <g>
+    <animateTransform attributeName="transform" type="translate" from="-120 0" to="920 0" dur="8s" repeatCount="indefinite"/>
+    <g transform="translate(0 4)">
+      <!-- tail -->
+      <path d="M36 48 C8 20 5 14 0 18 C7 35 7 57 28 68 C42 75 55 63 59 54 Z" fill="url(#fur)" stroke="#9a3412" stroke-width="2">
+        <animateTransform attributeName="transform" type="rotate" values="0 42 52;10 42 52;0 42 52;-8 42 52;0 42 52" dur=".48s" repeatCount="indefinite"/>
+      </path>
+      <path d="M3 19 Q16 17 26 35 Q15 33 8 43 Q8 28 3 19" fill="#fff7ed"/>
+      <!-- body -->
+      <ellipse cx="72" cy="49" rx="38" ry="20" fill="url(#fur)" stroke="#9a3412" stroke-width="2"/>
+      <path d="M52 57 Q72 71 94 56 Q84 73 62 68Z" fill="#fff7ed"/>
+      <!-- neck and head -->
+      <path d="M91 43 Q104 26 119 33 L128 47 Q114 58 99 57Z" fill="url(#fur)" stroke="#9a3412" stroke-width="2"/>
+      <path d="M106 33 L109 16 L122 31Z" fill="#f97316" stroke="#9a3412" stroke-width="2"/>
+      <path d="M118 34 L128 20 L132 41Z" fill="#f97316" stroke="#9a3412" stroke-width="2"/>
+      <path d="M112 27 L112 21 L118 29Z M124 31 L129 25 L128 35Z" fill="#fff7ed"/>
+      <path d="M119 45 Q133 41 140 47 Q133 55 120 52Z" fill="#fff7ed"/>
+      <circle cx="119" cy="39" r="2.2" fill="#111827"/>
+      <circle cx="139" cy="47" r="2.5" fill="#111827"/>
+      <!-- far legs -->
+      <g fill="#c2410c" stroke="#9a3412" stroke-width="2">
+        <path d="M51 58 L47 78 L39 83" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" values="28 51 58;-28 51 58;28 51 58" dur=".32s" repeatCount="indefinite"/>
+        </path>
+        <path d="M91 58 L96 78 L104 82" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" values="-28 91 58;28 91 58;-28 91 58" dur=".32s" repeatCount="indefinite"/>
+        </path>
+      </g>
+      <!-- near legs -->
+      <g fill="#f97316" stroke="#9a3412" stroke-width="2">
+        <path d="M61 61 L56 82 L48 86" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" values="-32 61 61;32 61 61;-32 61 61" dur=".32s" repeatCount="indefinite"/>
+        </path>
+        <path d="M84 61 L90 82 L98 86" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" values="32 84 61;-32 84 61;32 84 61" dur=".32s" repeatCount="indefinite"/>
+        </path>
+      </g>
+    </g>
+  </g>
+</svg>
