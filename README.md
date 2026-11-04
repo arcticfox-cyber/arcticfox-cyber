@@ -6,7 +6,11 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ffffff,100:f0f0f0&height=180&section=header&text=ARCTIC%20FOX&fontSize=48&fontColor=000000&animation=fadeIn&fontAlignY=38" width="100%" alt="Animated Arctic Fox header">
 </picture>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=900&color=000000&center=true&vCenter=true&width=600&lines=Cybersecurity+Developer;Ethical+Hacking+%7C+OSINT;Building+Open-Source+Security+Tools" alt="Animated typing text"></a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=900&color=58A6FF&center=true&vCenter=true&width=650&lines=Cybersecurity+Developer;Ethical+Hacking+%7C+OSINT;Building+Open-Source+Security+Tools">
+  <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=900&color=0969DA&center=true&vCenter=true&width=650&lines=Cybersecurity+Developer;Ethical+Hacking+%7C+OSINT;Building+Open-Source+Security+Tools">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=900&color=0969DA&center=true&vCenter=true&width=650&lines=Cybersecurity+Developer;Ethical+Hacking+%7C+OSINT;Building+Open-Source+Security+Tools" alt="Animated typing text">
+</picture>
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)](https://github.com/arcticfox-cyber)
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@arcticfox-cyber)
@@ -24,7 +28,11 @@ Cybersecurity developer exploring **ethical hacking, OSINT, Linux, and security 
 ## ⚡ Tech Stack
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=python,bash,powershell,linux,kali,docker,git,github,vscode,js&theme=light" alt="Technology icons">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=python,bash,powershell,linux,kali,docker,git,github,vscode,js&theme=dark">
+    <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=python,bash,powershell,linux,kali,docker,git,github,vscode,js&theme=light">
+    <img src="https://skillicons.dev/icons?i=python,bash,powershell,linux,kali,docker,git,github,vscode,js&theme=light" alt="Technology icons">
+  </picture>
 </div>
 
 ## 🚀 Projects
@@ -47,9 +55,9 @@ Cybersecurity developer exploring **ethical hacking, OSINT, Linux, and security 
 [![YouTube](https://img.shields.io/badge/Subscribe-YouTube-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@arcticfox-cyber)
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,35:1f3a5f,70:4c1d95,100:0d1117&height=150&section=footer&text=STAY%20CURIOUS%20%E2%80%A2%20BUILD%20SECURELY&fontSize=18&fontColor=ffffff&animation=fadeIn&fontAlignY=65">
-  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:e0f2fe,35:bae6fd,70:c4b5fd,100:e0e7ff&height=150&section=footer&text=STAY%20CURIOUS%20%E2%80%A2%20BUILD%20SECURELY&fontSize=18&fontColor=1e293b&animation=fadeIn&fontAlignY=65">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:e0f2fe,35:bae6fd,70:c4b5fd,100:e0e7ff&height=150&section=footer&text=STAY%20CURIOUS%20%E2%80%A2%20BUILD%20SECURELY&fontSize=18&fontColor=1e293b&animation=fadeIn&fontAlignY=65" width="100%" alt="Animated gradient footer banner">
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:07111f,25:123b66,55:4c1d95,80:164e63,100:07111f&height=170&section=footer&text=ARCTIC%20FOX&fontSize=34&fontColor=ffffff&animation=twinkling&fontAlignY=55&desc=SECURITY%20%7C%20RESEARCH%20%7C%20OPEN%20SOURCE&descSize=13&descAlignY=75&descColor=bfdbfe">
+  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:dbeafe,25:93c5fd,55:c4b5fd,80:67e8f9,100:e0f2fe&height=170&section=footer&text=ARCTIC%20FOX&fontSize=34&fontColor=172554&animation=twinkling&fontAlignY=55&desc=SECURITY%20%7C%20RESEARCH%20%7C%20OPEN%20SOURCE&descSize=13&descAlignY=75&descColor=1e3a8a">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:dbeafe,25:93c5fd,55:c4b5fd,80:67e8f9,100:e0f2fe&height=170&section=footer&text=ARCTIC%20FOX&fontSize=34&fontColor=172554&animation=twinkling&fontAlignY=55&desc=SECURITY%20%7C%20RESEARCH%20%7C%20OPEN%20SOURCE&descSize=13&descAlignY=75&descColor=1e3a8a" width="100%" alt="Animated Arctic Fox gradient footer banner">
 </picture>
 
 <sub>🦊 Think clearly · Research responsibly · Build useful tools</sub>
