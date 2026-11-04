@@ -52,6 +52,20 @@ A quick starting point for exploring the Arctic Fox project portfolio.
 
 **Want to help?** Open an issue with a reproducible bug report, suggest a focused improvement, or contribute a tested pull request. Please read each repository's license and contribution guidance first.
 
+## Repository Dashboard
+
+The table below is automatically updated by GitHub Actions with repository descriptions, primary languages, stars, and forks.
+
+<!-- REPOSITORY-DASHBOARD:START -->
+
+| Repository | Description | Language | Stars | Forks |
+|:---|:---|:---:|---:|---:|
+| Dashboard will be populated automatically by GitHub Actions. | — | — | — | — |
+
+<!-- REPOSITORY-DASHBOARD:END -->
+
+![Repository language chart](./repository-language-chart.svg)
+
 ## Focus Areas
 
 <div align="center">
