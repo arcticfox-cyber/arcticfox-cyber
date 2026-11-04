@@ -46,7 +46,11 @@ Cybersecurity developer exploring **ethical hacking, OSINT, Linux, and security 
 
 [![YouTube](https://img.shields.io/badge/Subscribe-YouTube-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@arcticfox-cyber)
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ffffff,100:ffffff&height=110&section=footer&animation=fadeIn" width="100%" alt="Animated footer">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,35:1f3a5f,70:4c1d95,100:0d1117&height=150&section=footer&text=STAY%20CURIOUS%20%E2%80%A2%20BUILD%20SECURELY&fontSize=18&fontColor=ffffff&animation=fadeIn&fontAlignY=65">
+  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:e0f2fe,35:bae6fd,70:c4b5fd,100:e0e7ff&height=150&section=footer&text=STAY%20CURIOUS%20%E2%80%A2%20BUILD%20SECURELY&fontSize=18&fontColor=1e293b&animation=fadeIn&fontAlignY=65">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:e0f2fe,35:bae6fd,70:c4b5fd,100:e0e7ff&height=150&section=footer&text=STAY%20CURIOUS%20%E2%80%A2%20BUILD%20SECURELY&fontSize=18&fontColor=1e293b&animation=fadeIn&fontAlignY=65" width="100%" alt="Animated gradient footer banner">
+</picture>
 
 <sub>🦊 Think clearly · Research responsibly · Build useful tools</sub>
 
