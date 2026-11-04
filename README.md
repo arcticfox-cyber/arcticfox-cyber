@@ -23,7 +23,7 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
   <img src="https://cdn.simpleicons.org/git/F05032" height="42" alt="Git logo" />
   <img src="https://cdn.simpleicons.org/github/181717" height="42" alt="GitHub logo" />
   <img src="https://cdn.simpleicons.org/docker/2496ED" height="42" alt="Docker logo" />
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@16.23.0/icons/visualstudiocode.svg" height="42" alt="Visual Studio Code logo" />
+  
 </p>
 
 **Penetration Testing & Web Security**
