@@ -13,7 +13,7 @@ permissions:
 
 # Prevent overlapping dashboard runs from racing to update main.
 concurrency:
-  group: repository-dashboard-${{ github.ref }}
+  group: profile-readme-updates
   cancel-in-progress: false
 
 jobs:
