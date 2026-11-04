@@ -25,13 +25,29 @@ Cybersecurity developer exploring **ethical hacking, OSINT, Linux, and security 
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="85%" alt="Animated divider">
 </div>
 
-## ⚡ Tech Stack
+## ⚡ Languages & Technologies
 
+### 💻 Programming Languages
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=python,c,cpp,js,bash&theme=dark" alt="Python, C, C++, JavaScript and Bash">
+
+<br>
+
+<img src="https://img.shields.io/badge/Python-Advanced-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/C-Programming-A8B9CC?style=for-the-badge&logo=c&logoColor=black" alt="C">
+<img src="https://img.shields.io/badge/C++-Programming-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++">
+<img src="https://img.shields.io/badge/JavaScript-Programming-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+<img src="https://img.shields.io/badge/Bash-Scripting-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="Bash">
+
+</div>
+
+### 🛠️ Tools & Platforms
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=python,bash,powershell,linux,kali,docker,git,github,vscode,js&theme=dark">
-    <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=python,bash,powershell,linux,kali,docker,git,github,vscode,js&theme=light">
-    <img src="https://skillicons.dev/icons?i=python,bash,powershell,linux,kali,docker,git,github,vscode,js&theme=light" alt="Technology icons">
+    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=linux,kali,docker,git,github,vscode&theme=dark">
+    <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=linux,kali,docker,git,github,vscode&theme=light">
+    <img src="https://skillicons.dev/icons?i=linux,kali,docker,git,github,vscode&theme=light" alt="Linux, Kali Linux, Docker, Git, GitHub and VS Code">
   </picture>
 </div>
 
