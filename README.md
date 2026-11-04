@@ -34,15 +34,6 @@ Cybersecurity developer exploring **ethical hacking, OSINT, Linux, and security 
 
 <!-- FEATURED-REPOSITORIES:END -->
 
-## 📊 GitHub Activity
-
-<div align="center">
-
-<img height="155" src="https://github-readme-stats.vercel.app/api?username=arcticfox-cyber&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" alt="GitHub statistics">
-<img height="155" src="https://github-readme-streak-stats.herokuapp.com/?user=arcticfox-cyber&theme=tokyonight&hide_border=true" alt="Contribution streak">
-
-</div>
-
 <!-- REPOSITORY-DASHBOARD:START -->
 
 | Repository | Description | Language | Stars | Forks |
