@@ -51,6 +51,26 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
 - [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) — My privacy-focused project
 - [Arctic-Fox-Uninstaller](https://github.com/arcticfox-cyber/Arctic-Fox-Uninstaller) — My Kali Linux GUI uninstaller
 
+
+
+## Featured Repositories
+
+<!-- FEATURED-REPOSITORIES:START -->
+
+_Projects will be added automatically._
+
+<!-- FEATURED-REPOSITORIES:END -->
+
+## Repository Dashboard
+
+<!-- REPOSITORY-DASHBOARD:START -->
+
+_Repository statistics will be updated automatically._
+
+<!-- REPOSITORY-DASHBOARD:END -->
+
+![Repository language chart](repository-language-chart.svg)
+
 ## Connect
 
 - GitHub: [@arcticfox-cyber](https://github.com/arcticfox-cyber)
