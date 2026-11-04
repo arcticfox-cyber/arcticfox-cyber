@@ -15,35 +15,42 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
 ## Tools & Technologies
 
 **Core Development**
-<p>
-  <img src="https://skillicons.dev/icons?i=python,bash,linux,kali,git,github,docker,vscode" alt="Python, Bash, Linux, Kali Linux, Git, GitHub, Docker and VS Code" />
+<p align="left">
+  <img src="https://cdn.simpleicons.org/python/3776AB" height="42" alt="Python" />
+  <img src="https://cdn.simpleicons.org/gnubash/4EAA25" height="42" alt="Bash" />
+  <img src="https://cdn.simpleicons.org/linux/FCC624" height="42" alt="Linux" />
+  <img src="https://cdn.simpleicons.org/kalilinux/557C94" height="42" alt="Kali Linux" />
+  <img src="https://cdn.simpleicons.org/git/F05032" height="42" alt="Git" />
+  <img src="https://cdn.simpleicons.org/github/181717" height="42" alt="GitHub" />
+  <img src="https://cdn.simpleicons.org/docker/2496ED" height="42" alt="Docker" />
+  <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" height="42" alt="VS Code" />
 </p>
 
 **Penetration Testing & Web Security**
-<p>
-  <img src="https://img.shields.io/badge/-Nmap-214478?style=for-the-badge&logo=nmap&logoColor=white" alt="Nmap" />
-  <img src="https://img.shields.io/badge/-Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white" alt="Burp Suite" />
-  <img src="https://img.shields.io/badge/-Metasploit-2596CD?style=for-the-badge&logo=metasploit&logoColor=white" alt="Metasploit" />
-  <img src="https://img.shields.io/badge/-OWASP_ZAP-00549E?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP ZAP" />
-  <img src="https://img.shields.io/badge/-Nuclei-5B4BDB?style=for-the-badge&logo=probot&logoColor=white" alt="Nuclei" />
-  <img src="https://img.shields.io/badge/-ffuf-333333?style=for-the-badge&logo=go&logoColor=white" alt="ffuf" />
-  <img src="https://img.shields.io/badge/-SQLmap-CC3333?style=for-the-badge&logo=databricks&logoColor=white" alt="SQLmap" />
+<p align="left">
+  <img src="https://cdn.simpleicons.org/nmap/4A90E2" height="42" alt="Nmap" />
+  <img src="https://cdn.simpleicons.org/burpsuite/FF6633" height="42" alt="Burp Suite" />
+  <img src="https://cdn.simpleicons.org/metasploit/2596CD" height="42" alt="Metasploit" />
+  <img src="https://cdn.simpleicons.org/owasp/000000" height="42" alt="OWASP ZAP" />
+  <img src="https://cdn.simpleicons.org/nuclei/5B4BDB" height="42" alt="Nuclei" />
+  <img src="https://cdn.simpleicons.org/go/00ADD8" height="42" alt="ffuf (Go project icon)" />
+  <img src="https://cdn.simpleicons.org/mysql/4479A1" height="42" alt="SQLmap" />
 </p>
 
 **Network Analysis & Digital Forensics**
-<p>
-  <img src="https://img.shields.io/badge/-Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" alt="Wireshark" />
-  <img src="https://img.shields.io/badge/-Ghidra-BB2025?style=for-the-badge&logo=gnuemacs&logoColor=white" alt="Ghidra" />
-  <img src="https://img.shields.io/badge/-Autopsy-333333?style=for-the-badge&logo=files&logoColor=white" alt="Autopsy" />
-  <img src="https://img.shields.io/badge/-Volatility-5C6BC0?style=for-the-badge&logo=linux&logoColor=white" alt="Volatility" />
+<p align="left">
+  <img src="https://cdn.simpleicons.org/wireshark/1679A7" height="42" alt="Wireshark" />
+  <img src="https://cdn.simpleicons.org/gnuemacs/7F5AB6" height="42" alt="Ghidra (symbolic icon)" />
+  <img src="https://cdn.simpleicons.org/ files/666666" height="42" alt="Autopsy" />
+  <img src="https://cdn.simpleicons.org/linux/FCC624" height="42" alt="Volatility" />
 </p>
 
 **OSINT & Reconnaissance**
-<p>
-  <img src="https://img.shields.io/badge/-Amass-6A5ACD?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Amass" />
-  <img src="https://img.shields.io/badge/-Subfinder-2E8B57?style=for-the-badge&logo=search&logoColor=white" alt="Subfinder" />
-  <img src="https://img.shields.io/badge/-theHarvester-444444?style=for-the-badge&logo=googlechrome&logoColor=white" alt="theHarvester" />
-  <img src="https://img.shields.io/badge/-Maltego-1E90FF?style=for-the-badge&logo=networkx&logoColor=white" alt="Maltego" />
+<p align="left">
+  <img src="https://cdn.simpleicons.org/owasp/000000" height="42" alt="Amass (OWASP)" />
+  <img src="https://cdn.simpleicons.org/search/4285F4" height="42" alt="Subfinder" />
+  <img src="https://cdn.simpleicons.org/googlechrome/4285F4" height="42" alt="theHarvester" />
+  <img src="https://cdn.simpleicons.org/maltego/1E90FF" height="42" alt="Maltego" />
 </p>
 ## Projects
 
