@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="150" viewBox="0 0 960 150" role="img" aria-labelledby="t">
+<title id="t">Snow-white Arctic fox running through a winter breeze</title>
+<defs>
+ <linearGradient id="coat" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#ffffff"/><stop offset=".55" stop-color="#f5fbff"/><stop offset="1" stop-color="#dceaf7"/></linearGradient>
+ <linearGradient id="shadow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#dceafa"/><stop offset="1" stop-color="#a9c2d9"/></linearGradient>
+ <linearGradient id="ice" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b9e6ff" stop-opacity="0"/><stop offset=".5" stop-color="#b9e6ff" stop-opacity=".8"/><stop offset="1" stop-color="#b9e6ff" stop-opacity="0"/></linearGradient>
+</defs>
+<path d="M0 125 Q180 110 340 125 T680 125 T960 125" fill="none" stroke="url(#ice)" stroke-width="3"/>
+<g fill="#c8e7fb" opacity=".8"><circle cx="95" cy="35" r="3"/><circle cx="285" cy="22" r="2"/><circle cx="690" cy="38" r="3"/><circle cx="840" cy="25" r="2"/></g>
+<g>
+ <animateTransform attributeName="transform" type="translate" values="-190 0;970 0" dur="9s" repeatCount="indefinite"/>
+ <g transform="translate(0 8)" stroke="#8da8c0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- huge silky white plume tail -->
+  <path d="M63 70 C35 35 12 29 2 39 C9 53 11 83 38 98 C57 109 78 89 83 73Z" fill="url(#coat)">
+   <animateTransform attributeName="transform" type="rotate" values="0 65 76;8 65 76;0 65 76;-7 65 76;0 65 76" dur=".55s" repeatCount="indefinite"/>
+  </path>
+  <path d="M7 40 Q29 39 48 60 Q27 53 17 72 Q16 52 7 40Z" fill="#e4f1fb" stroke="none"/>
+  <!-- fluffy body and chest -->
+  <ellipse cx="111" cy="72" rx="49" ry="27" fill="url(#coat)"/>
+  <path d="M74 75 Q105 105 143 76 Q129 105 98 99Z" fill="#e7f2fb" stroke="none"/>
+  <path d="M143 61 Q158 39 181 47 L194 67 Q177 83 151 80Z" fill="url(#coat)"/>
+  <!-- ears -->
+  <path d="M159 49 L161 17 Q178 27 181 51Z" fill="url(#coat)"/>
+  <path d="M181 51 L202 26 Q208 45 198 65Z" fill="url(#coat)"/>
+  <path d="M166 42 L166 27 L175 46Z M188 49 L201 34 L196 55Z" fill="#c6dced" stroke="none"/>
+  <!-- face and muzzle -->
+  <path d="M178 62 Q202 53 220 65 Q209 79 184 76Z" fill="#ffffff"/>
+  <path d="M214 64 Q222 62 225 68 Q221 74 215 70Z" fill="#34495e" stroke="none"/>
+  <circle cx="181" cy="57" r="3.2" fill="#24384b" stroke="none"/>
+  <path d="M185 83 Q198 89 208 81" fill="none" stroke="#9db4c9" stroke-width="1.5"/>
+  <!-- running legs, alternating stride -->
+  <g fill="url(#shadow)">
+   <path d="M85 91 L77 117 L66 125"><animateTransform attributeName="transform" type="rotate" values="30 85 91;-27 85 91;30 85 91" dur=".36s" repeatCount="indefinite"/></path>
+   <path d="M139 91 L149 116 L161 122"><animateTransform attributeName="transform" type="rotate" values="-27 139 91;30 139 91;-27 139 91" dur=".36s" repeatCount="indefinite"/></path>
+  </g>
+  <g fill="#f8fcff">
+   <path d="M99 94 L91 121 L79 129"><animateTransform attributeName="transform" type="rotate" values="-32 99 94;30 99 94;-32 99 94" dur=".36s" repeatCount="indefinite"/></path>
+   <path d="M127 94 L137 121 L149 128"><animateTransform attributeName="transform" type="rotate" values="30 127 94;-32 127 94;30 127 94" dur=".36s" repeatCount="indefinite"/></path>
+  </g>
+  <path d="M66 125 L58 128 M161 122 L169 125 M79 129 L72 132 M149 128 L157 131" fill="none" stroke="#536b82" stroke-width="3.2"/>
+ </g>
+</g>
+</svg>
