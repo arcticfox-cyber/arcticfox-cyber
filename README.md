@@ -57,7 +57,13 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
 
 <!-- FEATURED-REPOSITORIES:START -->
 
-_Projects will be added automatically._
+| Project | Description |
+|:---|:---|
+| [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | Discover GitHub repositories, users, and developers |
+| [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Username-based OSINT account discovery |
+| [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) | Privacy-focused anonymity tool |
+| [Arctic-Fox-Uninstaller](https://github.com/arcticfox-cyber/Arctic-Fox-Uninstaller) | Kali Linux GUI package uninstaller |
+| [Hexstrike-Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Cybersecurity research toolkit |
 
 <!-- FEATURED-REPOSITORIES:END -->
 
