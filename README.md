@@ -43,7 +43,6 @@ A quick starting point for exploring the Arctic Fox project portfolio.
 | Project | What it does |
 |:---|:---|
 | [Arctic Fox GitHub Search](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | Explore public GitHub profiles and repositories from the terminal. |
-| [Hacker AI](https://github.com/arcticfox-cyber/Hacker-Ai) | AI-assisted cybersecurity research and testing workflows; see the README for upstream project credits and setup requirements. |
 | [Hexstrike Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Cybersecurity-focused toolkit; review its documentation and authorization requirements before use. |
 | [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Username-based OSINT searches across supported public websites. |
 | [GLM-5](https://github.com/arcticfox-cyber/GLM-5) | Community-maintained GLM-5 project resources; official model details and weights are linked to Z.ai. |
@@ -65,7 +64,6 @@ The table below is automatically updated by GitHub Actions with repository descr
 | [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | 🦊 Arctic Fox GitHub Search v3.0 – A powerful GitHub search tool for discovering repositories, users, and developers quickly and efficiently.  | Python | ⭐ 2 | 🍴 0 |
 | [Hexstrike-Uncensored](https://github.com/arcticfox-cyber/Hexstrike-Uncensored) | Powerful uncensored cybersecurity toolkit for advanced security research and ethical hacking. 🔥 | Other | ⭐ 2 | 🍴 0 |
 | [GLM-5](https://github.com/arcticfox-cyber/GLM-5) | GLM-5 is an advanced 753B parameter open-weights AI model designed for programming and complex logic. | Other | ⭐ 2 | 🍴 0 |
-| [Hacker-Ai](https://github.com/arcticfox-cyber/Hacker-Ai) | 🦊 AI-powered cybersecurity assistant for ethical hacking, penetration testing, security research, and automated security workflows. Built for security enthusiasts and professionals.  | Other | ⭐ 2 | 🍴 0 |
 | [introduction_arcticfox-cyber](https://github.com/arcticfox-cyber/introduction_arcticfox-cyber) | 🦊 Discover Arctic Fox — Cybersecurity, Ethical Hacking, Security Tools &amp; Open Source. Think Deeper. Build Smarter. Stay Secure. 🔐 | Other | ⭐ 2 | 🍴 0 |
 | [Sherlock](https://github.com/arcticfox-cyber/Sherlock) | Sherlock is a powerful OSINT tool that helps you find social media accounts across multiple platforms using just a username. It automates username searches on hundreds of websites, making it useful for digital investigations, cybersecurity research, and online identity discovery. | Other | ⭐ 2 | 🍴 0 |
 
