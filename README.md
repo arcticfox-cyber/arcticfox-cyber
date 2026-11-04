@@ -20,10 +20,9 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
 
 ## Projects
 
-- [Arctic Fox GitHub Search](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) — GitHub search utility
-- [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) — Privacy-focused project
-- [Sherlock](https://github.com/arcticfox-cyber/Sherlock) — Username OSINT tool
-- [Arctic-Fox-Uninstaller](https://github.com/arcticfox-cyber/Arctic-Fox-Uninstaller) — Kali Linux GUI uninstaller
+- [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) — My GitHub search project
+- [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) — My privacy-focused project
+- [Arctic-Fox-Uninstaller](https://github.com/arcticfox-cyber/Arctic-Fox-Uninstaller) — My Kali Linux GUI uninstaller
 
 ## Connect
 
