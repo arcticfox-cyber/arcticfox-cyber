@@ -1,6 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ffffff,100:ffffff&height=180&section=header&text=ARCTIC%20FOX&fontSize=48&fontColor=000000&animation=fadeIn&fontAlignY=38" width="100%" alt="Animated Arctic Fox header">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:21262d&height=180&section=header&text=ARCTIC%20FOX&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=38">
+  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:ffffff,100:f0f0f0&height=180&section=header&text=ARCTIC%20FOX&fontSize=48&fontColor=000000&animation=fadeIn&fontAlignY=38">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ffffff,100:f0f0f0&height=180&section=header&text=ARCTIC%20FOX&fontSize=48&fontColor=000000&animation=fadeIn&fontAlignY=38" width="100%" alt="Animated Arctic Fox header">
+</picture>
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=900&color=000000&center=true&vCenter=true&width=600&lines=Cybersecurity+Developer;Ethical+Hacking+%7C+OSINT;Building+Open-Source+Security+Tools" alt="Animated typing text"></a>
 
