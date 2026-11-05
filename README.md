@@ -61,19 +61,6 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
 
 <!-- FEATURED-REPOSITORIES:END -->
 
-## Repository Dashboard
-
-<!-- REPOSITORY-DASHBOARD:START -->
-
-| Repository | Description | Language | Stars | Forks |
-|:---|:---|:---:|---:|---:|
-| [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) | A powerful privacy-focused anonymity tool designed to enhance online privacy and protect user identity. | Shell | ⭐ 3 | 🍴 1 |
-| [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | 🦊 Arctic Fox GitHub Search v3.0 – A powerful GitHub search tool for discovering repositories, users, and developers quickly and efficiently.  | Python | ⭐ 3 | 🍴 1 |
-| [Arctic-Fox-Uninstaller](https://github.com/arcticfox-cyber/Arctic-Fox-Uninstaller) | A powerful Kali Linux GUI uninstaller featuring package removal. | Python | ⭐ 3 | 🍴 1 |
-
-<!-- REPOSITORY-DASHBOARD:END -->
-
-![Repository language chart](repository-language-chart.svg)
 
 ## Connect
 
