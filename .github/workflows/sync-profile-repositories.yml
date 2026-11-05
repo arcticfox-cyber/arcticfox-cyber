@@ -59,26 +59,11 @@ jobs:
                   f'| [{r["name"]}](https://github.com/{username}/{r["name"]}) '
                   f'| {clean(r.get("description")) or "No description provided."} |')
 
-          dashboard_rows = [
-              "| Repository | Description | Language | Stars | Forks |",
-              "|:---|:---|:---:|---:|---:|",
-          ]
-          for r in sorted(repos, key=lambda x: x.get("updated_at", ""), reverse=True):
-              dashboard_rows.append(
-                  f'| [{r["name"]}](https://github.com/{username}/{r["name"]}) '
-                  f'| {clean(r.get("description")) or "No description provided."} '
-                  f'| {clean(r.get("language")) or "Other"} '
-                  f'| ⭐ {r.get("stargazers_count", 0)} | 🍴 {r.get("forks_count", 0)} |')
-          if not repos:
-              dashboard_rows.append("| No public repositories found | — | — | 0 | 0 |")
-
           with open("README.md", encoding="utf-8") as f:
               readme = f.read()
           for start_marker, end_marker, rows in [
               ("<!-- FEATURED-REPOSITORIES:START -->",
                "<!-- FEATURED-REPOSITORIES:END -->", featured_rows),
-              ("<!-- REPOSITORY-DASHBOARD:START -->",
-               "<!-- REPOSITORY-DASHBOARD:END -->", dashboard_rows),
           ]:
               start, end = readme.find(start_marker), readme.find(end_marker)
               if start < 0 or end <= start:
