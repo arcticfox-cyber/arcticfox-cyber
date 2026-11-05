@@ -55,9 +55,9 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
 
 | Project | Description |
 |:---|:---|
+| [Arctic-Fox-Uninstaller](https://github.com/arcticfox-cyber/Arctic-Fox-Uninstaller) | A powerful Kali Linux GUI uninstaller featuring package removal. |
 | [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) | A powerful privacy-focused anonymity tool designed to enhance online privacy and protect user identity. |
 | [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) | 🦊 Arctic Fox GitHub Search v3.0 – A powerful GitHub search tool for discovering repositories, users, and developers quickly and efficiently. |
-| [Arctic-Fox-Uninstaller](https://github.com/arcticfox-cyber/Arctic-Fox-Uninstaller) | A powerful Kali Linux GUI uninstaller featuring package removal. |
 
 <!-- FEATURED-REPOSITORIES:END -->
 
