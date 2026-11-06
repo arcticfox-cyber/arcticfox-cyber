@@ -1,74 +1,90 @@
-<p align="center">
-  <img src="arctic-fox-logo.png" width="100%" alt="Arctic Fox Cyber Banner">
-</p>
+<div align="center">
 
-# Hi, I'm Arctic Fox 🦊
+<img src="assets/arctic-fox-banner.svg" width="100%" alt="Arctic Fox Cyber banner" />
 
-**Cybersecurity Developer | Ethical Hacking | OSINT**
+# ARCTIC FOX 🦊
 
-I explore cybersecurity, Linux, and open-source development. I enjoy building practical tools and learning through hands-on projects.
+**Cybersecurity Developer · Offensive Security · OSINT · Linux**
 
-## Areas of Interest
+[![GitHub](https://img.shields.io/badge/GitHub-arcticfox--cyber-181717?style=for-the-badge&logo=github)](https://github.com/arcticfox-cyber)
+[![Focus](https://img.shields.io/badge/Focus-Cybersecurity-e53935?style=for-the-badge)](https://github.com/arcticfox-cyber)
+[![Platform](https://img.shields.io/badge/Platform-Kali%20Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)](https://www.kali.org/)
 
-- Cybersecurity and ethical hacking
-- OSINT and security research
-- Linux and Kali Linux
-- Python and security automation
-- Open-source software
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=17&pause=1200&color=FF4545&center=true&vCenter=true&width=700&lines=Building+practical+cybersecurity+tools;Exploring+Linux%2C+OSINT+%26+security+research;Automating+with+Python+%26+Bash;Research+responsibly.+Build+useful+tools." alt="Animated introduction" />
 
-## Tools & Technologies
-
-**Core Development**
-<p align="left">
-  <img src="https://cdn.simpleicons.org/python/3776AB" height="42" alt="Python logo" />
-  <img src="https://cdn.simpleicons.org/gnubash/4EAA25" height="42" alt="GNU Bash logo" />
-  <img src="https://cdn.simpleicons.org/linux/FCC624" height="42" alt="Linux logo" />
-  <img src="https://cdn.simpleicons.org/kalilinux/557C94" height="42" alt="Kali Linux logo" />
-  <img src="https://cdn.simpleicons.org/git/F05032" height="42" alt="Git logo" />
-  <img src="https://cdn.simpleicons.org/github/181717" height="42" alt="GitHub logo" />
-  <img src="https://cdn.simpleicons.org/docker/2496ED" height="42" alt="Docker logo" />
-</p>
-
-**Penetration Testing & Web Security**
-<p align="left">
-  <img src="https://nmap.org/images/nmap-logo-256x256.png" height="48" alt="Official Nmap logo" />
-  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/BurpSuite_logo.svg" height="48" alt="Burp Suite logo" />
-  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Metasploit_logo_and_wordmark.svg" height="42" alt="Metasploit logo" />
-  <img src="https://cdn.simpleicons.org/owasp/000000" height="42" alt="OWASP logo" />
-</p>
-
-**Network Analysis & Digital Forensics**
-<p align="left">
-  <img src="https://cdn.simpleicons.org/wireshark/1679A7" height="42" alt="Wireshark logo" />
-  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ghidra_logo.svg" height="42" alt="Ghidra logo" />
-</p>
-
-## Projects
-
-- [Arctic-Fox-GitHub-Search-v3.0](https://github.com/arcticfox-cyber/Arctic-Fox-GitHub-Search-v3.0) — My GitHub search project
-- [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) — My privacy-focused project
-- [Arctic-Fox-Uninstaller](https://github.com/arcticfox-cyber/Arctic-Fox-Uninstaller) — My Kali Linux GUI uninstaller
-
-## Featured Repositories
-
-<!-- FEATURED-REPOSITORIES:START -->
-
-| Project | Description |
-|:---|:---|
-| [GitHub-Search](https://github.com/arcticfox-cyber/GitHub-Search) | GitHub Search is a Python-based GUI and CLI tool for Kali Linux to search GitHub users, explore profiles and repositories, clone projects, view public activity, and export reports. |
-| [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) | A powerful privacy-focused anonymity tool designed to enhance online privacy and protect user identity. |
-| [Kali-Uninstaller](https://github.com/arcticfox-cyber/Kali-Uninstaller) | It provides a simple way to manage and clean up installed software. |
-
-<!-- FEATURED-REPOSITORIES:END -->
-
-
-## Connect
-
-- GitHub: [@arcticfox-cyber](https://github.com/arcticfox-cyber)
-- YouTube: [@arcticfox-cyber](https://www.youtube.com/@arcticfox-cyber)
+</div>
 
 ---
 
-*Think clearly. Research responsibly. Build useful tools.*
+## About
+
+I build practical tools for cybersecurity, Linux, privacy, and open-source workflows. My work focuses on turning technical ideas into useful applications, improving system administration workflows, and learning through hands-on security research.
+
+- **Cybersecurity:** security tooling, authorized testing, and defensive awareness
+- **OSINT:** public-source research and information discovery
+- **Linux:** Kali Linux, Debian-based systems, and Bash automation
+- **Development:** Python applications, command-line utilities, and desktop GUI tools
+- **Principles:** responsible research, clear documentation, and safer software
+
+## Featured Projects
+
+<div align="center">
+
+| Project | Description | Technologies |
+|:---|:---|:---|
+| [**GitHub Search**](https://github.com/arcticfox-cyber/GitHub-Search) | Desktop GUI and CLI for searching GitHub users, inspecting public profiles and repositories, cloning projects, and exporting reports. | Python · Tkinter · GitHub API |
+| [**Arctic Fox Anonymity**](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) | Transparent Tor-routing toolkit for Kali Linux, with firewall management, DNS routing, status checks, and identity-change commands. | Bash · Tor · iptables |
+| [**Kali Uninstaller**](https://github.com/arcticfox-cyber/Kali-Uninstaller) | GUI utility for browsing installed packages, inspecting package details, and removing selected software through APT. | Python · Tkinter · APT |
+
+</div>
+
+## Technologies & Tools
+
+<div align="center">
+
+**Languages & Development**
+
+<img src="https://skillicons.dev/icons?i=python,bash,linux,git,github,docker" alt="Python, Bash, Linux, Git, GitHub and Docker" />
+
+**Security & Networking**
+
+<img src="https://cdn.simpleicons.org/kalilinux/557C94" height="42" alt="Kali Linux" />
+<img src="https://nmap.org/images/nmap-logo-256x256.png" height="42" alt="Nmap" />
+<img src="https://cdn.simpleicons.org/wireshark/1679A7" height="42" alt="Wireshark" />
+<img src="https://cdn.simpleicons.org/owasp/FFFFFF" height="42" alt="OWASP" />
+
+</div>
+
+## Repository Languages
+
+<div align="center">
+
+<img src="repository-language-chart.svg" width="100%" alt="Languages used across public repositories" />
+
+</div>
+
+## Current Interests
+
+- Building reliable Linux utilities and desktop applications
+- Improving Python and Bash automation
+- Exploring web, network, and application security
+- Developing responsible OSINT workflows
+- Writing clear installation guides and technical documentation
+
+## Connect
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/arcticfox-cyber)
+[![YouTube](https://img.shields.io/badge/YouTube-Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@arcticfox-cyber)
+
+<img src="assets/arctic-signal-graph.svg" width="100%" alt="Animated Arctic Fox signal graph" />
+
+**Think clearly. Research responsibly. Build useful tools.**
+
+<img src="assets/running-arctic-fox.svg" width="180" alt="Running Arctic Fox" />
+
+</div>
 
 > Projects are intended for education, authorized security testing, and ethical research.
+
