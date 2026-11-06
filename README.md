@@ -43,12 +43,6 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ghidra_logo.svg" height="42" alt="Ghidra logo" />
 </p>
 
-## Projects
-
-- [GitHub-Search](https://github.com/arcticfox-cyber/GitHub-Search) — Python desktop GUI and CLI for searching GitHub users and inspecting public profiles, repositories, gists, and activity.
-- [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) — Bash-based transparent Tor routing toolkit for Kali Linux and Debian-based systems.
-- [Kali-Uninstaller](https://github.com/arcticfox-cyber/Kali-Uninstaller) — Python/Tkinter GUI for browsing installed packages, viewing package details, and removing selected software with APT.
-
 ## Featured Repositories
 
 | **Project** | **Description** |
