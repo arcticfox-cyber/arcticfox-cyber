@@ -49,7 +49,7 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
 
 | Project | Description |
 |:---|:---|
-| [GitHub-Search](https://github.com/arcticfox-cyber/GitHub-Search) | GitHub Search is a Python-based GUI and CLI tool for Kali Linux to search GitHub users, explore profiles and repositories, clone projects, view public activity, and export reports. |
+| [GitHub-Search](https://github.com/arcticfox-cyber/GitHub-Search) | A powerful GitHub search and profile inspection tool with GUI and CLI support. |
 | [Kali-Uninstaller](https://github.com/arcticfox-cyber/Kali-Uninstaller) | A multi-source graphical uninstaller for Kali Linux and compatible Debian-based systems. |
 | [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) | A powerful privacy-focused anonymity tool designed to enhance online privacy and protect user identity. |
 
