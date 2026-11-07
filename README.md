@@ -45,11 +45,15 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
 
 ## Featured Repositories
 
+<!-- FEATURED-REPOSITORIES:START -->
+
 | **Project** | **Description** |
 | --- | --- |
 | [GitHub-Search](https://github.com/arcticfox-cyber/GitHub-Search) | A Python desktop application for searching GitHub users by username, full name, or email; exploring public profiles, repositories, gists, and activity; cloning repositories; and exporting TXT and JSON reports. Includes a GUI and CLI for Kali Linux. |
 | [Arctic-Fox-Anonymity](https://github.com/arcticfox-cyber/Arctic-Fox-Anonymity) | A Bash-based privacy toolkit that configures transparent Tor routing with firewall rules, redirects supported TCP and DNS traffic through Tor, and provides commands to manage routing and request a new Tor circuit. |
 | [Kali-Uninstaller](https://github.com/arcticfox-cyber/Kali-Uninstaller) | A Python/Tkinter graphical package-management utility for Kali Linux. Browse and search installed packages, inspect package details, and remove selected software using APT with removal-plan checks and operation logging. |
+
+<!-- FEATURED-REPOSITORIES:END -->
 
 ## Connect
 
