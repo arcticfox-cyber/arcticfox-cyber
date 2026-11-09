@@ -43,18 +43,6 @@ I explore cybersecurity, Linux, and open-source development. I enjoy building pr
   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ghidra_logo.svg" height="42" alt="Ghidra logo" />
 </p>
 
-## Featured Repositories
-
-<!-- FEATURED-REPOSITORIES:START -->
-
-| Project | Description |
-|:---|:---|
-| [Arctic-Anonymity](https://github.com/arcticfox-cyber/Arctic-Anonymity) | A powerful privacy-focused anonymity tool designed to enhance online privacy and protect user identity. |
-| [GitHub-Search](https://github.com/arcticfox-cyber/GitHub-Search) | A powerful GitHub search and profile inspection tool with GUI and CLI support. |
-| [Kali-Uninstaller](https://github.com/arcticfox-cyber/Kali-Uninstaller) | A multi-source graphical uninstaller for Kali Linux and compatible Debian-based systems. |
-
-<!-- FEATURED-REPOSITORIES:END -->
-
 ## Connect
 
 - GitHub: [@arcticfox-cyber](https://github.com/arcticfox-cyber)
