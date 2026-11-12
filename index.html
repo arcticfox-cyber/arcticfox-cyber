@@ -80,10 +80,40 @@ body{isolation:isolate}
 @media(max-width:650px){.hero{min-height:auto}.hero-scroll{display:none}.hero-visual:before{width:100%}.aurora-ribbon{opacity:.12}}
 @media(prefers-reduced-motion:reduce){.aurora-ribbon{display:none}.hero h1 span{animation:none}.hero-scroll{display:none}}
 
+
+/* CINEMATIC COSMOS MOTION PACK */
+:root{--motion-glow:rgba(117,210,255,.18)}
+.space-wash:after{content:"";position:absolute;inset:-30%;background:conic-gradient(from 0deg at 50% 50%,transparent 0 28%,#7a5cff0b 34%,transparent 43%,#42dfff0b 56%,transparent 68%,#ff7acb09 78%,transparent 100%);animation:cosmicTurn 65s linear infinite}
+@keyframes cosmicTurn{to{transform:rotate(360deg)}}
+.nebula{will-change:transform;animation-duration:19s}
+.nebula.two{animation-duration:23s}
+.nebula.three{animation-duration:27s}
+.planet{animation:float 5.5s ease-in-out infinite,planetPulse 7s ease-in-out infinite alternate}
+@keyframes planetPulse{from{filter:saturate(.95) brightness(.94)}to{filter:saturate(1.22) brightness(1.13)}}
+.ring{animation:ringBreathe 5s ease-in-out infinite alternate}
+@keyframes ringBreathe{from{filter:brightness(.8);box-shadow:0 0 12px #8deeff22,inset 0 0 10px #a78bfa16}to{filter:brightness(1.45);box-shadow:0 0 30px #8deeff66,inset 0 0 20px #a78bfa44}}
+.planet-glow{animation:glowBreath 4.5s ease-in-out infinite alternate}
+@keyframes glowBreath{to{transform:scale(1.3);opacity:.72}}
+.shooting-star{position:fixed;z-index:-1;left:-25%;top:18%;width:210px;height:1px;pointer-events:none;opacity:0;transform:rotate(-25deg);background:linear-gradient(90deg,transparent,#8deeffaa,#fff);filter:drop-shadow(0 0 5px #8deeff);animation:shootAcross 9s linear infinite}
+.shooting-star:after{content:"";position:absolute;right:0;top:-2px;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 14px 4px #8deeff}
+.shooting-star.s2{top:42%;width:140px;animation-delay:3.7s;animation-duration:11s;filter:drop-shadow(0 0 5px #ff8acb)}
+.shooting-star.s2:after{box-shadow:0 0 14px 4px #ff8acb}
+.shooting-star.s3{top:72%;width:175px;animation-delay:7s;animation-duration:13s}
+@keyframes shootAcross{0%,68%{opacity:0;transform:translate3d(-5vw,-8vh,0) rotate(-25deg)}70%{opacity:1}79%{opacity:0;transform:translate3d(145vw,55vh,0) rotate(-25deg)}100%{opacity:0;transform:translate3d(145vw,55vh,0) rotate(-25deg)}}
+.repo-card{animation:cardIgnite .8s var(--ease-out) both}
+.repo-card:nth-child(2){animation-delay:70ms}.repo-card:nth-child(3){animation-delay:140ms}.repo-card:nth-child(4){animation-delay:210ms}.repo-card:nth-child(5){animation-delay:280ms}.repo-card:nth-child(6){animation-delay:350ms}
+@keyframes cardIgnite{from{opacity:0;transform:translateY(24px) scale(.97);filter:blur(5px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.section:not(.contact):before{content:"";position:absolute;pointer-events:none;left:-20vw;top:10%;width:42vw;height:42vw;border-radius:50%;background:radial-gradient(circle,#7356d414,transparent 68%);animation:sectionDrift 18s ease-in-out infinite alternate}
+@keyframes sectionDrift{to{transform:translate3d(20vw,8vh,0) scale(1.2)}}
+.button.primary{box-shadow:0 0 0 1px #c5b7ff12,0 0 28px #9b8bff16;transition:transform .35s var(--ease-out),box-shadow .35s,border-color .35s}
+.button.primary:hover{box-shadow:0 10px 35px #a68cff45,0 0 55px #8deeff24}
+@media(prefers-reduced-motion:reduce){.space-wash:after,.shooting-star,.planet,.ring,.planet-glow,.section:not(.contact):before,.repo-card{animation:none!important}}
+@media(max-width:650px){.shooting-star{opacity:.45}.section:not(.contact):before{width:75vw;height:75vw}}
+
 </style>
 </head>
 <body>
-<canvas id="cosmos" aria-hidden="true"></canvas><div class="aurora-ribbon" aria-hidden="true"></div><div class="pointer-aura" aria-hidden="true"></div><div class="space-comet" aria-hidden="true"></div><div class="space-wash"></div><div class="nebula one"></div><div class="nebula two"></div><div class="nebula three"></div>
+<canvas id="cosmos" aria-hidden="true"></canvas><div class="aurora-ribbon" aria-hidden="true"></div><div class="pointer-aura" aria-hidden="true"></div><div class="space-comet" aria-hidden="true"></div><div class="shooting-star" aria-hidden="true"></div><div class="shooting-star s2" aria-hidden="true"></div><div class="shooting-star s3" aria-hidden="true"></div><div class="space-wash"></div><div class="nebula one"></div><div class="nebula two"></div><div class="nebula three"></div>
 <header class="header"><div class="wrap nav">
 <a class="brand" href="#home"><span>ARCTIC FOX<small>CYBER · BEYOND LIMITS</small></span></a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="links">MENU ☰</button>
