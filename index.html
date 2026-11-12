@@ -244,6 +244,48 @@ footer{background:#040609;border-top-color:#b9d8ef18}
  .aurora-ribbon,.nebula,.deep-cosmos:before,.deep-cosmos:after,.cosmic-dust,.warp-lane,.space-wash:before,.planet,.orbit-line,.hero:after{animation:none!important}
 }
 
+
+/* REAL UNIVERSE — cinematic depth, galaxy haze and orbital atmosphere */
+:root{--space-black:#020409;--ice-light:#d8f2ff}
+body{background:#020409}
+.space-wash{background:
+ radial-gradient(ellipse at 50% 42%,#12283b35,transparent 48%),
+ radial-gradient(ellipse at 82% 18%,#1a355026,transparent 31%),
+ linear-gradient(180deg,#020409 0%,#050a12 48%,#020409 100%)}
+.space-wash:after{content:"";position:absolute;inset:-30%;pointer-events:none;opacity:.23;background:
+ radial-gradient(ellipse at 48% 48%,transparent 0 18%,#9acdeb08 30%,transparent 48%),
+ repeating-linear-gradient(168deg,transparent 0 90px,#b4dfff05 91px,transparent 93px 170px);
+ filter:blur(22px);animation:galaxyCloud 44s ease-in-out infinite alternate}
+@keyframes galaxyCloud{to{transform:translate3d(3%,-2%,0) rotate(-3deg) scale(1.08);opacity:.38}}
+.deep-cosmos{opacity:.64}
+.deep-cosmos:before{background-size:370px 330px,520px 470px,690px 580px;opacity:.35;animation-duration:210s}
+.deep-cosmos:after{opacity:.18;animation-duration:280s}
+.cosmic-dust{opacity:.25;filter:blur(.2px)}
+.warp-lane{opacity:.075;animation-duration:210s}
+.hero{min-height:min(940px,calc(100svh - 78px));overflow:hidden}
+.hero:before{background:linear-gradient(90deg,#020409f2 0%,#020409b9 43%,#02040924 100%),radial-gradient(ellipse at 76% 48%,transparent 8%,#0204092b 76%)}
+.hero-visual{isolation:isolate}
+.hero-visual:before{width:128%;opacity:.72;background:repeating-radial-gradient(ellipse at center,transparent 0 46px,#b5dfff0a 47px 48px,transparent 49px 96px);animation-duration:140s}
+.planet-system{width:min(510px,94vw);filter:drop-shadow(0 20px 70px #020713aa)}
+.planet-glow{width:74%;background:radial-gradient(circle,#8bdcff20 0%,#729bd512 34%,transparent 70%);filter:blur(30px);animation:planetPulse 7s ease-in-out infinite}
+@keyframes planetPulse{50%{transform:scale(1.16);opacity:.65}}
+.planet{width:45%;background:radial-gradient(circle at 28% 22%,#f5fbff 0%,#c4dced 8%,#7898b8 25%,#354d6d 52%,#17263d 76%,#07101d 100%);box-shadow:inset -28px -16px 42px #02050edb,inset 13px 8px 22px #ffffff72,0 0 48px #9bdcff55,0 0 130px #72b9e52a,0 0 240px #4a8cb51b}
+.planet:before{background:repeating-linear-gradient(165deg,transparent 0 9px,#e5f5ff20 10px 12px,transparent 14px 26px);filter:blur(1.5px)}
+.planet:after{background:linear-gradient(105deg,#fff8 0%,#d9f1ff18 24%,transparent 46%,#020713d9 100%);box-shadow:inset -14px 0 28px #02071388}
+.ring{width:105%;height:33%;border-width:1.5px;border-color:#d4efff9c;border-left-color:#8bdcff32;border-bottom-color:#a6d8f48c;box-shadow:0 0 12px #8bdcff35,0 0 35px #8bdcff14,inset 0 0 14px #c2eaff1c}
+.ring.back{width:108%;height:36%;border-color:#8cb8d866 transparent #d0eaff8c transparent}
+.orbit-line{width:102%;border-color:#b4d8f02b}
+.orbit-line.second{width:124%;border-color:#c3d5e91b}
+.moon{width:7%;right:10%;top:19%;box-shadow:0 0 28px #d4eaff88,0 0 70px #8bdcff22}
+.hero-scroll{color:#9aafc1}
+.section{background:linear-gradient(180deg,transparent,#07101a20 50%,transparent)}
+.section:after{opacity:.13}
+.repo-card,.universe-card{backdrop-filter:blur(9px);background:linear-gradient(145deg,#101a26df,#060b12eF);border-color:#a4c4dc2a}
+.repo-card:hover,.universe-card:hover{border-color:#a9dcf477;box-shadow:0 22px 60px #0009,0 0 32px #8bdcff13}
+.contact{background:radial-gradient(ellipse at 50% 110%,#24425b48,transparent 60%),radial-gradient(ellipse at 50% 0%,#1c3a5228,transparent 55%)}
+@media(max-width:650px){.hero{min-height:auto}.planet-system{width:min(390px,94vw)}.deep-cosmos{opacity:.4}.space-wash:after{opacity:.13}}
+@media(prefers-reduced-motion:reduce){.space-wash:after,.planet-glow{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -276,10 +318,15 @@ footer{background:#040609;border-top-color:#b9d8ef18}
 <footer><div class="wrap footer-row"><div class="footer-brand"> ARCTIC FOX CYBER</div><div class="footer-note">© <span id="year"></span> · INDEPENDENT BY NATURE</div><a class="footer-link" href="https://github.com/arcticfox-cyber" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></div></footer>
 <script>
 "use strict";
-const canvas=document.getElementById("cosmos"),ctx=canvas.getContext("2d");let stars=[],w=0,h=0,raf=0;
-function seedStars(){const dpr=Math.min(window.devicePixelRatio||1,2);w=window.innerWidth;h=window.innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+"px";canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(175,Math.floor(w*h/7600));stars=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.35+.25,a:Math.random()*.65+.2,s:Math.random()*.012+.002,p:Math.random()*Math.PI*2,c:Math.random()<.16?"190,174,255":Math.random()<.5?"141,238,255":"255,255,255"}));}
-function drawStars(t){ctx.clearRect(0,0,w,h);const seconds=t*.001;for(const s of stars){const depth=.12+s.r*.2;s.y+=depth*.16;if(s.y>h+3){s.y=-3;s.x=Math.random()*w;}const alpha=s.a*(.72+.28*Math.sin(seconds*s.s*8+s.p));ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+alpha+")";ctx.fill();if(s.r>1.15){ctx.beginPath();ctx.arc(s.x,s.y,s.r*3.2,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+(alpha*.09)+")";ctx.fill();}}raf=requestAnimationFrame(drawStars);}
-seedStars();raf=requestAnimationFrame(drawStars);window.addEventListener("resize",seedStars,{passive:true});document.addEventListener("visibilitychange",()=>{if(document.hidden){cancelAnimationFrame(raf)}else{raf=requestAnimationFrame(drawStars)}});
+/* 3D starfield: stars travel through depth toward the viewer. */
+const canvas=document.getElementById("cosmos"),ctx=canvas.getContext("2d");let stars=[],w=0,h=0,raf=0,lastFrame=0;
+const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function resetStar(s,spread){s.x=(Math.random()*2-1)*(spread||1);s.y=(Math.random()*2-1)*(spread||1);s.z=Math.random()*.98+.02;s.p=Math.random()*Math.PI*2;s.c=Math.random()<.13?"190,220,255":Math.random()<.42?"141,220,255":"235,243,255";return s;}
+function seedStars(){const dpr=Math.min(window.devicePixelRatio||1,1.7);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+"px";canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(430,Math.max(190,Math.floor(w*h/3300)));stars=Array.from({length:count},()=>resetStar({}));}
+function drawStars(t){if(!w||!h){raf=requestAnimationFrame(drawStars);return;}const dt=Math.min(34,lastFrame?t-lastFrame:16);lastFrame=t;ctx.clearRect(0,0,w,h);const cx=w*.5,cy=h*.49,focal=Math.min(w,h)*.62,velocity=reducedMotion?.000035:.00023;
+for(const s of stars){const oldZ=s.z;s.z-=velocity*dt;if(s.z<=.025){resetStar(s);continue;}const x=cx+s.x*focal/s.z,y=cy+s.y*focal/s.z;if(x<-30||x>w+30||y<-30||y>h+30){resetStar(s);continue;}const radius=Math.min(2.5,Math.max(.35,(1-s.z)*1.8));const alpha=Math.min(.9,(.22+(1-s.z)*.72)*(.78+.22*Math.sin(t*.0014+s.p)));if(!reducedMotion&&s.z<.42){const px=cx+s.x*focal/oldZ,py=cy+s.y*focal/oldZ;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(x,y);ctx.strokeStyle="rgba("+s.c+","+alpha*.22+")";ctx.lineWidth=radius*.8;ctx.stroke();}ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+alpha+")";ctx.fill();if(radius>1.7){ctx.beginPath();ctx.arc(x,y,radius*3,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+alpha*.08+")";ctx.fill();}}
+raf=requestAnimationFrame(drawStars);}
+seedStars();raf=requestAnimationFrame(drawStars);addEventListener("resize",seedStars,{passive:true});document.addEventListener("visibilitychange",()=>{if(document.hidden){cancelAnimationFrame(raf);lastFrame=0;}else{lastFrame=0;raf=requestAnimationFrame(drawStars);}});
 const menu=document.getElementById("menu"),links=document.getElementById("links");menu.addEventListener("click",()=>{const open=links.classList.toggle("open");menu.setAttribute("aria-expanded",String(open));menu.textContent=open?"CLOSE ×":"MENU ☰";});links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{links.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.textContent="MENU ☰";}));
 document.getElementById("year").textContent=String(new Date().getFullYear());
 const USER="arcticfox-cyber",CACHE="arcticfox_universe_repos_v3",TTL=600000,grid=document.getElementById("repoGrid"),status=document.getElementById("repoStatus"),search=document.getElementById("repoSearch");let repos=[];
