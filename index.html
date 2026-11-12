@@ -2326,7 +2326,7 @@ addEventListener("scroll",()=>{
 
 /* ARCTIC FOX OS desktop + one-folder-per-public-repository */
 (()=>{
- const $=s=>document.querySelector(s); const $=s=>Array.from(document.querySelectorAll(s));
+ const $$=s=>Array.from(document.querySelectorAll(s));
  const os=$("#arcticOS"),files=$("#osFilesWindow"),repoWin=$("#osRepoWindow"),term=$("#osTerminalWindow"),about=$("#osAboutWindow");
  let repoData=[],activeRepo=null,z=20;
  const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
