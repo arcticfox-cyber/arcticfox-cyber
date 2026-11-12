@@ -45,10 +45,45 @@ body:after{content:"";position:fixed;z-index:5;pointer-events:none;top:-2px;left
 @media(prefers-reduced-motion:reduce){.space-comet,.hero:after{display:none!important}.reveal{opacity:1;transform:none;filter:none;transition:none}.hero-copy,.hero .eyebrow,.hero h1,.hero .actions{animation:none}}
 
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ARCTIC FOX // AURORA EXPERIENCE UPGRADE */
+:root{--mx:50vw;--my:35vh;--ease-out:cubic-bezier(.16,1,.3,1)}
+body{isolation:isolate}
+.pointer-aura{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(560px circle at var(--mx) var(--my),rgba(111,207,255,.105),transparent 62%);mix-blend-mode:screen;opacity:.8}
+.aurora-ribbon{position:fixed;z-index:-2;inset:-25% -20%;pointer-events:none;opacity:.22;filter:blur(65px);background:conic-gradient(from 210deg at 45% 48%,transparent 0deg,#5be7ff22 45deg,transparent 100deg,#a77cff26 155deg,transparent 215deg,#ff8acb18 275deg,transparent 330deg);animation:auroraRotate 42s linear infinite}
+@keyframes auroraRotate{to{transform:rotate(360deg) scale(1.08)}}
+.hero{min-height:min(900px,calc(100svh - 78px));}
+.hero-grid{min-height:inherit}
+.hero h1{max-width:760px;text-wrap:balance}
+.hero h1 span{background-size:220% 100%;animation:gradientFlow 8s ease-in-out infinite alternate}
+@keyframes gradientFlow{to{background-position:100% 50%;filter:brightness(1.2)}}
+.hero-visual:before{content:"";position:absolute;width:115%;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 42px,#9cecff0a 43px 44px,transparent 45px 82px);mask-image:radial-gradient(circle,#000 30%,transparent 72%);animation:slowSpin 90s linear infinite}
+@keyframes slowSpin{to{transform:rotate(360deg)}}
+.planet{box-shadow:inset -24px -12px 35px #020615d9,inset 12px 8px 22px #ffffff5c,0 0 65px #8275f75c,0 0 150px #6d60db25,0 0 220px #58dfff17}
+.planet-system:after{content:"";position:absolute;inset:7%;border:1px solid #b5d8ff19;border-radius:50%;transform:rotateX(68deg) rotate(-18deg);box-shadow:0 0 35px #8deeff0b}
+.hero-scroll{position:absolute;right:0;bottom:32px;display:flex;align-items:center;gap:12px;color:#8492b0;font:9px "DM Mono",monospace;letter-spacing:.2em;text-transform:uppercase}
+.hero-scroll i{display:block;width:42px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent);position:relative;overflow:hidden}
+.hero-scroll i:after{content:"";position:absolute;inset:0;background:white;transform:translateX(-100%);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{to{transform:translateX(100%)}}
+.section-head h2{background:linear-gradient(110deg,#fff,#c7d8ff 60%,#c2aaff);background-clip:text;color:transparent}
+.repo-card,.universe-card{transform-style:preserve-3d;backface-visibility:hidden;transition:transform .45s var(--ease-out),border-color .35s,box-shadow .35s}
+.repo-card:after,.universe-card:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(360px circle at var(--card-x,50%) var(--card-y,50%),#8deeff19,transparent 55%);transition:opacity .3s}
+.repo-card:hover:after,.universe-card:hover:before{opacity:1}
+.universe-card{border-radius:5px;transition:transform .5s var(--ease-out),border-color .35s,box-shadow .35s}
+.universe-card:hover{transform:translateY(-8px) scale(1.012);border-color:#a9dfff77;box-shadow:0 24px 65px #02040d99,0 0 35px #8deeff10}
+.button{position:relative;isolation:isolate;overflow:hidden}
+.button:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(110deg,transparent 20%,#ffffff38 48%,transparent 72%);transform:translateX(-120%);transition:transform .7s var(--ease-out)}
+.button:hover:before{transform:translateX(120%)}
+.header{transition:background .3s,border-color .3s}
+.header.scrolled{background:#050713ed;border-color:#8deeff35;box-shadow:0 12px 35px #0003}
+.footer-brand{transition:letter-spacing .3s}.footer-brand:hover{letter-spacing:.22em}
+@media(max-width:650px){.hero{min-height:auto}.hero-scroll{display:none}.hero-visual:before{width:100%}.aurora-ribbon{opacity:.12}}
+@media(prefers-reduced-motion:reduce){.aurora-ribbon{display:none}.hero h1 span{animation:none}.hero-scroll{display:none}}
+
 </style>
 </head>
 <body>
-<canvas id="cosmos" aria-hidden="true"></canvas><div class="space-comet" aria-hidden="true"></div><div class="space-wash"></div><div class="nebula one"></div><div class="nebula two"></div><div class="nebula three"></div>
+<canvas id="cosmos" aria-hidden="true"></canvas><div class="aurora-ribbon" aria-hidden="true"></div><div class="pointer-aura" aria-hidden="true"></div><div class="space-comet" aria-hidden="true"></div><div class="space-wash"></div><div class="nebula one"></div><div class="nebula two"></div><div class="nebula three"></div>
 <header class="header"><div class="wrap nav">
 <a class="brand" href="#home"><span>ARCTIC FOX<small>CYBER · BEYOND LIMITS</small></span></a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="links">MENU ☰</button>
@@ -58,7 +93,7 @@ body:after{content:"";position:fixed;z-index:5;pointer-events:none;top:-2px;left
 <section class="hero"><div class="wrap hero-grid">
 <div><div class="eyebrow">A universe of independent creation</div><h1>Explore the<span>unknown.</span></h1><p class="hero-copy">Beyond the ordinary. Into the unknown. Discover original cybersecurity tools, privacy-first ideas and Linux software — engineered independently by Arctic Fox Cyber.</p><div class="actions"><a class="button primary" href="#projects">Explore our universe <span>↘</span></a><a class="button" href="https://github.com/arcticfox-cyber" target="_blank" rel="noopener noreferrer">Enter GitHub <span>↗</span></a></div></div>
 <div class="hero-visual"><div class="planet-system"><div class="planet-glow"></div><div class="orbit-line"></div><div class="orbit-line second"></div><div class="ring back"></div><div class="planet"></div><div class="ring"></div><div class="moon"></div></div><div class="visual-caption">ARCTIC FOX · DEEP SPACE DIVISION</div></div>
-</div><div class="hero-meta"><div class="wrap"><span><i class="live-dot"></i>Independent digital universe</span><span>Curiosity has no boundaries</span></div></div></section>
+</div><div class="hero-scroll" aria-hidden="true">SCROLL TO EXPLORE <i></i></div><div class="hero-meta"><div class="wrap"><span><i class="live-dot"></i>Independent digital universe</span><span>Curiosity has no boundaries</span></div></div></section>
 <section class="section" id="projects"><div class="wrap">
 <div class="section-head"><div><div class="section-kicker">01 / Mission control</div><h2>Explore the projects.</h2></div><p class="section-intro">Every repository is a new world to explore. Public projects are loaded directly from GitHub and updated automatically.</p></div>
 <div class="repo-toolbar"><div class="repo-status" id="repoStatus">SCANNING THE GALAXY…</div><input class="repo-search" id="repoSearch" type="search" placeholder="Search missions..." aria-label="Search repositories" autocomplete="off"></div>
@@ -121,6 +156,25 @@ window.addEventListener("scroll",()=>{
     scrollTick=false;
   });
 },{passive:true});
+</script>
+<script>
+
+/* Fine-motion layer: pointer light, card depth and adaptive ambient motion. */
+(()=>{
+ const root=document.documentElement, header=document.querySelector(".header");
+ const fine=matchMedia("(pointer:fine)").matches, reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ let pointerFrame=0, px=innerWidth*.5, py=innerHeight*.35;
+ if(fine&&!reduced){
+  addEventListener("pointermove",e=>{px=e.clientX;py=e.clientY;if(pointerFrame)return;pointerFrame=requestAnimationFrame(()=>{root.style.setProperty("--mx",px+"px");root.style.setProperty("--my",py+"px");pointerFrame=0;});},{passive:true});
+  document.querySelectorAll(".repo-card,.universe-card").forEach(card=>{
+   card.addEventListener("pointermove",e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;card.style.setProperty("--card-x",(x*100)+"%");card.style.setProperty("--card-y",(y*100)+"%");card.style.transform="perspective(900px) rotateX("+((.5-y)*4)+"deg) rotateY("+((x-.5)*5)+"deg) translateY(-5px)";},{passive:true});
+   card.addEventListener("pointerleave",()=>{card.style.transform="";});
+  });
+ }
+ let ticking=false;
+ addEventListener("scroll",()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{header.classList.toggle("scrolled",scrollY>24);ticking=false;});},{passive:true});
+})();
+
 </script>
 </body>
 </html>
