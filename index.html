@@ -1082,6 +1082,112 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
  *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 
+
+/* ARCTIC FOX OS // BLACKARCH DESKTOP ENVIRONMENT */
+:root{--os-green:#b7ff38;--os-green2:#78d923;--os-cyan:#42e8ff;--os-panel:#111614;--os-line:#34452d;--os-muted:#9aa79a}
+html,body{width:100%;height:100%;overflow:hidden!important;background:#080c0a!important;color:#e4f0e2!important;cursor:default!important;font-family:"JetBrains Mono",monospace!important;text-shadow:none!important}
+body:before,.crt-vignette,.scanlines,.crt-flicker,#matrix1,#matrix2,#matrix3,.sys-hud,.sys-log,.radar,.cursor-ghost,.cursor-ring,.cursor-dot,.access-flash,.hex-particle,.header,body>main,body>footer,#portalModal,#universeModal{display:none!important}
+.boot-loader{z-index:99999!important;background:#050806!important;color:#d9e9d7!important;pointer-events:auto!important}
+.boot-loader:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 48%,#16301966,transparent 58%),repeating-linear-gradient(0deg,#ffffff06 0 1px,transparent 1px 4px);pointer-events:none}
+.boot-shell{width:min(850px,94vw)!important;max-height:92svh!important;padding:26px 30px!important;background:rgba(7,12,9,.97)!important;border:1px solid #557a36!important;box-shadow:0 0 0 1px #111c12,0 0 90px #75db2630,0 35px 100px #000!important}
+.boot-top{font:10px "JetBrains Mono",monospace!important;color:var(--os-green)!important;border-color:#3b552d!important}
+.boot-version{color:#a0b88d!important}
+.boot-brand{border-color:#263b25!important}
+.boot-ascii{color:var(--os-green)!important;text-shadow:0 0 16px #9aff4566!important}
+.boot-ascii b{color:#edffe5!important}
+.boot-ascii i{color:var(--os-cyan)!important}
+.boot-brand-meta{color:#a1b59b!important}
+.boot-terminal{color:#b8cdb4!important}
+.boot-line.ok,.boot-line.ok:before{color:#b7ff8a!important}
+.boot-line.info{color:var(--os-cyan)!important}
+.boot-line.prompt{color:var(--os-green)!important}
+.boot-progress-track{background:#1a291b!important}
+.boot-progress-track span{background:linear-gradient(90deg,#4d9224,var(--os-green),var(--os-cyan))!important;box-shadow:0 0 15px #a8ff39!important}
+.boot-progress-meta span:last-child,.boot-footer span:last-child{color:var(--os-green)!important}
+#arcticOS{position:fixed;inset:0;z-index:5000;display:flex;flex-direction:column;overflow:hidden;color:#e5f1e3;background:#070b09;font:12px "JetBrains Mono",monospace;isolation:isolate}
+#arcticOS *{box-sizing:border-box}
+#arcticOS:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 72% 18%,#214c2d55,transparent 35%),radial-gradient(ellipse at 15% 82%,#153d3855,transparent 38%),linear-gradient(135deg,#080d0a,#101b13 48%,#070b0a)}
+#arcticOS:after{content:"";position:absolute;inset:0;z-index:-1;opacity:.17;pointer-events:none;background-image:linear-gradient(#aaff4410 1px,transparent 1px),linear-gradient(90deg,#aaff4410 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(transparent,#000 25%,#000 80%,transparent)}
+.os-topbar{height:38px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 14px;background:#101712eF;border-bottom:1px solid #49613b;box-shadow:0 3px 22px #0008;z-index:30}
+.os-top-left,.os-top-right{display:flex;align-items:center;gap:16px}
+.os-brand{color:var(--os-green);font-weight:700;letter-spacing:.12em;cursor:pointer}
+.os-brand:before{content:"❄ ";color:var(--os-cyan)}
+.os-menu{border:0;background:transparent;color:#d7e7d2;font:inherit;cursor:pointer}
+.os-menu:hover,.os-topbar button:hover{color:var(--os-green)}
+.os-indicator{color:#9eb394;font-size:10px}
+.os-live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--os-green);box-shadow:0 0 9px var(--os-green);margin-right:6px}
+.os-clock{color:#e4f2df;font-size:11px;min-width:145px;text-align:right}
+.os-workspace{position:relative;flex:1;min-height:0;overflow:hidden}
+.os-wallpaper-mark{position:absolute;right:5vw;top:11%;font-size:clamp(70px,16vw,220px);font-weight:700;letter-spacing:-.12em;line-height:1;color:#d8ffd5;opacity:.035;pointer-events:none;user-select:none}
+.os-wallpaper-caption{position:absolute;right:28px;bottom:26px;color:#8ba185;font-size:9px;letter-spacing:.2em;text-align:right;line-height:2;pointer-events:none}
+.os-icons{position:absolute;top:24px;left:20px;bottom:24px;width:min(500px,65vw);display:grid;grid-auto-flow:column;grid-template-rows:repeat(5,88px);grid-auto-columns:88px;gap:8px;align-content:start;justify-content:start;overflow:auto;scrollbar-width:thin;scrollbar-color:#49613b transparent}
+.os-icon{width:82px;min-height:78px;padding:7px 4px;border:1px solid transparent;background:transparent;color:#e4efdf;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-align:center;cursor:pointer;border-radius:5px;transition:background .18s,border .18s,transform .18s;text-shadow:0 2px 5px #000}
+.os-icon:hover,.os-icon:focus-visible{outline:none;background:#b7ff3818;border-color:#b7ff3866;transform:translateY(-2px)}
+.os-icon .glyph{font-size:31px;line-height:1;filter:drop-shadow(0 5px 9px #0009)}
+.os-icon .os-icon-label{font-size:9px;line-height:1.35;max-width:78px;overflow-wrap:anywhere}
+.os-icon .os-icon-type{font-size:7px;color:#a4c18f;letter-spacing:.08em}
+.os-folder-glyph{width:43px;height:34px;position:relative;margin:0 auto 2px;filter:drop-shadow(0 5px 8px #0009)}
+.os-folder-glyph:before{content:"";position:absolute;left:3px;top:1px;width:17px;height:8px;background:linear-gradient(#d5ff79,#7acb35);border-radius:4px 4px 0 0}
+.os-folder-glyph:after{content:"";position:absolute;left:0;top:7px;width:43px;height:26px;background:linear-gradient(145deg,#b6ef5b,#5b9b2c 68%,#3c7025);clip-path:polygon(0 0,100% 0,91% 100%,7% 100%);border:1px solid #d5ff7b;box-shadow:inset 0 1px 4px #fff8}
+.os-icon.repo .os-folder-glyph:after{background:linear-gradient(145deg,#c3f879,#70ad34 65%,#365d25)}
+.os-icon.repo .os-icon-type{color:var(--os-cyan)}
+.os-dock-wrap{position:absolute;bottom:13px;left:50%;transform:translateX(-50%);z-index:20;max-width:calc(100% - 24px)}
+.os-dock{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#101812d9;border:1px solid #5a7546;border-radius:12px;box-shadow:0 12px 35px #0009,inset 0 1px #ffffff12;backdrop-filter:blur(18px)}
+.os-dock button{width:43px;height:43px;border:1px solid transparent;border-radius:8px;background:#1c2a1e;color:#eaffdf;font-size:22px;cursor:pointer;transition:.2s}
+.os-dock button:hover{transform:translateY(-7px) scale(1.1);border-color:var(--os-green);box-shadow:0 0 16px #9cff3944}
+.os-dock .dock-sep{width:1px;height:28px;background:#4a5d42;margin:0 3px}
+.os-window{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(920px,calc(100% - 34px));height:min(620px,calc(100% - 42px));background:#111813f2;border:1px solid #66844f;border-radius:8px;box-shadow:0 25px 90px #000b,0 0 45px #8aff3215;display:none;flex-direction:column;overflow:hidden;z-index:15;backdrop-filter:blur(20px)}
+.os-window.open{display:flex;animation:osWindowIn .24s cubic-bezier(.16,1,.3,1)}
+@keyframes osWindowIn{from{opacity:0;transform:translate(-50%,-47%) scale(.97)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.os-window.maximized{inset:8px 8px 8px 8px;left:8px;top:8px;width:auto;height:auto;transform:none}
+.os-titlebar{height:42px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 12px;background:linear-gradient(90deg,#1d2b1c,#17221a);border-bottom:1px solid #435b37;cursor:move;user-select:none}
+.os-title{display:flex;align-items:center;gap:9px;color:#dff4d5;font-size:11px}
+.os-title b{color:var(--os-green);font-weight:500}
+.os-window-controls{display:flex;gap:6px}
+.os-window-controls button{width:23px;height:22px;border:1px solid #526a43;background:#243225;color:#dcebd7;border-radius:4px;cursor:pointer}
+.os-window-controls button:last-child:hover{background:#a52c35}
+.os-window-body{flex:1;min-height:0;overflow:auto;padding:18px}
+.os-file-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.os-path{flex:1;min-width:180px;padding:9px 11px;background:#0b100d;border:1px solid #354a30;color:#a7c49a;font-size:10px}
+.os-search{width:min(240px,100%);padding:9px 10px;background:#0b100d;border:1px solid #354a30;color:#e8f4e4;font:10px inherit;outline:none}
+.os-search:focus{border-color:var(--os-green)}
+.os-file-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.os-file{padding:14px 9px;min-height:128px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;background:#172219;border:1px solid #344a2f;border-radius:5px;color:#e3efdf;cursor:pointer;transition:.2s}
+.os-file:hover{border-color:var(--os-green);background:#203020;transform:translateY(-3px);box-shadow:0 9px 22px #0006}
+.os-file .os-folder-glyph{transform:scale(1.08)}
+.os-file strong{font-size:10px;overflow-wrap:anywhere}
+.os-file small{color:#9db393;font-size:8px}
+.os-empty{padding:35px;text-align:center;color:#9cb091;border:1px dashed #526b43}
+.os-details{max-width:720px;margin:auto;padding:22px;background:#0b110d;border:1px solid #3e5735;border-radius:5px}
+.os-details h2{margin:0 0 12px;color:var(--os-green);font-size:20px;overflow-wrap:anywhere}
+.os-details p{color:#c0d0b8;font-size:11px;line-height:1.8}
+.os-detail-meta{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0;color:#a8c39b;font-size:10px}
+.os-action{padding:10px 15px;background:#a7e84c;border:1px solid #d5ff7c;color:#10180d;font:700 10px "JetBrains Mono",monospace;cursor:pointer;border-radius:3px}
+.os-action:hover{background:#d2ff7a;box-shadow:0 0 18px #b7ff3855}
+.os-secondary{padding:10px 15px;background:#1c2b1d;border:1px solid #526c43;color:#dcebd6;font:10px "JetBrains Mono",monospace;cursor:pointer;border-radius:3px}
+.os-terminal{height:100%;min-height:260px;background:#080d09;color:#b9e4a5;padding:16px;font:11px/1.8 "JetBrains Mono",monospace;overflow:auto}
+.os-terminal .green{color:var(--os-green)}.os-terminal .cyan{color:var(--os-cyan)}.os-terminal .dim{color:#78916e}
+.os-terminal-input{display:flex;gap:8px;margin-top:8px}
+.os-terminal-input span{color:var(--os-green);white-space:nowrap}
+.os-terminal-input input{flex:1;min-width:0;background:transparent;border:0;outline:none;color:#e6f4e0;font:inherit}
+.os-menu-pop{position:absolute;top:43px;left:12px;width:245px;padding:9px;background:#111a13f5;border:1px solid #60794c;border-radius:6px;box-shadow:0 15px 40px #000b;z-index:60;display:none}
+.os-menu-pop.open{display:block;animation:osWindowIn .16s ease-out}
+.os-menu-pop button{width:100%;padding:10px;text-align:left;background:transparent;border:0;color:#dcebd7;font:10px "JetBrains Mono",monospace;cursor:pointer}
+.os-menu-pop button:hover{background:#b7ff3817;color:var(--os-green)}
+.os-toast{position:absolute;top:52px;left:50%;transform:translateX(-50%);padding:9px 14px;background:#172319;border:1px solid #5a7746;color:var(--os-green);font-size:9px;z-index:80;opacity:0;pointer-events:none;transition:.25s}
+.os-toast.show{opacity:1}
+.os-mobile-hint{display:none}
+@media(max-width:700px){
+ .os-topbar{height:36px;padding:0 8px}.os-top-left,.os-top-right{gap:8px}.os-indicator{display:none}.os-clock{min-width:0;font-size:9px}
+ .os-icons{top:12px;left:8px;bottom:78px;width:100%;grid-template-rows:repeat(5,78px);grid-auto-columns:76px;gap:4px}
+ .os-icon{width:72px;min-height:72px}.os-icon .glyph{font-size:27px}.os-icon .os-icon-label{font-size:8px}
+ .os-dock-wrap{bottom:8px}.os-dock{gap:5px;padding:6px 8px}.os-dock button{width:37px;height:37px;font-size:19px}
+ .os-window{width:calc(100% - 14px);height:calc(100% - 52px);top:8px;left:7px;transform:none}.os-window.maximized{inset:4px}
+ .os-window-body{padding:11px}.os-file-grid{grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px}
+ .os-wallpaper-caption{display:none}
+}
+@media(prefers-reduced-motion:reduce){#arcticOS *,#arcticOS *:before,#arcticOS *:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
 </style>
 </head>
 <body>
@@ -2150,6 +2256,78 @@ addEventListener("scroll",()=>{
   },{passive:true});
   document.addEventListener("pointerleave",()=>{visual.style.transform="";});
 })();
+</script>
+
+<div id="arcticOS" aria-label="Arctic Fox desktop">
+ <div class="os-topbar">
+  <div class="os-top-left"><button class="os-menu" id="osMenuBtn"> Applications</button><span class="os-brand">ARCTIC FOX OS</span><span class="os-indicator">BLACKARCH // WORKSTATION</span></div>
+  <div class="os-top-right"><span class="os-indicator"><i class="os-live"></i>ONLINE</span><span class="os-indicator" id="osRepoCount">REPO INDEX: SYNCING</span><span class="os-clock" id="osClock">--:--:--</span></div>
+ </div>
+ <div class="os-menu-pop" id="osMenuPop">
+  <button data-open="files">▣ &nbsp; File Manager — /home/arctic</button><button data-open="terminal">⌘ &nbsp; Terminal — zsh</button><button data-open="about">❄ &nbsp; About Arctic Fox OS</button><button data-open="github">↗ &nbsp; GitHub Profile</button>
+ </div>
+ <div class="os-workspace">
+  <div class="os-wallpaper-mark">AF</div>
+  <div class="os-icons" id="osDesktopIcons">
+   <button class="os-icon" data-open="files"><span class="glyph">🏠</span><span class="os-icon-label">Home</span><span class="os-icon-type">DIRECTORY</span></button>
+   <button class="os-icon" data-open="terminal"><span class="glyph">⌘</span><span class="os-icon-label">Terminal</span><span class="os-icon-type">SHELL</span></button>
+   <button class="os-icon" data-open="about"><span class="glyph">❄</span><span class="os-icon-label">Arctic Fox</span><span class="os-icon-type">SYSTEM</span></button>
+   <button class="os-icon" data-open="github"><span class="glyph">◉</span><span class="os-icon-label">GitHub</span><span class="os-icon-type">REMOTE</span></button>
+   <button class="os-icon" data-open="files"><span class="glyph">📁</span><span class="os-icon-label">Repositories</span><span class="os-icon-type">/home/arctic/repos</span></button>
+  </div>
+  <div class="os-wallpaper-caption">ARCTIC FOX CYBER<br>BLACK-ICE WORKSTATION · SESSION 01<br><span style="color:#b7ff38">SYSTEM READY</span></div>
+  <section class="os-window" id="osFilesWindow">
+   <div class="os-titlebar"><div class="os-title">📁 <b>FILE MANAGER</b> <span class="dim">— /home/arctic/repos</span></div><div class="os-window-controls"><button data-minimize="osFilesWindow">−</button><button data-maximize="osFilesWindow">□</button><button data-close="osFilesWindow">×</button></div></div>
+   <div class="os-window-body"><div class="os-file-toolbar"><div class="os-path">/home/arctic/repos/</div><input class="os-search" id="osRepoSearch" placeholder="Search folders..." aria-label="Search repository folders"></div><div class="os-file-grid" id="osRepoFiles"><div class="os-empty">Connecting to GitHub repository index…</div></div></div>
+  </section>
+  <section class="os-window" id="osRepoWindow">
+   <div class="os-titlebar"><div class="os-title">📂 <b id="osRepoTitle">REPOSITORY</b></div><div class="os-window-controls"><button data-minimize="osRepoWindow">−</button><button data-maximize="osRepoWindow">□</button><button data-close="osRepoWindow">×</button></div></div>
+   <div class="os-window-body" id="osRepoDetails"></div>
+  </section>
+  <section class="os-window" id="osTerminalWindow">
+   <div class="os-titlebar"><div class="os-title">⌘ <b>TERMINAL</b> <span class="dim">— arctic@blackarch</span></div><div class="os-window-controls"><button data-minimize="osTerminalWindow">−</button><button data-maximize="osTerminalWindow">□</button><button data-close="osTerminalWindow">×</button></div></div>
+   <div class="os-window-body" style="padding:0"><div class="os-terminal" id="osTerminal"><div class="green">ARCTIC FOX OS [Version 6.0]</div><div class="dim">BlackArch-inspired operator workstation. Type 'help' to list commands.</div><br><div class="os-terminal-input"><span>arctic@fox:~$</span><input id="osTerminalInput" autocomplete="off" spellcheck="false" aria-label="Terminal command"></div></div></div>
+  </section>
+  <section class="os-window" id="osAboutWindow">
+   <div class="os-titlebar"><div class="os-title">❄ <b>ABOUT ARCTIC FOX</b></div><div class="os-window-controls"><button data-minimize="osAboutWindow">−</button><button data-maximize="osAboutWindow">□</button><button data-close="osAboutWindow">×</button></div></div>
+   <div class="os-window-body"><div class="os-details"><h2>ARCTIC FOX CYBER</h2><p>A BlackArch-inspired cyber workstation for independent security engineering, OSINT, privacy tooling and Linux software.</p><p class="os-detail-meta">KERNEL: BLACK-ICE · SHELL: ARCTIC-ZSH · THEME: BLACKARCH GREEN</p><button class="os-action" data-open="files">OPEN REPOSITORIES</button></div></div>
+  </section>
+ </div>
+ <div class="os-dock-wrap"><div class="os-dock">
+  <button title="Applications" data-menu></button><button title="File Manager" data-open="files">📁</button><button title="Terminal" data-open="terminal">⌘</button><button title="About" data-open="about">❄</button><span class="dock-sep"></span><button title="GitHub" data-open="github">◉</button>
+ </div></div>
+ <div class="os-toast" id="osToast"></div>
+</div>
+<script>
+
+/* ARCTIC FOX OS desktop + one-folder-per-public-repository */
+(()=>{
+ const $=s=>document.querySelector(s), $=s=>[...document.querySelectorAll(s)];
+ const os=$("#arcticOS"),files=$("#osFilesWindow"),repoWin=$("#osRepoWindow"),term=$("#osTerminalWindow"),about=$("#osAboutWindow");
+ let repoData=[],activeRepo=null,z=20;
+ const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const toast=m=>{const t=$("#osToast");t.textContent=m;t.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("show"),1800)};
+ function openWindow(name){const map={files,terminal:term,about};if(name==="github"){window.open("https://github.com/arcticfox-cyber","_blank","noopener");return}const w=map[name];if(w){$(".os-window").forEach(x=>x.classList.remove("open"));w.classList.add("open");w.style.zIndex=++z;if(name==="terminal")setTimeout(()=>$("#osTerminalInput")?.focus(),80)}}
+ function openRepo(r){activeRepo=r;$("#osRepoTitle").textContent=r.name.toUpperCase();$("#osRepoDetails").innerHTML='<div class="os-details"><div class="os-folder-glyph"></div><h2>'+esc(r.name)+'</h2><p>'+esc(r.description||"No description has been added to this repository yet.")+'</p><div class="os-detail-meta"><span>LANGUAGE: '+esc(r.language||"Not specified")+'</span><span>★ '+Number(r.stargazers_count||0)+' STARS</span><span>⑂ '+Number(r.forks_count||0)+' FORKS</span><span>UPDATED: '+esc(new Date(r.updated_at).toLocaleDateString())+'</span></div><p class="dim">PATH: /home/arctic/repos/'+esc(r.name)+'/</p><button class="os-action" id="osOpenRepo">OPEN ON GITHUB ↗</button> <button class="os-secondary" id="osCloneRepo">COPY CLONE URL</button></div>';openWindow("repo");repoWin.classList.add("open");repoWin.style.zIndex=++z;$("#osOpenRepo").onclick=()=>window.open(r.html_url,"_blank","noopener");$("#osCloneRepo").onclick=async()=>{try{await navigator.clipboard.writeText(r.clone_url);toast("Clone URL copied")}catch(e){toast(r.clone_url)}}}
+ function folderMarkup(r){return '<button class="os-file" data-repo="'+esc(r.name)+'"><span class="os-folder-glyph"></span><strong>'+esc(r.name)+'</strong><small>'+esc(r.language||"Repository")+' · ★ '+Number(r.stargazers_count||0)+'</small></button>'}
+ function drawRepos(){const q=($("#osRepoSearch")?.value||"").toLowerCase();const list=repoData.filter(r=>(r.name+" "+(r.description||"")+" "+(r.language||"")).toLowerCase().includes(q));$("#osRepoFiles").innerHTML=list.length?list.map(folderMarkup).join(""):'<div class="os-empty">No repository folders match this search.</div>';$("#osRepoCount").textContent="REPO INDEX: "+repoData.length+" FOLDERS";$("#osDesktopIcons").querySelectorAll(".repo").forEach(x=>x.remove());const desktop=repoData.slice(0,30);desktop.forEach((r,i)=>{const b=document.createElement("button");b.className="os-icon repo";b.dataset.repo=r.name;b.innerHTML='<span class="os-folder-glyph"></span><span class="os-icon-label">'+esc(r.name)+'</span><span class="os-icon-type">GITHUB FOLDER</span>';b.style.gridRow=String((i%5)+1);b.style.gridColumn=String(Math.floor(i/5)+1);$("#osDesktopIcons").appendChild(b)})}
+ function syncRepoData(){const cards=$("#repoGrid .repo-card");if(!cards.length)return;const parsed=cards.map(c=>{const a=c.querySelector("a.source");return{name:c.querySelector("h3")?.textContent||"repository",description:c.querySelector("p")?.textContent||"",language:c.querySelector(".repo-language")?.textContent||"",stargazers_count:Number((c.querySelector(".repo-meta span")?.textContent||"").replace(/[^0-9]/g,""))||0,forks_count:0,updated_at:new Date().toISOString(),html_url:a?.href||"https://github.com/arcticfox-cyber",clone_url:(a?.href||"https://github.com/arcticfox-cyber")+".git"}});if(parsed.length){repoData=parsed;drawRepos()}}
+ const mo=new MutationObserver(()=>syncRepoData());const rg=$("#repoGrid");if(rg)mo.observe(rg,{childList:true,subtree:true});
+ // The source app's repository feed is live; this secondary fetch provides complete metadata for folder windows.
+ async function loadFull(){try{const res=await fetch("https://api.github.com/users/arcticfox-cyber/repos?type=public&sort=updated&direction=desc&per_page=100",{headers:{Accept:"application/vnd.github+json"}});if(!res.ok)throw Error(res.status);const data=await res.json();if(Array.isArray(data)){repoData=data;drawRepos()}}catch(e){syncRepoData();if(!repoData.length)$("#osRepoFiles").innerHTML='<div class="os-empty">GitHub index unavailable. Reload to retry.</div>'}}
+ loadFull();
+ $("#osRepoSearch").addEventListener("input",drawRepos);
+ os.addEventListener("click",e=>{const open=e.target.closest("[data-open]");if(open){openWindow(open.dataset.open);$("#osMenuPop").classList.remove("open");return}const folder=e.target.closest("[data-repo]");if(folder){const r=repoData.find(x=>x.name===folder.dataset.repo);if(r)openRepo(r);return}const close=e.target.closest("[data-close]");if(close){$("#"+close.dataset.close).classList.remove("open");return}const min=e.target.closest("[data-minimize]");if(min){$("#"+min.dataset.minimize).classList.remove("open");return}const max=e.target.closest("[data-maximize]");if(max){$("#"+max.dataset.maximize).classList.toggle("maximized");return}if(e.target.closest("[data-menu]")||e.target.closest("#osMenuBtn"))$("#osMenuPop").classList.toggle("open")});
+ $("#osMenuPop").addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(b){openWindow(b.dataset.open);$("#osMenuPop").classList.remove("open")}});
+ function clock(){const d=new Date();$("#osClock").textContent=d.toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"})+" · "+d.toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"})}clock();setInterval(clock,1000);
+ const input=$("#osTerminalInput"),terminal=$("#osTerminal");
+ function termLine(html){const d=document.createElement("div");d.innerHTML=html;terminal.insertBefore(d,input.parentElement)}
+ input.addEventListener("keydown",e=>{if(e.key!=="Enter")return;const cmd=input.value.trim();input.value="";termLine('<span class="green">arctic@fox:~$</span> '+esc(cmd));const [c,...args]=cmd.split(/\s+/);if(c==="help")termLine('<span class="cyan">help · ls · whoami · neofetch · open &lt;repo&gt; · clear</span>');else if(c==="whoami")termLine("arctic-fox operator");else if(c==="neofetch")termLine('<span class="green">ARCTIC FOX OS</span> · BlackArch-inspired desktop · '+repoData.length+' public repositories');else if(c==="ls")termLine(repoData.map(r=>'<span class="cyan">'+esc(r.name)+'/</span>').join(" &nbsp; ")||"Repository index loading…");else if(c==="open"){const r=repoData.find(x=>x.name.toLowerCase()===args.join(" ").toLowerCase());if(r){openRepo(r);termLine("Opening "+esc(r.name))}else termLine("Repository not found. Run ls.");}else if(c==="clear"){terminal.querySelectorAll(":scope > div:not(.os-terminal-input)").forEach(x=>x.remove())}else if(cmd)termLine('<span class="dim">command not found: '+esc(c)+'</span>');terminal.scrollTop=terminal.scrollHeight});
+ // Default desktop starts clean; double-clicking icons opens apps like a workstation.
+ $(".os-icon").forEach(b=>b.addEventListener("dblclick",()=>{if(b.dataset.open)openWindow(b.dataset.open);else if(b.dataset.repo){const r=repoData.find(x=>x.name===b.dataset.repo);if(r)openRepo(r)}}));
+ document.addEventListener("keydown",e=>{if(e.key==="Escape"){$(".os-window").forEach(w=>w.classList.remove("open"));$("#osMenuPop").classList.remove("open")}if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="e"){e.preventDefault();openWindow("files")}});
+})();
+
 </script>
 </body>
 </html>
