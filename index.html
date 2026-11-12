@@ -364,6 +364,13 @@ body{background:#020409}
 .contact h2{text-shadow:0 0 18px #9bdcff20}
 @media(max-width:650px){.hero-grid>div:first-child{translate:0 calc(var(--hero-text-y,0px)*.4)}.hero-visual{translate:0 calc(var(--hero-visual-y,0px)*.43);scale:var(--hero-scale,1)}}
 
+
+/* Final compositor-safe scene lighting and opacity. */
+.hero-grid>div:first-child{opacity:var(--hero-text-opacity,1)}
+.section:before,.contact:before{background:radial-gradient(ellipse at 50% var(--scene-light-y,70%),rgba(115,193,255,.16),transparent 52%),radial-gradient(ellipse at 80% 20%,rgba(166,125,255,.08),transparent 42%)}
+.scroll-cinema-light{background:radial-gradient(ellipse 38% 30% at var(--light-x,50%) var(--light-y,48%),rgba(111,205,255,.13),transparent 72%)}
+@media(max-width:650px){.hero-grid>div:first-child{translate:0 var(--hero-text-y,0px)}}
+
 </style>
 </head>
 <body>
@@ -483,12 +490,12 @@ window.addEventListener("scroll",()=>{
    target=clamp(scrollY/max);
    const heroRect=hero.getBoundingClientRect();
    const heroP=clamp((0-heroRect.top)/Math.max(1,heroRect.height*.88));
-   root.style.setProperty("--hero-depth",heroP.toFixed(4));root.style.setProperty("--hero-text-y",(-heroP*54)+"px");root.style.setProperty("--hero-visual-y",(-heroP*105)+"px");root.style.setProperty("--hero-scale",(1+heroP*.18).toFixed(4));root.style.setProperty("--planet-rotation",(heroP*32)+"deg");root.style.setProperty("--ring-rotation",(-heroP*19)+"deg");root.style.setProperty("--orbit-rotation",(heroP*12)+"deg");
+   root.style.setProperty("--hero-depth",heroP.toFixed(4));root.style.setProperty("--hero-text-y",(-heroP*54)+"px");root.style.setProperty("--hero-visual-y",(-heroP*105)+"px");root.style.setProperty("--hero-scale",(1+heroP*.18).toFixed(4));root.style.setProperty("--hero-text-opacity",(1-heroP*.32).toFixed(3));root.style.setProperty("--planet-rotation",(heroP*32)+"deg");root.style.setProperty("--ring-rotation",(-heroP*19)+"deg");root.style.setProperty("--orbit-rotation",(heroP*12)+"deg");
    root.style.setProperty("--page-depth",target.toFixed(4));
    sections.forEach((section,i)=>{
      const r=section.getBoundingClientRect();
      const p=clamp((innerHeight-r.top)/(innerHeight+r.height));
-     section.style.setProperty("--scene-progress",p.toFixed(4));section.style.setProperty("--scene-offset",((1-p)*18)+"px");section.style.setProperty("--scene-opacity",(.08+p*.2).toFixed(3));
+     section.style.setProperty("--scene-progress",p.toFixed(4));section.style.setProperty("--scene-offset",((1-p)*18)+"px");section.style.setProperty("--scene-opacity",(.08+p*.2).toFixed(3));section.style.setProperty("--scene-light-y",(100-p*70)+"%");
      if(r.top<innerHeight*.8&&r.bottom>innerHeight*.2){
        const x=50+Math.sin((i+1)*1.7)*24;
        const y=38+p*24;
