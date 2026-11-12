@@ -110,10 +110,46 @@ body{isolation:isolate}
 @media(prefers-reduced-motion:reduce){.space-wash:after,.shooting-star,.planet,.ring,.planet-glow,.section:not(.contact):before,.repo-card{animation:none!important}}
 @media(max-width:650px){.shooting-star{opacity:.45}.section:not(.contact):before{width:75vw;height:75vw}}
 
+
+/* IMMERSIVE DEEP-SPACE FLIGHT */
+#cosmos{z-index:-3}
+.space-wash{z-index:-2;overflow:hidden}
+.space-wash:before{content:"";position:absolute;inset:-35%;background:
+ radial-gradient(ellipse at 18% 35%,#3f2a8055,transparent 28%),
+ radial-gradient(ellipse at 76% 22%,#0b789355,transparent 26%),
+ radial-gradient(ellipse at 62% 78%,#77305b44,transparent 30%);
+ filter:blur(48px);animation:nebulaVoyage 34s ease-in-out infinite alternate;will-change:transform}
+@keyframes nebulaVoyage{0%{transform:translate3d(-3%,2%,0) scale(.95) rotate(0deg)}100%{transform:translate3d(4%,-3%,0) scale(1.12) rotate(8deg)}}
+.space-depth{position:fixed;inset:-20%;z-index:-2;pointer-events:none;opacity:.24;background-image:
+ radial-gradient(1px 1px at 8% 12%,#fff 99%,transparent),
+ radial-gradient(1px 1px at 27% 73%,#b9dfff 99%,transparent),
+ radial-gradient(1.5px 1.5px at 66% 34%,#fff 99%,transparent),
+ radial-gradient(1px 1px at 84% 82%,#d9caff 99%,transparent),
+ radial-gradient(1px 1px at 48% 55%,#fff 99%,transparent);
+ background-size:370px 310px,430px 390px,510px 420px,340px 360px,620px 510px;
+ animation:deepDrift 110s linear infinite;will-change:transform}
+@keyframes deepDrift{to{transform:translate3d(-5%,3%,0) rotate(2deg)}}
+.hero{perspective:1100px}
+.hero-grid{transform-style:preserve-3d}
+.hero-visual{transform-style:preserve-3d}
+.planet-system{filter:drop-shadow(0 18px 60px #0b0b2d66)}
+.planet-system .planet{transform:translateZ(35px)}
+.planet-system .ring{transform:translateZ(15px) rotate(-24deg)}
+.planet-system .orbit-line{transform-style:preserve-3d}
+.hero-visual:after{content:"";position:absolute;inset:8%;border-radius:50%;pointer-events:none;background:conic-gradient(from 180deg,transparent,#9beaff12,transparent,#c39aff15,transparent);filter:blur(16px);animation:nebulaHalo 18s linear infinite}
+@keyframes nebulaHalo{to{transform:rotate(360deg)}}
+.hero:before{background:linear-gradient(90deg,#050713ed 0%,#050713a6 43%,#05071322 100%),radial-gradient(ellipse at 76% 48%,transparent 8%,#05071322 75%)}
+.section{isolation:isolate}
+.section:after{content:"";position:absolute;pointer-events:none;inset:0;opacity:.22;background:linear-gradient(180deg,transparent,#7b8dff08 50%,transparent);background-size:100% 220%;animation:spaceCurrent 16s ease-in-out infinite}
+@keyframes spaceCurrent{0%,100%{background-position:0 0}50%{background-position:0 100%}}
+.repo-card:hover,.universe-card:hover{box-shadow:0 22px 65px #02040dcc,0 0 38px #83dfff20}
+@media(max-width:650px){.space-depth{opacity:.13}.hero-visual:after{inset:2%}}
+@media(prefers-reduced-motion:reduce){.space-wash:before,.space-depth,.hero-visual:after,.section:after{animation:none!important}}
+
 </style>
 </head>
 <body>
-<canvas id="cosmos" aria-hidden="true"></canvas><div class="aurora-ribbon" aria-hidden="true"></div><div class="pointer-aura" aria-hidden="true"></div><div class="space-comet" aria-hidden="true"></div><div class="shooting-star" aria-hidden="true"></div><div class="shooting-star s2" aria-hidden="true"></div><div class="shooting-star s3" aria-hidden="true"></div><div class="space-wash"></div><div class="nebula one"></div><div class="nebula two"></div><div class="nebula three"></div>
+<canvas id="cosmos" aria-hidden="true"></canvas><div class="aurora-ribbon" aria-hidden="true"></div><div class="pointer-aura" aria-hidden="true"></div><div class="space-comet" aria-hidden="true"></div><div class="shooting-star" aria-hidden="true"></div><div class="shooting-star s2" aria-hidden="true"></div><div class="shooting-star s3" aria-hidden="true"></div><div class="space-depth" aria-hidden="true"></div><div class="space-wash"></div><div class="nebula one"></div><div class="nebula two"></div><div class="nebula three"></div>
 <header class="header"><div class="wrap nav">
 <a class="brand" href="#home"><span>ARCTIC FOX<small>CYBER · BEYOND LIMITS</small></span></a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="links">MENU ☰</button>
@@ -144,7 +180,7 @@ body{isolation:isolate}
 "use strict";
 const canvas=document.getElementById("cosmos"),ctx=canvas.getContext("2d");let stars=[],w=0,h=0,raf=0;
 function seedStars(){const dpr=Math.min(window.devicePixelRatio||1,2);w=window.innerWidth;h=window.innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+"px";canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(260,Math.floor(w*h/5200));stars=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.35+.25,a:Math.random()*.65+.2,s:Math.random()*.012+.002,p:Math.random()*Math.PI*2,c:Math.random()<.16?"190,174,255":Math.random()<.5?"141,238,255":"255,255,255"}));}
-function drawStars(t){ctx.clearRect(0,0,w,h);for(const s of stars){const alpha=s.a*(.65+.35*Math.sin(t*s.s+s.p));ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+alpha+")";ctx.fill();if(s.r>1.15){ctx.beginPath();ctx.arc(s.x,s.y,s.r*3,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+(alpha*.08)+")";ctx.fill();}}raf=requestAnimationFrame(drawStars);}
+function drawStars(t){ctx.clearRect(0,0,w,h);const seconds=t*.001;for(const s of stars){const depth=.12+s.r*.2;s.y+=depth*.16;if(s.y>h+3){s.y=-3;s.x=Math.random()*w;}const alpha=s.a*(.72+.28*Math.sin(seconds*s.s*8+s.p));ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+alpha+")";ctx.fill();if(s.r>1.15){ctx.beginPath();ctx.arc(s.x,s.y,s.r*3.2,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+(alpha*.09)+")";ctx.fill();}}raf=requestAnimationFrame(drawStars);}
 seedStars();raf=requestAnimationFrame(drawStars);window.addEventListener("resize",seedStars,{passive:true});document.addEventListener("visibilitychange",()=>{if(document.hidden){cancelAnimationFrame(raf)}else{raf=requestAnimationFrame(drawStars)}});
 const menu=document.getElementById("menu"),links=document.getElementById("links");menu.addEventListener("click",()=>{const open=links.classList.toggle("open");menu.setAttribute("aria-expanded",String(open));menu.textContent=open?"CLOSE ×":"MENU ☰";});links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{links.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.textContent="MENU ☰";}));
 document.getElementById("year").textContent=String(new Date().getFullYear());
