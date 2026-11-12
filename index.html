@@ -819,6 +819,74 @@ body:after{
   body{cursor:auto}
   .reveal{opacity:1;transform:none;filter:none}
 }
+
+/* ============================================================
+   BLACK-ARCH-INSPIRED ARCTIC FOX VISUAL SYSTEM
+   ============================================================ */
+:root{
+  --bg:#050608;--bg-deep:#020304;
+  --red:#e31b32;--red-bright:#ff334f;--red-dim:#9d1428;--red-deep:#3b0711;
+  --amber:#ffbd4a;--white:#e8e9ed;--muted:#747983;
+  --line:#24262c;--line-bright:#4a2029;
+}
+body{background:#050608;color:#e7e9ef;text-shadow:none;font-family:"JetBrains Mono",monospace}
+body:before{background:radial-gradient(ellipse 120% 110% at 50% 50%,transparent 62%,rgba(0,0,0,.72) 100%)}
+#matrix1{opacity:.32}#matrix2{opacity:.16}#matrix3{opacity:.08}
+.scanlines{opacity:.38;mix-blend-mode:screen}
+.crt-flicker{opacity:.25}
+.sys-hud,.sys-log{font-family:"JetBrains Mono",monospace}
+.header{background:rgba(5,6,8,.91);border-bottom:1px solid #3a1820;box-shadow:0 8px 30px #0008}
+.brand{font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:700;letter-spacing:.1em}
+.brand-logo{border-color:#7e1727;background:#16070b}
+.nav-links a{font-family:"JetBrains Mono",monospace;font-size:10px}
+.hero{background:radial-gradient(ellipse at 75% 48%,rgba(151,13,35,.13),transparent 42%),linear-gradient(135deg,#07080b,#090609 55%,#10070b)}
+.hero:before{background:linear-gradient(90deg,rgba(5,6,8,.97),rgba(5,6,8,.68) 60%,rgba(5,6,8,.3))}
+.section{background:linear-gradient(180deg,#07080b,#080609)}
+.section:nth-of-type(even){background:#06070a}
+.repo-card,.universe-card,.terminal-window,.um-card{
+  background:linear-gradient(145deg,rgba(18,19,24,.96),rgba(8,8,11,.98));
+  border-color:#34212a;box-shadow:0 12px 35px #0007,inset 0 1px #ffffff08;
+}
+.repo-card:hover,.universe-card:hover,.um-card:hover{border-color:#b21e37;box-shadow:0 18px 45px #000a,0 0 24px #e31b321c}
+h1,h2,h3,h4{color:#f1f1f4}
+.hero h1,.section-title{ text-shadow:0 0 24px #e31b3228}
+button,.button,.cta{border-radius:3px}
+::selection{background:#e31b32;color:#fff}
+.boot-loader{
+  z-index:400;background:
+    radial-gradient(ellipse at 50% 40%,rgba(123,12,30,.12),transparent 55%),
+    #030405;color:#dfe1e7;opacity:1;
+}
+.boot-loader:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;background:repeating-linear-gradient(0deg,transparent 0 3px,#d9233c 4px,transparent 5px)}
+.boot-shell{position:relative;width:min(760px,92vw);max-height:88svh;overflow:hidden;padding:22px 26px;border:1px solid #401722;background:rgba(5,6,8,.92);box-shadow:0 0 0 1px #16080c,0 25px 100px #000,0 0 65px #b21e3714}
+.boot-top,.boot-footer,.boot-progress-meta{display:flex;justify-content:space-between;gap:12px;font:9px "JetBrains Mono",monospace;letter-spacing:.12em;color:#9b9da5}
+.boot-top{padding-bottom:13px;border-bottom:1px solid #3a1820;color:#ff5268}
+.boot-version{color:#858993}
+.boot-brand{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:26px 0 20px;border-bottom:1px solid #292027}
+.boot-ascii{margin:0;color:#ff344f;font:12px/1.35 "JetBrains Mono",monospace;text-shadow:0 0 12px #e31b3266}
+.boot-ascii b{font-size:16px;letter-spacing:.16em;color:#f3f3f5}
+.boot-ascii i{font:8px "JetBrains Mono",monospace;color:#ffbd4a;letter-spacing:.12em}
+.boot-brand-meta{text-align:right;color:#777d88;font:8px/1.9 "JetBrains Mono",monospace;letter-spacing:.1em}
+.boot-terminal{height:245px;overflow:hidden;padding:18px 0 12px;font:10px/1.9 "JetBrains Mono",monospace;color:#a8adb7}
+.boot-line{opacity:0;animation:bootIn .18s ease-out forwards;white-space:pre-wrap}
+.boot-line.ok{color:#c8ccd3}.boot-line.ok:before{color:#ff4059}
+.boot-line.info{color:#ffbd4a}.boot-line.prompt{color:#ff4059;text-shadow:0 0 12px #e31b3277}
+.boot-progress{padding:10px 0 17px}
+.boot-progress-track{height:3px;background:#25151a;overflow:hidden}
+.boot-progress-track span{display:block;width:0;height:100%;background:linear-gradient(90deg,#8c1024,#ff4059,#ffbd4a);box-shadow:0 0 12px #ff334f;transition:width .22s ease}
+.boot-progress-meta{padding-top:8px;font-size:8px}
+.boot-progress-meta span:last-child{color:#ff5268}
+.boot-footer{border-top:1px solid #292027;padding-top:12px;font-size:8px;color:#626873}
+.boot-footer span:last-child{color:#ff4059}
+.boot-loader.done{opacity:0;transition:opacity .7s ease}
+@media(max-width:600px){
+ .boot-shell{padding:16px 14px}.boot-brand{align-items:flex-start;flex-direction:column;padding:20px 0 14px}
+ .boot-brand-meta{text-align:left}.boot-terminal{height:220px;font-size:9px}
+ .boot-ascii{font-size:10px}.boot-ascii b{font-size:13px}
+ .boot-footer{font-size:7px;letter-spacing:.03em}
+}
+@media(prefers-reduced-motion:reduce){.boot-progress-track span{transition:none}}
+
 </style>
 </head>
 <body>
@@ -859,7 +927,18 @@ body:after{
 
 <!-- ============ BOOT LOADER ============ -->
 <div class="boot-loader" id="bootLoader" aria-hidden="true">
-  <div class="boot-terminal" id="bootTerminal"></div>
+  <div class="boot-shell">
+    <div class="boot-top"><span>ARCTIC FOX // SYSTEM STARTUP</span><span class="boot-version">AFOS 6.0.26</span></div>
+    <div class="boot-brand">
+      <pre class="boot-ascii">     /\_/\\
+    ( o.o )   <b>ARCTIC FOX</b>
+     > ^ <    <i>CYBER OPERATING ENVIRONMENT</i></pre>
+      <div class="boot-brand-meta">BLACK-ICE KERNEL · RED TEAM EDITION<br>SECURE SESSION INITIALIZATION</div>
+    </div>
+    <div class="boot-terminal" id="bootTerminal" role="log" aria-live="polite"></div>
+    <div class="boot-progress"><div class="boot-progress-track"><span id="bootProgress"></span></div><div class="boot-progress-meta"><span id="bootStage">INITIALIZING SYSTEM</span><span id="bootPercent">0%</span></div></div>
+    <div class="boot-footer"><span>TTY1</span><span>AUTHORIZED OPERATOR ACCESS ONLY</span><span>● ONLINE</span></div>
+  </div>
 </div>
 
 <header class="header"><div class="wrap nav">
@@ -1184,75 +1263,57 @@ body:after{
 "use strict";
 
 /* ============================================================
-   1) BOOT SEQUENCE
+   1) ARCTIC FOX // BLACK-ARCH-INSPIRED BOOT SEQUENCE
    ============================================================ */
 (()=>{
   const bootEl=document.getElementById("bootTerminal");
+  const progress=document.getElementById("bootProgress");
+  const percent=document.getElementById("bootPercent");
+  const stage=document.getElementById("bootStage");
   if(!bootEl) return;
   const lines=[
-    {t:"ARCTIC FOX // OPERATOR BIOS v3.14.159",c:"ok"},
-    {t:"Copyright (c) 2026 Arctic Fox Cyber. Classified.",c:"dim"},
-    {t:"",c:""},
-    {t:"Performing power-on self test...",c:"dim"},
-    {t:"  CPU: AMD Ryzen Unknown @ 4.20GHz         [ OK ]",c:"ok"},
-    {t:"  Memory: 65536MB DDR5                     [ OK ]",c:"ok"},
-    {t:"  Network: eth0 link up                    [ OK ]",c:"ok"},
-    {t:"  Storage: nvme0n1 2TB encrypted           [ OK ]",c:"ok"},
-    {t:"  Cryptographic co-processor               [ OK ]",c:"ok"},
-    {t:"  TPM 2.0 sealed                           [ OK ]",c:"ok"},
-    {t:"",c:""},
-    {t:"Initializing red team modules...",c:"dim"},
-    {t:"  arctic_fox_core.ko                       [ OK ]",c:"ok"},
-    {t:"  offensive_toolkit.ko                     [ OK ]",c:"ok"},
-    {t:"  osint_recon.ko                           [ OK ]",c:"ok"},
-    {t:"  privacy_engine.ko                        [ OK ]",c:"ok"},
-    {t:"  linux_native_drv.ko                      [ OK ]",c:"ok"},
-    {t:"",c:""},
-    {t:"Mounting encrypted filesystems...",c:"dim"},
-    {t:"  /dev/mapper/arctic-root on /             [ OK ]",c:"ok"},
-    {t:"  /dev/nvme0n1p1 on /boot                  [ OK ]",c:"ok"},
-    {t:"  tmpfs on /tmp                            [ OK ]",c:"ok"},
-    {t:"  /dev/mapper/vault on /vault              [ OK ]",c:"ok"},
-    {t:"",c:""},
-    {t:"Establishing secure shell...",c:"dim"},
-    {t:"  SSH daemon started on port 22            [ OK ]",c:"ok"},
-    {t:"  Tor circuit established                  [WARN]",c:"warn"},
-    {t:"  VPN tunnel to unknown                    [ OK ]",c:"ok"},
-    {t:"  MAC address randomized                   [ OK ]",c:"ok"},
-    {t:"",c:""},
-    {t:"Loading operator profile...",c:"dim"},
-    {t:"  Clearance: RED TEAM                      [ OK ]",c:"ok"},
-    {t:"  Operations declassified                  [ OK ]",c:"ok"},
-    {t:"  Mission control online                   [ OK ]",c:"ok"},
-    {t:"  Offensive operations armed               [ OK ]",c:"ok"},
-    {t:"",c:""},
-    {t:"Welcome, operator.",c:"ok"},
-    {t:"",c:""},
-    {t:"red_team@arctic-fox:~# _",c:""}
+    {t:"[  OK  ] Mounting virtual kernel filesystems",c:"ok",s:"KERNEL"},
+    {t:"[  OK  ] Loading arctic_fox kernel modules",c:"ok",s:"KERNEL"},
+    {t:"[  OK  ] Checking system integrity",c:"ok",s:"SECURITY"},
+    {t:"[  OK  ] Initializing entropy and cryptographic services",c:"ok",s:"SECURITY"},
+    {t:"[  OK  ] Starting network interface manager",c:"ok",s:"NETWORK"},
+    {t:"[  OK  ] Preparing encrypted operator workspace",c:"ok",s:"STORAGE"},
+    {t:"[  OK  ] Loading OSINT and recon tool index",c:"ok",s:"TOOLS"},
+    {t:"[  OK  ] Loading privacy and anonymity modules",c:"ok",s:"PRIVACY"},
+    {t:"[  OK  ] Starting mission-control interface",c:"ok",s:"INTERFACE"},
+    {t:"[  OK  ] Establishing secure browser session",c:"ok",s:"SESSION"},
+    {t:"[ INFO ] All systems initialized",c:"info",s:"READY"},
+    {t:"",c:"",s:"READY"},
+    {t:"arctic@fox:~$ launch --operator-console",c:"prompt",s:"READY"}
   ];
   let idx=0;
   function nextLine(){
     if(idx>=lines.length){
+      stage.textContent="SYSTEM READY";
+      percent.textContent="100%";
+      progress.style.width="100%";
       setTimeout(()=>{
         const bl=document.getElementById("bootLoader");
         bl.classList.add("done");
-        setTimeout(()=>bl.classList.add("gone"),800);
+        setTimeout(()=>bl.classList.add("gone"),700);
         startMainExperience();
-      },400);
+      },550);
       return;
     }
     const l=lines[idx++];
     const div=document.createElement("div");
     div.className="boot-line "+l.c;
-    div.style.animationDelay=((idx-1)*55)+"ms";
     div.textContent=l.t;
     bootEl.appendChild(div);
-    setTimeout(nextLine,50+Math.random()*40);
+    bootEl.scrollTop=bootEl.scrollHeight;
+    const p=Math.round((idx/lines.length)*100);
+    progress.style.width=p+"%";
+    percent.textContent=p+"%";
+    stage.textContent=l.s==="READY"?"FINALIZING SESSION":"LOADING "+l.s;
+    setTimeout(nextLine,105+Math.random()*75);
   }
-  const si=setInterval(()=>{bootEl.scrollTop=bootEl.scrollHeight},80);
-  setTimeout(()=>{clearInterval(si);nextLine();},150);
+  setTimeout(nextLine,250);
 })();
-
 /* ============================================================
    2) START MAIN EXPERIENCE
    ============================================================ */
