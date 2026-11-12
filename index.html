@@ -165,6 +165,85 @@ body{isolation:isolate}
 @media(max-width:650px){.deep-cosmos:before,.deep-cosmos:after{opacity:.24}.warp-lane{opacity:.07}.cosmic-dust{opacity:.2}}
 @media(prefers-reduced-motion:reduce){.deep-cosmos:before,.deep-cosmos:after,.cosmic-dust,.warp-lane,.hero-visual .planet-system{animation:none!important}}
 
+
+/* ARCTIC FOX — CLASSIC OBSIDIAN / ICE MOTION */
+:root{
+ --bg:#05070b;--panel:#0a0f16;--line:#263342;--white:#f2f6fa;
+ --muted:#9aa9b8;--cyan:#8bdcff;--violet:#a8b8d8;--pink:#b9c9dc;
+ --ease-out:cubic-bezier(.2,.8,.2,1);
+}
+html{scroll-behavior:smooth;background:#05070b}
+body{background:#05070b;color:#f2f6fa}
+.space-wash{
+ background:
+ radial-gradient(ellipse at 78% 16%,#18334b38,transparent 34%),
+ radial-gradient(ellipse at 14% 72%,#182b3c2b,transparent 38%),
+ linear-gradient(180deg,#05070b,#080d13 54%,#05070b);
+}
+.space-wash:before{opacity:.48;filter:blur(68px);animation-duration:52s}
+.nebula{opacity:.07;filter:blur(95px);animation-duration:32s}
+.aurora-ribbon{opacity:.09;filter:blur(85px);animation-duration:75s}
+.pointer-aura{opacity:.42;background:radial-gradient(440px circle at var(--mx) var(--my),#8bdcff0c,transparent 66%)}
+.deep-cosmos{opacity:.42}
+.deep-cosmos:before,.deep-cosmos:after{opacity:.25;animation-duration:150s}
+.cosmic-dust{opacity:.2;animation-duration:38s}
+.warp-lane{opacity:.055;animation-duration:160s}
+#cosmos{opacity:.72}
+.header{background:#05080de8;border-bottom-color:#b9d8ef18;backdrop-filter:blur(18px)}
+.header.scrolled{background:#05080df5;box-shadow:0 10px 35px #0008}
+.brand{letter-spacing:.16em}
+.brand small{color:#8295a8}
+.nav-links a{color:#aebbc8;transition:color .2s ease,opacity .2s ease}
+.nav-links a:hover{color:#d8f3ff}
+.nav-links .github{border-color:#8bdcff55;color:#e8f6ff}
+.hero{min-height:min(850px,calc(100svh - 78px));border-bottom-color:#b9d8ef18}
+.hero:before{background:linear-gradient(90deg,#05070bf2 0%,#05070bbf 46%,#05070b38 100%),radial-gradient(ellipse at 76% 48%,transparent 10%,#05070b35 75%)}
+.hero:after{opacity:.24;animation-duration:12s}
+.hero h1{letter-spacing:-.075em}
+.hero h1 span{background:linear-gradient(100deg,#f8fbff 0%,#c8e7fa 48%,#91b9d6 100%);background-clip:text;filter:drop-shadow(0 0 22px #8bdcff18);animation:none}
+.eyebrow,.section-kicker{color:#9bdcff}
+.button{border-color:#8ca6ba55;transition:transform .22s var(--ease-out),border-color .22s,background .22s,box-shadow .22s}
+.button:hover{transform:translateY(-2px);border-color:#9bdcff;box-shadow:0 8px 25px #8bdcff18}
+.button.primary{background:linear-gradient(110deg,#c5eaff,#9bbbd3);color:#07111b}
+.button.primary:hover{box-shadow:0 8px 28px #8bdcff30}
+.planet{background:radial-gradient(circle at 30% 24%,#edf8ff 0%,#b6d0e5 12%,#5e7898 37%,#263b57 66%,#101c2b 100%);box-shadow:inset -24px -12px 35px #020615d9,inset 12px 8px 22px #ffffff55,0 0 55px #8bdcff38,0 0 130px #8bdcff12;animation-duration:7s}
+.ring{border-color:#b7d8ed88;border-left-color:#8bdcff55;border-bottom-color:#8bdcff66;box-shadow:0 0 14px #8bdcff20}
+.ring.back{border-color:#a8b8d855 transparent #b7d8ed66 transparent}
+.orbit-line{border-color:#9fc9e52b;animation-duration:28s}
+.orbit-line.second{border-color:#b8cce52b;animation-duration:42s}
+.orbit-line:before{background:#a9e4ff;box-shadow:0 0 15px #8bdcff}
+.orbit-line.second:before{background:#d0dced;box-shadow:0 0 14px #d0dced}
+.section{border-bottom-color:#b9d8ef18}
+.section:after{opacity:.1;animation-duration:24s}
+.section-head h2{background:linear-gradient(110deg,#f4f7fb,#c3d9e9 75%,#a9c1d6);background-clip:text}
+.repo-card,.universe-card{background:linear-gradient(145deg,#0e151eeb,#080d13f2);border-color:#8ea7bb27;box-shadow:0 12px 35px #0002;transition:transform .28s var(--ease-out),border-color .24s,box-shadow .24s}
+.repo-card:before{background:linear-gradient(90deg,transparent,#9bdcff,#d4e5f2,transparent);opacity:.24}
+.repo-card:hover,.universe-card:hover{border-color:#9bdcff77;box-shadow:0 16px 42px #0008,0 0 22px #8bdcff0c}
+.repo-card h3,.universe-card h3{color:#edf4f9}
+.repo-card p,.universe-card p{color:#a4b1be}
+.repo-language,.repo-status strong{color:#9bdcff}
+.universe-card:after{opacity:.11;filter:blur(85px)}
+.universe-card .card-orb{filter:saturate(.55);box-shadow:0 0 24px #8bdcff24,inset -8px -5px 12px #050713}
+.contact{background:radial-gradient(ellipse at 50% 110%,#1d344b38,transparent 58%),radial-gradient(ellipse at 50% 0%,#14283a26,transparent 50%)}
+.contact h2{background:linear-gradient(110deg,#f6f9fc,#c4dbea);background-clip:text;color:transparent}
+footer{background:#040609;border-top-color:#b9d8ef18}
+.shooting-star{opacity:.42}
+.space-comet{animation-duration:12s;opacity:0}
+.reveal{transition:opacity .42s var(--ease-out),transform .42s var(--ease-out),filter .42s ease}
+.repo-card.reveal:nth-child(3n+2),.universe-card.reveal:nth-child(3n+2),
+.repo-card.reveal:nth-child(3n),.universe-card.reveal:nth-child(3n){transition-delay:0ms}
+@media(max-width:650px){
+ .nav-links{background:#080d13f7;border-bottom-color:#263342}
+ .hero{min-height:auto}
+ .hero-visual{min-height:310px}
+ .deep-cosmos:before,.deep-cosmos:after{opacity:.16}
+ .cosmic-dust{opacity:.12}
+ .shooting-star{opacity:.25}
+}
+@media(prefers-reduced-motion:reduce){
+ .aurora-ribbon,.nebula,.deep-cosmos:before,.deep-cosmos:after,.cosmic-dust,.warp-lane,.space-wash:before,.planet,.orbit-line,.hero:after{animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -198,7 +277,7 @@ body{isolation:isolate}
 <script>
 "use strict";
 const canvas=document.getElementById("cosmos"),ctx=canvas.getContext("2d");let stars=[],w=0,h=0,raf=0;
-function seedStars(){const dpr=Math.min(window.devicePixelRatio||1,2);w=window.innerWidth;h=window.innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+"px";canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(260,Math.floor(w*h/5200));stars=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.35+.25,a:Math.random()*.65+.2,s:Math.random()*.012+.002,p:Math.random()*Math.PI*2,c:Math.random()<.16?"190,174,255":Math.random()<.5?"141,238,255":"255,255,255"}));}
+function seedStars(){const dpr=Math.min(window.devicePixelRatio||1,2);w=window.innerWidth;h=window.innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+"px";canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(175,Math.floor(w*h/7600));stars=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.35+.25,a:Math.random()*.65+.2,s:Math.random()*.012+.002,p:Math.random()*Math.PI*2,c:Math.random()<.16?"190,174,255":Math.random()<.5?"141,238,255":"255,255,255"}));}
 function drawStars(t){ctx.clearRect(0,0,w,h);const seconds=t*.001;for(const s of stars){const depth=.12+s.r*.2;s.y+=depth*.16;if(s.y>h+3){s.y=-3;s.x=Math.random()*w;}const alpha=s.a*(.72+.28*Math.sin(seconds*s.s*8+s.p));ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+alpha+")";ctx.fill();if(s.r>1.15){ctx.beginPath();ctx.arc(s.x,s.y,s.r*3.2,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+(alpha*.09)+")";ctx.fill();}}raf=requestAnimationFrame(drawStars);}
 seedStars();raf=requestAnimationFrame(drawStars);window.addEventListener("resize",seedStars,{passive:true});document.addEventListener("visibilitychange",()=>{if(document.hidden){cancelAnimationFrame(raf)}else{raf=requestAnimationFrame(drawStars)}});
 const menu=document.getElementById("menu"),links=document.getElementById("links");menu.addEventListener("click",()=>{const open=links.classList.toggle("open");menu.setAttribute("aria-expanded",String(open));menu.textContent=open?"CLOSE ×":"MENU ☰";});links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{links.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.textContent="MENU ☰";}));
