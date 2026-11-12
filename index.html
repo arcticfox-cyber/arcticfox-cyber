@@ -3,1430 +3,1480 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#020308">
-<meta name="description" content="Arctic Fox Cyber — an independent universe of cybersecurity tools, privacy engineering and Linux software.">
-<meta property="og:title" content="Arctic Fox Cyber — Explore the Unknown">
-<meta property="og:description" content="Independent security engineering. A universe of original tools.">
-<title>Arctic Fox Cyber — Explore the Unknown</title>
+<meta name="theme-color" content="#0a0405">
+<meta name="description" content="ARCTIC FOX // Red Team operator portfolio — offensive security, OSINT, privacy engineering &amp; Linux software">
+<meta property="og:title" content="ARCTIC FOX // RED TEAM OPERATOR">
+<meta property="og:description" content="Independent offensive security engineering. A portfolio of original tools.">
+<title>ARCTIC FOX // red_team@operator:~#</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   ARCTIC FOX CYBER — ULTRA CINEMATIC EDITION v2
-   Three.js spiral galaxy + black hole accretion + hyperdrive
-   speed lines + supernova flashes + constellation web +
-   custom cosmic cursor + letter stagger + magnetic buttons +
-   scroll-camera flight + particle explosions + SVG aurora +
-   glitch headings + IN-TAB portal navigation + full universe
-   overview modal.
+   ARCTIC FOX // RED TEAM OPERATOR PORTFOLIO
+   Classic crimson terminal aesthetic. Refined hacker style.
+   Smooth minimal cursor. Red matrix rain. CRT scanlines.
+   Boot sequence. System HUD. Live logs. Portal navigation.
    ============================================================ */
 :root{
   color-scheme:dark;
-  --bg:#020308; --panel:#0a0f16; --line:#263342;
-  --white:#f2f6fa; --muted:#9aa9b8;
-  --cyan:#8bdcff; --violet:#a8b8d8; --pink:#b9c9dc;
-  --ice:#9be6ff; --gold:#f8d995;
-  --max:1220px;
+  --bg:#0a0405; --bg-deep:#050203;
+  --red:#ff2d4a; --red-bright:#ff5577;
+  --red-dim:#8a1a2a; --red-deep:#3a0810;
+  --amber:#ffb000; --amber-dim:#6b4a00;
+  --white:#f0d8d8; --muted:#6b4a52;
+  --line:#2a1418; --line-bright:#4a1a22;
+  --max:1180px;
   --ease-out:cubic-bezier(.16,1,.3,1);
   --ease-spring:cubic-bezier(.34,1.56,.64,1);
-  --mx:50vw; --my:35vh;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:86px;background:#020308}
+html{scroll-behavior:smooth;scroll-padding-top:80px;background:#0a0405}
 body{
-  margin:0;background:var(--bg);color:var(--white);
-  font-family:Manrope,system-ui,sans-serif;
-  overflow-x:hidden;
-  cursor:none;
+  margin:0;background:var(--bg);color:var(--red-bright);
+  font-family:"Share Tech Mono",monospace;
+  overflow-x:hidden;cursor:none;
+  text-shadow:0 0 3px rgba(255,45,74,.5),0 0 10px rgba(255,45,74,.2);
+  position:relative;
+}
+/* CRT screen bend */
+body:before{
+  content:"";position:fixed;inset:0;z-index:300;pointer-events:none;
+  background:radial-gradient(ellipse 120% 110% at 50% 50%,transparent 65%,rgba(0,0,0,.5) 100%);
 }
 a{color:inherit;text-decoration:none}
 button,input{font:inherit}
-::selection{background:#9be6ff;color:#020308}
-.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
-.mono,.eyebrow,.nav a,.button,.section-kicker,.micro,.repo-meta,.footer-note{font-family:"DM Mono",monospace}
+::selection{background:var(--red);color:#000}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
 
-/* ---------- Hide native cursor everywhere; custom cosmic cursor ---------- */
-@media (pointer:coarse){ body{cursor:auto} .cosmic-cursor,.cosmic-trail{display:none!important} }
-
-/* ---------- 3D Galaxy canvas (Three.js) ---------- */
-#galaxy{
-  position:fixed;inset:0;width:100%;height:100%;
-  z-index:-3;pointer-events:none;
+/* ---------- MATRIX RAIN (red, 3 layers) ---------- */
+#matrix1,#matrix2,#matrix3{
+  position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
 }
-/* fallback 2D starfield kept on top of galaxy for extra depth */
-#cosmos{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;opacity:.5;mix-blend-mode:screen}
+#matrix1{z-index:-4;opacity:.7}
+#matrix2{z-index:-3;opacity:.35;mix-blend-mode:screen}
+#matrix3{z-index:-2;opacity:.18;mix-blend-mode:screen;filter:blur(1px)}
 
-/* ---------- Background atmospheric layers ---------- */
-.space-wash{
-  position:fixed;inset:0;z-index:-1;pointer-events:none;
+/* ---------- CRT SCANLINES + FLICKER + VIGNETTE ---------- */
+.scanlines{
+  position:fixed;inset:0;z-index:200;pointer-events:none;
+  background:repeating-linear-gradient(0deg,
+    rgba(255,45,74,.035) 0,
+    rgba(255,45,74,.035) 1px,
+    transparent 1px,
+    transparent 3px);
+  mix-blend-mode:overlay;
+}
+.scanlines:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent,rgba(255,45,74,.05),transparent);
+  height:140px;animation:scanMove 6s linear infinite;
+}
+@keyframes scanMove{0%{transform:translateY(-20vh)}100%{transform:translateY(120vh)}}
+.crt-flicker{
+  position:fixed;inset:0;z-index:201;pointer-events:none;
+  background:rgba(255,45,74,.01);
+  animation:flicker .12s infinite;
+}
+@keyframes flicker{0%,100%{opacity:.95}50%{opacity:1}73%{opacity:.92}}
+.crt-vignette{
+  position:fixed;inset:0;z-index:199;pointer-events:none;
+  background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.65) 95%);
+}
+
+/* ---------- HEX PARTICLES ---------- */
+.hex-particle{
+  position:fixed;z-index:-1;pointer-events:none;
+  color:var(--red);font:10px "Share Tech Mono",monospace;
+  text-shadow:0 0 6px var(--red);opacity:0;
+}
+
+/* ---------- SYSTEM HUD (top-right) ---------- */
+.sys-hud{
+  position:fixed;top:14px;right:16px;z-index:50;
+  font:9.5px "Share Tech Mono",monospace;
+  color:var(--red-dim);text-align:right;line-height:1.65;
+  letter-spacing:.08em;pointer-events:none;
+  text-shadow:0 0 3px rgba(255,45,74,.4);
+}
+.sys-hud .v{color:var(--red-bright);text-shadow:0 0 5px var(--red)}
+.sys-hud .alert{color:var(--amber);text-shadow:0 0 5px var(--amber)}
+.sys-hud .blink{animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.sys-hud .label{color:var(--muted)}
+
+/* ---------- SYSTEM LOG (bottom-left) ---------- */
+.sys-log{
+  position:fixed;bottom:14px;left:14px;z-index:50;
+  width:260px;max-height:150px;overflow:hidden;
+  font:9px "Share Tech Mono",monospace;
+  color:var(--red-dim);pointer-events:none;
+  opacity:.55;line-height:1.5;
+  text-shadow:0 0 3px rgba(255,45,74,.3);
+}
+.sys-log .line{white-space:nowrap;animation:logIn .4s ease-out both}
+.sys-log .line .ts{color:#3a1a22}
+.sys-log .line .ok{color:var(--red-bright)}
+.sys-log .line .warn{color:var(--amber)}
+.sys-log .line .err{color:var(--red);text-shadow:0 0 6px var(--red)}
+@keyframes logIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+
+/* ---------- RADAR (top-left) ---------- */
+.radar{
+  position:fixed;top:80px;left:16px;z-index:49;
+  width:88px;height:88px;border-radius:50%;
+  border:1px solid var(--red-dim);
+  pointer-events:none;opacity:.35;
   background:
-    radial-gradient(ellipse at 78% 16%,#18334b38,transparent 34%),
-    radial-gradient(ellipse at 14% 72%,#182b3c2b,transparent 38%),
-    linear-gradient(180deg,#020308,#050a12 54%,#020308);
+    radial-gradient(circle,transparent 30%,rgba(255,45,74,.04) 50%,transparent 70%),
+    repeating-radial-gradient(circle,transparent 0 12px,rgba(255,45,74,.1) 12px 13px);
 }
-.space-wash:before{
-  content:"";position:absolute;inset:-30%;
-  background:conic-gradient(from 0deg at 50% 50%,transparent 0 28%,#7a5cff0b 34%,transparent 43%,#42dfff0b 56%,transparent 68%,#ff7acb09 78%,transparent 100%);
-  animation:cosmicTurn 65s linear infinite;
+.radar:before{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 0deg,rgba(255,45,74,.35),transparent 60deg);
+  animation:radarSweep 4s linear infinite;
+}
+.radar:after{
+  content:"";position:absolute;top:50%;left:50%;
+  width:4px;height:4px;border-radius:50%;
+  background:var(--red);box-shadow:0 0 8px var(--red);
+  transform:translate(-50%,-50%);
+}
+@keyframes radarSweep{to{transform:rotate(360deg)}}
+
+/* ---------- SMOOTH MINIMAL CURSOR (proper design) ---------- */
+.cursor-ring{
+  position:fixed;top:0;left:0;
+  width:22px;height:22px;
+  border:1.5px solid var(--red);
+  border-radius:50%;
+  pointer-events:none;z-index:500;
+  transform:translate(-50%,-50%);
+  transition:width .2s var(--ease-spring),height .2s var(--ease-spring),
+             border-color .2s,background .2s,border-width .2s;
+  box-shadow:0 0 12px rgba(255,45,74,.6),inset 0 0 8px rgba(255,45,74,.15);
+  will-change:transform;
+}
+.cursor-ring.hover{
+  width:38px;height:38px;
+  border-color:var(--amber);
+  background:rgba(255,176,0,.08);
+  box-shadow:0 0 16px rgba(255,176,0,.6),inset 0 0 10px rgba(255,176,0,.15);
+}
+.cursor-ring.click{
+  width:14px;height:14px;
+  border-color:var(--white);
+  background:rgba(255,255,255,.2);
+  border-width:2px;
+}
+.cursor-dot{
+  position:fixed;top:0;left:0;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--red);
+  pointer-events:none;z-index:501;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 8px var(--red),0 0 16px var(--red);
+  will-change:transform;
+}
+.cursor-dot.click{background:var(--white);box-shadow:0 0 10px var(--white)}
+/* Soft trailing ghost */
+.cursor-ghost{
+  position:fixed;top:0;left:0;
+  width:14px;height:14px;border-radius:50%;
+  border:1px solid var(--red-dim);
+  pointer-events:none;z-index:499;
+  transform:translate(-50%,-50%);
+  mix-blend-mode:screen;
   opacity:.5;
-}
-@keyframes cosmicTurn{to{transform:rotate(360deg)}}
-.nebula{position:fixed;z-index:-1;pointer-events:none;width:42vw;height:42vw;filter:blur(95px);opacity:.07;border-radius:50%;animation:nebulaDrift 32s ease-in-out infinite alternate;will-change:transform}
-.nebula.one{background:#7848e8;top:8%;left:-15%}
-.nebula.two{background:#168fba;right:-18%;top:38%;animation-delay:-8s;animation-duration:27s}
-.nebula.three{background:#bd428d;bottom:-24%;left:35%;animation-delay:-13s;animation-duration:38s}
-@keyframes nebulaDrift{to{transform:translate(7vw,-5vh) scale(1.18)}}
-
-/* ---------- SVG Aurora Borealis ribbons ---------- */
-.aurora-svg{
-  position:fixed;inset:0;width:100%;height:100%;
-  z-index:-1;pointer-events:none;opacity:.45;mix-blend-mode:screen;
-  filter:blur(2px);
-}
-.aurora-path{
-  fill:none;stroke-width:2;
-  animation:auroraFlow 18s ease-in-out infinite alternate;
-}
-.aurora-path.a1{stroke:url(#auroraGrad1);animation-duration:14s}
-.aurora-path.a2{stroke:url(#auroraGrad2);animation-duration:21s;animation-delay:-7s}
-.aurora-path.a3{stroke:url(#auroraGrad3);animation-duration:26s;animation-delay:-12s}
-@keyframes auroraFlow{
-  0%{stroke-dashoffset:0;transform:translateX(-3%) translateY(0)}
-  100%{stroke-dashoffset:-300;transform:translateX(3%) translateY(-2%)}
+  will-change:transform;
 }
 
-/* ---------- Cinematic loader / portal intro ---------- */
-.portal-loader{
-  position:fixed;inset:0;z-index:200;background:#020308;
+/* ---------- ACCESS FLASH ---------- */
+.access-flash{
+  position:fixed;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  z-index:350;pointer-events:none;opacity:0;
+  font:700 56px "Share Tech Mono",monospace;
+  letter-spacing:.12em;
+  text-shadow:0 0 20px currentColor,0 0 40px currentColor;
+}
+.access-flash.show{animation:flashPop 1.2s ease-out forwards}
+@keyframes flashPop{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}
+  20%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}
+  80%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(1.4)}
+}
+
+/* ---------- CLICK RIPPLE ---------- */
+.click-ripple{
+  position:fixed;pointer-events:none;z-index:498;
+  border:1.5px solid var(--red);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  mix-blend-mode:screen;
+}
+
+/* ---------- BOOT LOADER ---------- */
+.boot-loader{
+  position:fixed;inset:0;z-index:400;background:var(--bg);
   display:flex;align-items:center;justify-content:center;
   pointer-events:none;
 }
-.portal-loader.done{opacity:0;transition:opacity 1s var(--ease-out)}
-.portal-loader.gone{display:none}
-.portal-ring{
-  width:200px;height:200px;border-radius:50%;
-  border:2px solid transparent;
-  border-top-color:#9be6ff;border-right-color:#a78bfa;
-  animation:portalSpin 1.2s linear infinite;
-  box-shadow:0 0 80px #8bdcff66,inset 0 0 60px #8bdcff33;
+.boot-loader.done{opacity:0;transition:opacity .8s var(--ease-out)}
+.boot-loader.gone{display:none}
+.boot-terminal{
+  width:min(680px,92vw);
+  font:12px "Share Tech Mono",monospace;
+  color:var(--red-bright);
+  text-shadow:0 0 5px var(--red);
+}
+.boot-line{white-space:pre;opacity:0;animation:bootIn .15s ease-out forwards}
+.boot-line .ok{color:var(--red-bright)}
+.boot-line .warn{color:var(--amber)}
+.boot-line .err{color:var(--red);text-shadow:0 0 6px var(--red)}
+.boot-line .dim{color:var(--red-dim)}
+@keyframes bootIn{to{opacity:1}}
+
+/* ---------- HEADER ---------- */
+.header{
+  height:72px;position:sticky;top:0;z-index:60;
+  background:linear-gradient(180deg,rgba(10,4,5,.96),rgba(10,4,5,.75));
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line-bright);
+  box-shadow:0 4px 20px rgba(255,45,74,.06),inset 0 -1px 0 rgba(255,45,74,.1);
+}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{
+  display:flex;align-items:center;gap:14px;
+  font-family:"VT323",monospace;font-size:18px;
+  letter-spacing:.06em;color:var(--red-bright);
+  text-shadow:0 0 6px var(--red),0 0 14px rgba(255,45,74,.35);
+}
+.brand-logo{
+  width:34px;height:34px;display:grid;place-items:center;
+  border:1px solid var(--red-dim);
+  background:linear-gradient(145deg,rgba(255,45,74,.1),transparent);
   position:relative;
 }
-.portal-ring:before,.portal-ring:after{
-  content:"";position:absolute;inset:18px;border-radius:50%;
-  border:1.5px solid transparent;
+.brand-logo:before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent 0 3px,rgba(255,45,74,.08) 3px 4px);
 }
-.portal-ring:before{border-top-color:#ff8acb;border-left-color:#9be6ff;animation:portalSpin 1.6s linear infinite reverse}
-.portal-ring:after{inset:38px;border-top-color:#f8d995;border-right-color:#a78bfa;animation:portalSpin .9s linear infinite}
-.portal-core{
-  position:absolute;width:50px;height:50px;border-radius:50%;
-  background:radial-gradient(circle,#fff,#9be6ff 30%,#a78bfa 70%,transparent);
-  filter:blur(8px);animation:portalPulse 1s ease-in-out infinite alternate;
+.brand-logo svg{position:relative;z-index:1}
+.brand-text{display:flex;flex-direction:column;line-height:1}
+.brand-text small{
+  color:var(--amber);font:9px "Share Tech Mono",monospace;
+  letter-spacing:.22em;margin-top:4px;text-shadow:0 0 3px var(--amber);
 }
-@keyframes portalSpin{to{transform:rotate(360deg)}}
-@keyframes portalPulse{from{transform:scale(.7);opacity:.6}to{transform:scale(1.2);opacity:1}}
-.portal-text{
-  position:absolute;bottom:30%;left:50%;transform:translateX(-50%);
-  color:#9be6ff;font:10px "DM Mono",monospace;letter-spacing:.3em;
-  text-transform:uppercase;opacity:.8;animation:portalPulse 1.4s ease-in-out infinite alternate;
+.brand-blink{
+  display:inline-block;width:8px;height:13px;background:var(--red);
+  vertical-align:middle;animation:blink 1s steps(2) infinite;
+  box-shadow:0 0 6px var(--red);margin-left:3px;
 }
-
-/* ---------- Custom cosmic cursor ---------- */
-.cosmic-cursor{
-  position:fixed;top:0;left:0;width:32px;height:32px;
-  border-radius:50%;border:1.5px solid #9be6ff;
-  pointer-events:none;z-index:300;
-  transform:translate(-50%,-50%);
-  mix-blend-mode:screen;
-  transition:width .25s var(--ease-spring),height .25s var(--ease-spring),border-color .25s,background .25s;
-  box-shadow:0 0 16px #8bdcff66,inset 0 0 10px #8bdcff33;
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{
+  font:10.5px "Share Tech Mono",monospace;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--red-dim);
+  transition:color .2s,text-shadow .2s;
+  position:relative;
 }
-.cosmic-cursor.hover{
-  width:60px;height:60px;border-color:#a78bfa;
-  background:radial-gradient(circle,#a78bfa22,transparent 70%);
-}
-.cosmic-cursor.click{
-  width:18px;height:18px;border-color:#fff;background:#fff;
-}
-.cosmic-dot{
-  position:fixed;top:0;left:0;width:6px;height:6px;
-  border-radius:50%;background:#fff;
-  pointer-events:none;z-index:301;
-  transform:translate(-50%,-50%);
-  box-shadow:0 0 10px #9be6ff,0 0 20px #9be6ff;
-  mix-blend-mode:screen;
-}
-.cosmic-trail{
-  position:fixed;top:0;left:0;width:5px;height:5px;
-  border-radius:50%;background:#9be6ff;
-  pointer-events:none;z-index:299;
-  transform:translate(-50%,-50%);
-  mix-blend-mode:screen;
-  filter:blur(1px);
-}
-
-/* ---------- Click particle explosion ---------- */
-.burst-particle{
-  position:fixed;pointer-events:none;z-index:298;
-  border-radius:50%;
-  mix-blend-mode:screen;
-  filter:blur(.5px);
-}
-
-/* ---------- Header ---------- */
-.header{
-  height:78px;position:sticky;top:0;z-index:20;
-  background:#05080de8;
-  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid #b9d8ef18;
-  transition:background .5s,border-color .5s,box-shadow .5s;
-}
-.header.scrolled{background:#05080df5;box-shadow:0 10px 35px #0008,0 1px #8deeff12;border-bottom-color:#8deeff38}
-.nav{height:100%;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:.16em;transition:letter-spacing .5s,text-shadow .5s}
-.brand:hover{text-shadow:0 0 22px #8deeff88;letter-spacing:.22em}
-.brand small{display:block;color:#8295a8;font:9px "DM Mono",monospace;letter-spacing:.22em;margin-top:4px}
-.nav-links{display:flex;align-items:center;gap:31px}
-.nav-links a{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#aebbc8;transition:color .2s ease,opacity .2s ease;position:relative}
-.nav-links a:hover{color:#d8f3ff}
+.nav-links a:hover{color:var(--red-bright);text-shadow:0 0 5px var(--red),0 0 12px rgba(255,45,74,.4)}
+.nav-links a:not(.github):before{content:"> "}
 .nav-links a:not(.github):after{
   content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
-  background:linear-gradient(90deg,#9be6ff,#a78bfa);
-  transition:width .35s var(--ease-out);
+  background:var(--red);box-shadow:0 0 4px var(--red);
+  transition:width .3s var(--ease-out);
 }
 .nav-links a:not(.github):hover:after{width:100%}
-.nav-links .github{padding:12px 17px;border:1px solid #8bdcff55;color:#e8f6ff;transition:all .25s var(--ease-out)}
-.nav-links .github:hover{background:#8bdcff15;border-color:#9be6ff;box-shadow:0 0 24px #8bdcff33}
-.menu{display:none;background:transparent;color:white;border:1px solid var(--line);padding:10px 12px;font:10px "DM Mono",monospace}
+.nav-links .github{
+  padding:8px 14px;border:1px solid var(--red-dim);
+  color:var(--red-bright);
+  transition:all .2s var(--ease-out);
+}
+.nav-links .github:hover{
+  border-color:var(--red);background:rgba(255,45,74,.08);
+  box-shadow:0 0 12px rgba(255,45,74,.3),inset 0 0 10px rgba(255,45,74,.08);
+}
+.menu{display:none;background:transparent;color:var(--red-bright);border:1px solid var(--red-dim);padding:8px 12px;font:11px "Share Tech Mono",monospace;cursor:none}
 
-/* ---------- Hero ---------- */
+/* ---------- HERO ---------- */
 .hero{
-  position:relative;min-height:min(960px,calc(100svh - 78px));
+  position:relative;min-height:min(860px,calc(100svh - 72px));
   display:flex;align-items:center;overflow:hidden;
-  border-bottom:1px solid #b9d8ef18;
-  perspective:1100px;
+  border-bottom:1px solid var(--line-bright);
 }
 .hero:before{
   content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(90deg,#020308f2 0%,#020308b9 43%,#02030824 100%),
-             radial-gradient(ellipse at 76% 48%,transparent 8%,#0203082b 76%);
+  background:
+    linear-gradient(90deg,rgba(10,4,5,.96) 0%,rgba(10,4,5,.65) 50%,rgba(10,4,5,.35) 100%),
+    radial-gradient(ellipse at 70% 50%,transparent,rgba(10,4,5,.5) 80%);
 }
 .hero:after{
-  content:"";position:absolute;inset:0;pointer-events:none;opacity:.42;
-  background:linear-gradient(115deg,transparent 0 47%,#b5d9ff0a 49%,transparent 52% 100%);
-  background-size:220% 100%;animation:spaceSweep 6s ease-in-out infinite;
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    repeating-linear-gradient(90deg,transparent 0 44px,rgba(255,45,74,.015) 44px 45px),
+    repeating-linear-gradient(0deg,transparent 0 44px,rgba(255,45,74,.015) 44px 45px);
 }
-@keyframes spaceSweep{0%,100%{background-position:150% 0}50%{background-position:-50% 0}}
 .hero-grid{
   position:relative;display:grid;
-  grid-template-columns:1.05fr .95fr;
-  align-items:center;gap:35px;padding:110px 0 105px;
-  transform-style:preserve-3d;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;gap:35px;padding:90px 0;
 }
 .eyebrow{
-  display:flex;align-items:center;gap:12px;
-  color:#9bdcff;font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:10px;
+  color:var(--amber);font:11px "Share Tech Mono",monospace;
+  letter-spacing:.25em;text-transform:uppercase;
+  text-shadow:0 0 5px var(--amber);
+  margin-bottom:18px;
 }
-.eyebrow:before{
-  content:"";height:1px;width:30px;
-  background:linear-gradient(90deg,#ff8acb,#9be6ff);
+.eyebrow:before{content:"[";color:var(--red-bright)}
+.eyebrow:after{content:"]";color:var(--red-bright)}
+.eyebrow .dot{
+  display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:var(--red);box-shadow:0 0 8px var(--red);
+  animation:blink 1s steps(2) infinite;
 }
 .hero h1{
-  font-size:clamp(53px,7.5vw,96px);letter-spacing:-.075em;
-  line-height:.99;margin:25px 0 23px;font-weight:800;
-  text-wrap:balance;
+  font-family:"VT323",monospace;
+  font-size:clamp(48px,7.5vw,90px);
+  letter-spacing:.02em;line-height:.96;
+  margin:0 0 22px;font-weight:400;
+  color:var(--red-bright);
+  text-shadow:0 0 10px var(--red),0 0 24px rgba(255,45,74,.45),0 0 45px rgba(255,45,74,.18);
 }
 .hero h1 span{
-  display:block;
-  background:linear-gradient(100deg,#f8fbff 0%,#c8e7fa 48%,#91b9d6 100%);
-  background-clip:text;-webkit-background-clip:text;color:transparent;
-  filter:drop-shadow(0 0 22px #8bdcff18);
+  display:block;color:var(--amber);
+  text-shadow:0 0 10px var(--amber),0 0 24px rgba(255,176,0,.4),0 0 45px rgba(255,176,0,.15);
 }
-/* letter stagger wrappers */
 .hero h1 .char{
   display:inline-block;position:relative;
-  animation:charDrop .9s var(--ease-spring) both;
+  animation:charType .08s steps(1) both;
+  animation-delay:var(--d,0s);
 }
-.hero h1 .char.glow{
-  text-shadow:
-    0 0 18px #9be6ffaa,
-    0 0 36px #a78bfa88,
-    0 0 60px #ff8acb44;
+@keyframes charType{
+  from{opacity:0;transform:translateY(-12px) scale(.7);filter:blur(4px)}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
 }
-@keyframes charDrop{
-  from{opacity:0;transform:translateY(40px) rotateX(-80deg) scale(.6);filter:blur(8px)}
-  to{opacity:1;transform:translateY(0) rotateX(0) scale(1);filter:blur(0)}
+.hero h1 .cursor{
+  display:inline-block;width:13px;height:32px;
+  background:var(--red);vertical-align:-5px;margin-left:6px;
+  animation:blink 1s steps(2) infinite;
+  box-shadow:0 0 10px var(--red);
 }
-.hero h1 .word{display:inline-block;perspective:600px}
-.hero-copy{max-width:550px;color:#b0bad2;font-size:15px;line-height:1.95;margin:0}
-.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:34px}
+.hero-copy{
+  max-width:560px;color:var(--white);
+  font:13.5px/1.85 "JetBrains Mono",monospace;
+  margin:0 0 30px;
+  text-shadow:0 0 2px rgba(255,45,74,.3);
+  border-left:2px solid var(--red-dim);
+  padding-left:14px;
+}
+.hero-copy:before{
+  content:"$ cat about.txt\n";
+  display:block;color:var(--amber);
+  margin-bottom:8px;font-size:11px;
+  text-shadow:0 0 5px var(--amber);
+}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
 
-/* ---------- Magnetic Buttons ---------- */
+/* ---------- BUTTONS (Red Team) ---------- */
 .button{
-  display:inline-flex;align-items:center;justify-content:center;gap:12px;
-  min-height:49px;padding:0 19px;
-  border:1px solid #8ca6ba55;color:#f4f4ff;
-  font-size:10px;letter-spacing:.11em;text-transform:uppercase;
-  position:relative;overflow:hidden;isolation:isolate;
-  background:transparent;
-  transition:transform .22s var(--ease-out),border-color .22s,background .22s,box-shadow .22s;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:44px;padding:0 20px;
+  border:1px solid var(--red-dim);
+  background:rgba(255,45,74,.04);
+  color:var(--red-bright);
+  font:11px "Share Tech Mono",monospace;
+  letter-spacing:.18em;text-transform:uppercase;
+  position:relative;overflow:hidden;isolation:isolate;cursor:none;
+  transition:transform .2s var(--ease-out),border-color .2s,background .2s,box-shadow .2s;
+  text-shadow:0 0 3px var(--red);
   will-change:transform;
 }
 .button:before{
   content:"";position:absolute;z-index:-1;inset:0;
-  background:linear-gradient(110deg,transparent 20%,#ffffff26 48%,transparent 72%);
+  background:linear-gradient(110deg,transparent 20%,rgba(255,45,74,.2) 48%,transparent 72%);
   transform:translateX(-120%);transition:transform .7s var(--ease-out);
 }
 .button:hover:before{transform:translateX(120%)}
-.button:hover{transform:translateY(-2px);border-color:#9bdcff;box-shadow:0 8px 25px #8bdcff18}
+.button:hover{
+  border-color:var(--red);background:rgba(255,45,74,.1);
+  box-shadow:0 0 14px rgba(255,45,74,.3),inset 0 0 10px rgba(255,45,74,.08);
+}
 .button.primary{
-  border-color:transparent;
-  background:linear-gradient(110deg,#c5eaff,#9bbbd3);
-  color:#07111b;font-weight:500;
+  border-color:var(--red);
+  background:var(--red);color:#000;
+  text-shadow:none;
 }
-.button.primary:hover{box-shadow:0 8px 28px #8bdcff30,0 0 50px #8bdcff22}
+.button.primary:hover{
+  background:var(--amber);border-color:var(--amber);
+  box-shadow:0 0 22px rgba(255,176,0,.55),0 0 45px rgba(255,176,0,.25);
+  color:#000;
+}
+.button.alert{
+  border-color:var(--amber);color:var(--amber);text-shadow:0 0 3px var(--amber);
+}
+.button.alert:hover{
+  background:rgba(255,176,0,.1);border-color:var(--amber);
+  box-shadow:0 0 14px rgba(255,176,0,.35);
+}
 
-/* ---------- Hero visual: planet system ---------- */
-.hero-visual{min-height:480px;position:relative;display:grid;place-items:center;transform-style:preserve-3d;isolation:isolate}
-.hero-visual:before{
-  content:"";position:absolute;width:138%;aspect-ratio:1;border-radius:50%;
-  background:repeating-radial-gradient(ellipse at center,transparent 0 35px,#b7e6ff10 36px 37px,transparent 38px 74px);
-  mask-image:radial-gradient(circle,#000 30%,transparent 72%);
-  -webkit-mask-image:radial-gradient(circle,#000 30%,transparent 72%);
-  animation:slowSpin 75s linear infinite;opacity:.8;
+/* ---------- HERO VISUAL: TERMINAL WINDOW ---------- */
+.hero-visual{min-height:460px;position:relative;display:grid;place-items:center}
+.terminal-window{
+  width:min(520px,94vw);
+  background:rgba(10,4,5,.88);
+  border:1px solid var(--line-bright);
+  box-shadow:0 0 50px rgba(255,45,74,.12),inset 0 0 35px rgba(255,45,74,.04);
+  position:relative;backdrop-filter:blur(4px);
+  animation:terminalGlitch 8s ease-in-out infinite;
 }
-@keyframes slowSpin{to{transform:rotate(360deg)}}
-.hero-visual:after{
-  content:"";position:absolute;inset:8%;border-radius:50%;pointer-events:none;
-  background:conic-gradient(from 180deg,transparent,#9beaff12,transparent,#c39aff15,transparent);
-  filter:blur(16px);animation:nebulaHalo 18s linear infinite;
+@keyframes terminalGlitch{
+  0%,100%{transform:translate(0,0)}
+  92%{transform:translate(0,0)}
+  93%{transform:translate(-2px,1px)}
+  94%{transform:translate(2px,-1px)}
+  95%{transform:translate(-1px,2px)}
+  96%{transform:translate(0,0)}
 }
-@keyframes nebulaHalo{to{transform:rotate(360deg)}}
-.planet-system{
-  position:relative;width:min(540px,96vw);aspect-ratio:1;
-  display:grid;place-items:center;
-  filter:drop-shadow(0 24px 85px #020713cc);
-  animation:systemFloat 9s ease-in-out infinite;
-  transform-style:preserve-3d;
-  transition:transform .15s linear;
-  will-change:transform;
+.terminal-titlebar{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 14px;
+  border-bottom:1px solid var(--line-bright);
+  background:rgba(255,45,74,.04);
+  font:10px "Share Tech Mono",monospace;
+  color:var(--red-dim);letter-spacing:.1em;
 }
-@keyframes systemFloat{0%,100%{translate:0 0}50%{translate:0 -14px}}
-.planet-glow{
-  position:absolute;width:88%;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle,#a2e6ff2a 0%,#729bd51a 36%,transparent 72%);
-  filter:blur(38px);animation:glowBreath 5s ease-in-out infinite alternate;
+.terminal-dots{display:flex;gap:6px}
+.terminal-dots span{
+  width:9px;height:9px;border-radius:50%;
+  border:1px solid;
 }
-@keyframes glowBreath{from{transform:scale(.82);opacity:.42;filter:blur(32px)}to{transform:scale(1.22);opacity:.72;filter:blur(48px)}}
-.planet{
-  position:relative;width:45%;aspect-ratio:1;border-radius:50%;overflow:hidden;
-  background:radial-gradient(circle at 27% 22%,#fff 0%,#d9efff 7%,#9bbbd5 18%,#587796 38%,#2b435f 62%,#0b1728 88%);
-  box-shadow:inset -30px -18px 48px #02050ef0,inset 13px 8px 25px #ffffff85,0 0 55px #9bdcff66,0 0 145px #72b9e540,0 0 250px #4a8cb526;
-  animation:planetHover 7s ease-in-out infinite,planetLight 9s ease-in-out infinite alternate;
+.terminal-dots span:nth-child(1){border-color:var(--red);background:rgba(255,45,74,.2)}
+.terminal-dots span:nth-child(2){border-color:var(--amber);background:rgba(255,176,0,.2)}
+.terminal-dots span:nth-child(3){border-color:#5a8a3a;background:rgba(90,138,58,.2)}
+.terminal-title{flex:1;text-align:center}
+.terminal-body{
+  padding:18px;
+  font:12px/1.7 "Share Tech Mono",monospace;
+  color:var(--red-bright);
+  text-shadow:0 0 3px rgba(255,45,74,.5);
+  white-space:pre-wrap;word-break:break-word;
+  min-height:280px;
 }
-@keyframes planetHover{0%,100%{translate:0 0}50%{translate:0 -13px}}
-@keyframes planetLight{0%{filter:brightness(.88) saturate(.9)}100%{filter:brightness(1.16) saturate(1.18)}}
-.planet:before{
-  content:"";position:absolute;inset:12% -20%;border-radius:50%;
-  background:repeating-linear-gradient(165deg,transparent 0 13px,#e5f5ff20 15px 18px,transparent 21px 31px);
-  transform:rotate(-24deg);filter:blur(2px);
-  animation:planetBands 48s linear infinite;
+.terminal-body .prompt{color:var(--amber);text-shadow:0 0 3px var(--amber)}
+.terminal-body .out{color:var(--red-dim);text-shadow:none}
+.terminal-body .ok{color:var(--red-bright);text-shadow:0 0 5px var(--red)}
+.terminal-body .warn{color:var(--amber);text-shadow:0 0 5px var(--amber)}
+.terminal-body .err{color:var(--red);text-shadow:0 0 5px var(--red)}
+.terminal-cursor{
+  display:inline-block;width:9px;height:14px;background:var(--red);
+  vertical-align:middle;animation:blink 1s steps(2) infinite;
+  box-shadow:0 0 5px var(--red);margin-left:3px;
 }
-@keyframes planetBands{to{transform:rotate(336deg)}}
-.planet:after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(105deg,#fff8 0%,#d9f1ff18 24%,transparent 46%,#020713d9 100%);
-  border-radius:50%;box-shadow:inset -18px 0 32px #02071399;
+.terminal-statusbar{
+  display:flex;justify-content:space-between;
+  padding:6px 14px;
+  border-top:1px solid var(--line-bright);
+  font:9px "Share Tech Mono",monospace;
+  color:var(--red-dim);letter-spacing:.1em;
 }
-.ring{
-  position:absolute;width:112%;height:35%;
-  border:2px solid #d4efffc2;border-left-color:#8bdcff4a;border-bottom-color:#a6d8f4c2;
-  border-radius:50%;transform:rotate(-24deg);
-  box-shadow:0 0 16px #8bdcff4b,0 0 42px #8bdcff20,inset 0 0 18px #c2eaff25;
-  animation:ringBreathe 5s ease-in-out infinite alternate;
-}
-@keyframes ringBreathe{from{filter:brightness(.8)}to{filter:brightness(1.45)}}
-.ring.back{
-  width:115%;height:38%;border-color:#8cb8d888 transparent #d0eaffb0 transparent;
-  z-index:-1;
-}
-.orbit-line{
-  position:absolute;width:110%;aspect-ratio:1;
-  border:1px solid #b4d8f044;border-radius:50%;
-  animation:orbit 36s linear infinite;
-}
-.orbit-line:before{
-  content:"";position:absolute;width:13px;height:13px;border-radius:50%;
-  background:#9be6ff;box-shadow:0 0 22px 4px #8bdcff;
-  top:15%;left:13%;
-}
-.orbit-line.second{
-  width:132%;border-style:dashed;border-color:#c3d5e936;
-  animation-direction:reverse;animation-duration:52s;
-}
-.orbit-line.second:before{
-  background:#d0dced;box-shadow:0 0 18px 3px #d0dced;
-  top:auto;left:auto;bottom:13%;right:12%;width:9px;height:9px;
-}
-@keyframes orbit{to{transform:rotate(360deg)}}
-.moon{
-  position:absolute;width:8%;aspect-ratio:1;right:10%;top:17%;border-radius:50%;
-  background:radial-gradient(circle at 30% 25%,#fff,#9eb4d9 48%,#344568);
-  box-shadow:0 0 30px #d4eaffaa,0 0 80px #8bdcff35;
-  transform-origin:-190% 150%;
-  animation:moonJourney 19s linear infinite;
-}
-@keyframes moonJourney{
-  from{transform:rotate(0deg) translateX(0)}
-  50%{transform:rotate(180deg) translateX(0)}
-  to{transform:rotate(360deg) translateX(0)}
+.terminal-statusbar .blink-dot{
+  display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--red);box-shadow:0 0 6px var(--red);
+  margin-right:6px;animation:blink 1s steps(2) infinite;
 }
 .visual-caption{
-  position:absolute;bottom:1%;left:50%;transform:translateX(-50%);
-  white-space:nowrap;color:#8e9cbb;font:9px "DM Mono",monospace;
-  letter-spacing:.2em;text-transform:uppercase;
+  position:absolute;bottom:6px;left:50%;transform:translateX(-50%);
+  white-space:nowrap;color:var(--red-dim);
+  font:9px "Share Tech Mono",monospace;letter-spacing:.25em;text-transform:uppercase;
 }
 .hero-scroll{
-  position:absolute;right:0;bottom:32px;
-  display:flex;align-items:center;gap:12px;
-  color:#9aafc1;font:9px "DM Mono",monospace;letter-spacing:.2em;text-transform:uppercase;
+  position:absolute;right:0;bottom:26px;
+  display:flex;align-items:center;gap:10px;
+  color:var(--red-dim);font:9px "Share Tech Mono",monospace;
+  letter-spacing:.25em;text-transform:uppercase;
 }
 .hero-scroll i{
-  display:block;width:58px;height:1px;
-  background:linear-gradient(90deg,#9be6ff,transparent);
+  display:block;width:60px;height:1px;
+  background:var(--red);box-shadow:0 0 4px var(--red);
   position:relative;overflow:hidden;
 }
 .hero-scroll i:after{
-  content:"";position:absolute;inset:0;background:white;
+  content:"";position:absolute;inset:0;background:var(--amber);
   transform:translateX(-100%);animation:scrollPulse 1.5s ease-in-out infinite;
 }
 @keyframes scrollPulse{to{transform:translateX(100%)}}
-.hero-meta{position:absolute;bottom:24px;left:0;right:0}
-.hero-meta .wrap{display:flex;justify-content:space-between;color:#8290ad;font:9px "DM Mono",monospace;letter-spacing:.14em;text-transform:uppercase}
-.live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#a4f3bd;box-shadow:0 0 12px #a4f3bd;margin-right:9px;animation:liveSignal 2.2s ease-out infinite}
-@keyframes liveSignal{0%{box-shadow:0 0 0 0 #a4f3bd88}70%{box-shadow:0 0 0 10px #a4f3bd00}100%{box-shadow:0 0 0 0 #a4f3bd00}}
+.hero-meta{
+  position:absolute;bottom:16px;left:0;right:0;
+  color:var(--red-dim);font:9px "Share Tech Mono",monospace;
+  letter-spacing:.18em;text-transform:uppercase;
+}
+.hero-meta .wrap{display:flex;justify-content:space-between}
+.live-dot{
+  display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--red);box-shadow:0 0 8px var(--red);
+  margin-right:8px;animation:livePulse 1.5s ease-out infinite;
+}
+@keyframes livePulse{
+  0%{box-shadow:0 0 0 0 rgba(255,45,74,.6)}
+  70%{box-shadow:0 0 0 8px rgba(255,45,74,0)}
+  100%{box-shadow:0 0 0 0 rgba(255,45,74,0)}
+}
 
-/* ---------- Sections ---------- */
-.section{padding:105px 0;border-bottom:1px solid #b9d8ef18;position:relative;isolation:isolate;overflow:hidden}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:38px}
-.section-kicker{color:#9bdcff;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+/* ---------- SECTIONS ---------- */
+.section{padding:90px 0;border-bottom:1px solid var(--line-bright);position:relative;isolation:isolate;overflow:hidden}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+.section-kicker{
+  color:var(--amber);font:11px "Share Tech Mono",monospace;
+  letter-spacing:.25em;text-transform:uppercase;
+  text-shadow:0 0 5px var(--amber);
+}
+.section-kicker:before{content:"// "}
 .section-head h2{
-  font-size:clamp(35px,5vw,59px);line-height:1.05;letter-spacing:-.07em;margin:14px 0 0;
-  background:linear-gradient(110deg,#f4f7fb,#c3d9e9 75%,#a9c1d6);
-  background-clip:text;-webkit-background-clip:text;color:transparent;
+  font-family:"VT323",monospace;
+  font-size:clamp(34px,5vw,54px);line-height:1.05;
+  letter-spacing:.02em;margin:12px 0 0;font-weight:400;
+  color:var(--red-bright);
+  text-shadow:0 0 10px var(--red),0 0 22px rgba(255,45,74,.35);
 }
-.section-intro{max-width:450px;color:var(--muted);font-size:13px;line-height:1.9;margin:0}
+.section-intro{
+  max-width:480px;color:var(--white);
+  font:13px/1.85 "JetBrains Mono",monospace;
+  margin:0;text-shadow:0 0 2px rgba(255,45,74,.2);
+}
 
-/* Glitch holographic heading on hover */
+/* ---------- GLITCH HEADING ---------- */
 .glitch{position:relative;display:inline-block;cursor:none}
-.glitch:hover:before,.glitch:hover:after{
-  opacity:1;
-  animation:glitchShift .4s steps(2,end) infinite;
-}
+.glitch:hover .glitch-text{animation:glitchScramble .6s steps(6) infinite}
+.glitch:hover:before,.glitch:hover:after{opacity:1;animation:glitchShift .3s steps(2) infinite}
 .glitch:before,.glitch:after{
   content:attr(data-text);position:absolute;top:0;left:0;width:100%;
-  opacity:0;background:inherit;-webkit-background-clip:text;background-clip:text;color:transparent;
+  opacity:0;pointer-events:none;
+  font-family:inherit;font-size:inherit;letter-spacing:inherit;
 }
-.glitch:before{color:#9be6ff;clip-path:polygon(0 0,100% 0,100% 33%,0 33%);transform:translate(-2px,0);text-shadow:-2px 0 #ff8acb}
-.glitch:after{color:#ff8acb;clip-path:polygon(0 67%,100% 67%,100% 100%,0 100%);transform:translate(2px,0);text-shadow:2px 0 #9be6ff}
+.glitch:before{color:var(--amber);clip-path:polygon(0 0,100% 0,100% 33%,0 33%);transform:translate(-2px,0);text-shadow:-2px 0 var(--red)}
+.glitch:after{color:var(--red);clip-path:polygon(0 67%,100% 67%,100% 100%,0 100%);transform:translate(2px,0);text-shadow:2px 0 var(--amber)}
 @keyframes glitchShift{
-  0%{transform:translate(0,0)}
-  25%{transform:translate(-3px,1px)}
-  50%{transform:translate(2px,-1px)}
-  75%{transform:translate(-1px,2px)}
+  0%{transform:translate(0,0)}25%{transform:translate(-3px,1px)}
+  50%{transform:translate(2px,-1px)}75%{transform:translate(-1px,2px)}
   100%{transform:translate(0,0)}
 }
 
-/* ---------- Repo section ---------- */
-.repo-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:19px}
-.repo-status{font:10px "DM Mono",monospace;color:#93a0bb;letter-spacing:.1em}
-.repo-status strong{color:#9bdcff;font-weight:400}
-.repo-search{
-  width:min(290px,100%);height:43px;padding:0 14px;
-  background:#0b1020d9;color:white;border:1px solid #7682a544;
-  outline:none;font:11px "DM Mono",monospace;
-  transition:border-color .2s,box-shadow .2s;
+/* ---------- REPO TOOLBAR + CARDS ---------- */
+.repo-toolbar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;margin-bottom:18px;padding:10px 14px;
+  border:1px solid var(--line-bright);
+  background:rgba(255,45,74,.03);
 }
-.repo-search:focus{border-color:#9be6ff;box-shadow:0 0 24px #8bdcff22}
-.repo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.repo-status{font:10px "Share Tech Mono",monospace;color:var(--red-dim);letter-spacing:.12em}
+.repo-status strong{color:var(--red-bright);font-weight:400;text-shadow:0 0 5px var(--red)}
+.repo-status .blink{display:inline-block;width:8px;height:8px;background:var(--amber);animation:blink 1s steps(2) infinite;vertical-align:middle;margin-right:6px;box-shadow:0 0 5px var(--amber)}
+.repo-search{
+  width:min(280px,100%);height:36px;padding:0 12px;
+  background:rgba(10,4,5,.7);color:var(--red-bright);
+  border:1px solid var(--line-bright);outline:none;
+  font:11px "Share Tech Mono",monospace;cursor:none;
+}
+.repo-search::placeholder{color:var(--red-dim)}
+.repo-search:focus{border-color:var(--red);box-shadow:0 0 10px rgba(255,45,74,.25),inset 0 0 6px rgba(255,45,74,.08)}
+.repo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .repo-card{
   position:relative;display:flex;flex-direction:column;
-  min-height:260px;padding:24px;
-  background:linear-gradient(145deg,#101d2be8,#050a12f5);
-  border:1px solid #a4c4dc2b;border-radius:5px;overflow:hidden;
-  backdrop-filter:blur(9px);
+  min-height:240px;padding:20px;
+  background:rgba(10,4,5,.75);
+  border:1px solid var(--line-bright);
+  overflow:hidden;cursor:none;
   transform-style:preserve-3d;backface-visibility:hidden;
-  transition:transform .45s var(--ease-out),border-color .35s,box-shadow .35s;
+  transition:transform .4s var(--ease-out),border-color .3s,box-shadow .3s;
   will-change:transform;
 }
 .repo-card:before{
-  content:"";position:absolute;top:0;left:0;width:100%;height:2px;
-  background:linear-gradient(90deg,transparent,#9be6ff,#a78bfa,#ff8acb,transparent);
-  background-size:220% 100%;opacity:.18;
-  animation:repoEnergy 6s linear infinite;
+  content:"";position:absolute;top:0;left:0;width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--red),var(--amber),transparent);
+  background-size:220% 100%;opacity:.3;
+  animation:cardScan 4s linear infinite;
 }
-@keyframes repoEnergy{0%{background-position:100% 0;opacity:.18}50%{opacity:.8}100%{background-position:-120% 0;opacity:.18}}
+@keyframes cardScan{0%{background-position:100% 0}100%{background-position:-120% 0}}
 .repo-card:after{
-  content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;
-  background:radial-gradient(360px circle at var(--card-x,50%) var(--card-y,50%),#8deeff19,transparent 55%);
-  transition:opacity .5s;
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.3;
+  background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,45,74,.025) 2px 3px);
 }
 .repo-card:hover{
-  border-color:#9bdcff77;
-  box-shadow:0 22px 65px #0009,0 0 38px #8bdcff13;
+  border-color:var(--red);
+  box-shadow:0 0 20px rgba(255,45,74,.18),inset 0 0 20px rgba(255,45,74,.04);
 }
-.repo-card:hover:after{opacity:.9}
-.repo-card:hover:before{opacity:1}
-.repo-top{display:flex;align-items:center;justify-content:space-between;gap:10px;transform:translateZ(20px)}
-.repo-language{color:#9bdcff;font:10px "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
-.repo-type{color:#7885a5;font:9px "DM Mono",monospace;letter-spacing:.12em}
-.repo-card h3{font-size:19px;letter-spacing:-.035em;margin:24px 0 10px;overflow-wrap:anywhere;color:#edf4f9;transform:translateZ(28px)}
-.repo-card p{color:#a4b1be;font-size:12px;line-height:1.85;margin:0 0 22px;transform:translateZ(14px)}
-.repo-meta{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:auto;padding-top:15px;border-top:1px solid #aab8e51c;color:#8995b1;font-size:9px;font-family:"DM Mono",monospace;transform:translateZ(18px)}
-.repo-meta .source{margin-left:auto;color:#d4d1ff;letter-spacing:.08em}
-.repo-meta .source:hover{color:#9be6ff}
-.repo-empty{grid-column:1/-1;border:1px dashed #8795c544;padding:30px;color:var(--muted);font:12px "DM Mono",monospace;line-height:1.8}
-.repo-note{margin-top:17px;color:#74809c;font:9px "DM Mono",monospace;letter-spacing:.08em}
+.repo-card:hover:before{opacity:1;height:2px}
+.repo-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.repo-language{
+  color:var(--amber);font:10px "Share Tech Mono",monospace;
+  letter-spacing:.12em;text-transform:uppercase;
+  text-shadow:0 0 3px var(--amber);
+}
+.repo-language:before{content:"$ "}
+.repo-type{color:var(--red-dim);font:9px "Share Tech Mono",monospace;letter-spacing:.15em}
+.repo-type:before{content:"["}
+.repo-type:after{content:"]"}
+.repo-card h3{
+  font:16px "Share Tech Mono",monospace;
+  letter-spacing:.02em;margin:18px 0 8px;
+  color:var(--red-bright);text-shadow:0 0 5px var(--red);
+  overflow-wrap:anywhere;
+}
+.repo-card h3:before{content:"> ";color:var(--amber)}
+.repo-card p{
+  color:var(--white);font:11.5px/1.8 "JetBrains Mono",monospace;
+  margin:0 0 18px;text-shadow:0 0 2px rgba(255,45,74,.15);
+}
+.repo-meta{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  margin-top:auto;padding-top:12px;
+  border-top:1px dashed var(--line-bright);
+  color:var(--red-dim);font:9px "Share Tech Mono",monospace;
+}
+.repo-meta .source{margin-left:auto;color:var(--amber);letter-spacing:.12em}
+.repo-meta .source:hover{color:var(--red-bright);text-shadow:0 0 5px var(--red)}
+.repo-empty{
+  grid-column:1/-1;border:1px dashed var(--line-bright);
+  padding:30px;color:var(--red-dim);
+  font:12px "Share Tech Mono",monospace;line-height:1.8;text-align:center;
+}
+.repo-empty:before{content:"[ ERROR ] ";color:var(--red);text-shadow:0 0 5px var(--red)}
+.repo-note{margin-top:14px;color:var(--red-dim);font:9px "Share Tech Mono",monospace;letter-spacing:.15em;text-align:center}
+.repo-note:before{content:"// "}
 
-/* ---------- Universe section ---------- */
-.universe-section{overflow:hidden;background:radial-gradient(ellipse at 50% 60%,#30205a3b,transparent 60%)}
-.universe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+/* ---------- UNIVERSE / MODULES SECTION ---------- */
+.universe-section{overflow:hidden;background:radial-gradient(ellipse at 50% 50%,rgba(255,45,74,.035),transparent 60%)}
+.universe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
 .universe-card{
-  position:relative;min-height:265px;padding:26px;
-  background:linear-gradient(150deg,#131a30c9,#090d1bd9);
-  border:1px solid #9a9bc42e;overflow:hidden;border-radius:5px;
-  transform-style:preserve-3d;backdrop-filter:blur(9px);
-  transition:transform .5s var(--ease-out),border-color .35s,box-shadow .35s;
+  position:relative;min-height:240px;padding:24px;
+  background:rgba(10,4,5,.75);
+  border:1px solid var(--line-bright);
+  overflow:hidden;cursor:none;
+  transform-style:preserve-3d;
+  transition:transform .5s var(--ease-out),border-color .3s,box-shadow .3s;
   will-change:transform;
 }
+.universe-card:before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:2px;
+  background:var(--planet-color,var(--red));opacity:.6;
+  box-shadow:0 0 8px var(--planet-color,var(--red));
+}
 .universe-card:after{
-  content:"";position:absolute;inset:-40%;pointer-events:none;
-  background:linear-gradient(115deg,transparent 42%,#c7edff0c 50%,transparent 58%);
-  transform:translateX(-65%) rotate(8deg);
-  animation:cardNebulaPass 11s ease-in-out infinite;
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,45,74,.02) 3px 4px);
 }
-.universe-card:nth-child(2):after{animation-delay:-3.5s}
-.universe-card:nth-child(3):after{animation-delay:-7s}
-@keyframes cardNebulaPass{0%,55%{transform:translateX(-65%) rotate(8deg)}85%,100%{transform:translateX(65%) rotate(8deg)}}
-.universe-card:hover{transform:translateY(-8px) scale(1.012);border-color:#a9dcf477;box-shadow:0 24px 65px #02040d99,0 0 35px #8deeff10}
-.universe-card .num{color:var(--planet-color,var(--cyan));font:10px "DM Mono",monospace;letter-spacing:.15em;transform:translateZ(22px)}
-.universe-card h3{font-size:21px;letter-spacing:-.04em;margin:50px 0 10px;transform:translateZ(28px)}
-.universe-card p{max-width:310px;color:var(--muted);font-size:12px;line-height:1.9;margin:0;transform:translateZ(14px)}
-.card-orb{
-  position:absolute;right:24px;top:22px;width:48px;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle at 30% 28%,#fff,var(--planet-color,var(--cyan)) 22%,#2a3261 70%,#10162c);
-  box-shadow:0 0 28px color-mix(in srgb,var(--planet-color,var(--cyan)) 40%,transparent),inset -8px -5px 12px #050713;
-  filter:saturate(.55);
-  transform:translateZ(40px);
-  animation:cardPlanetFloat 6s ease-in-out infinite,cardPlanetGlow 5s ease-in-out infinite alternate;
+.universe-card:hover{
+  border-color:var(--planet-color,var(--red));
+  box-shadow:0 0 20px rgba(255,45,74,.16),inset 0 0 20px rgba(255,45,74,.04);
 }
-.universe-card:nth-child(2) .card-orb{background:radial-gradient(circle at 30% 25%,#fff0f7,#e18ac5 22%,#784a9c 60%,#1a1438);animation-delay:-2s,-1s}
-.universe-card:nth-child(3) .card-orb{background:radial-gradient(circle at 30% 25%,#fff3d6,#e6b66e 22%,#8566a0 60%,#17152e);animation-delay:-4s,-2s}
-@keyframes cardPlanetFloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
-@keyframes cardPlanetGlow{from{filter:brightness(.85) saturate(.55)}to{filter:brightness(1.3) saturate(.7) drop-shadow(0 0 13px var(--planet-color))}}
+.universe-card .num{
+  color:var(--planet-color,var(--red-bright));
+  font:10px "Share Tech Mono",monospace;letter-spacing:.18em;
+  text-shadow:0 0 3px var(--planet-color,var(--red));
+}
+.universe-card .num:before{content:"// "}
+.universe-card h3{
+  font:18px "Share Tech Mono",monospace;
+  letter-spacing:.02em;margin:40px 0 10px;
+  color:var(--red-bright);text-shadow:0 0 5px var(--red);
+}
+.universe-card h3:before{content:"> "}
+.universe-card p{
+  max-width:310px;color:var(--white);
+  font:11.5px/1.85 "JetBrains Mono",monospace;
+  margin:0;text-shadow:0 0 2px rgba(255,45,74,.15);
+}
+.card-target{
+  position:absolute;right:24px;top:22px;
+  width:44px;height:44px;
+  border:1px solid var(--planet-color,var(--red));
+  border-radius:50%;
+  box-shadow:0 0 14px var(--planet-color,var(--red)),inset 0 0 10px rgba(255,45,74,.1);
+  animation:cardPulse 3s ease-in-out infinite alternate;
+}
+.card-target:before{
+  content:"";position:absolute;inset:8px;
+  border:1px solid var(--planet-color,var(--red));border-radius:50%;opacity:.5;
+}
+.card-target:after{
+  content:"";position:absolute;top:50%;left:50%;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--planet-color,var(--red));
+  box-shadow:0 0 8px var(--planet-color,var(--red));
+  transform:translate(-50%,-50%);
+}
+/* crosshair lines on target */
+.card-target .x1,.card-target .x2{
+  content:"";position:absolute;background:var(--planet-color,var(--red));opacity:.4;
+}
+.card-target .x1{top:50%;left:-8px;width:8px;height:1px}
+.card-target .x2{left:50%;top:-8px;width:1px;height:8px}
+.universe-card:nth-child(2) .card-target{animation-delay:-1.5s}
+.universe-card:nth-child(3) .card-target{animation-delay:-3s}
+@keyframes cardPulse{from{transform:scale(.85);opacity:.6}to{transform:scale(1.1);opacity:1}}
 
-/* ---------- Contact ---------- */
-.contact{text-align:center;padding:116px 0;background:radial-gradient(ellipse at 50% 110%,#24425b48,transparent 60%),radial-gradient(ellipse at 50% 0%,#1c3a5228,transparent 55%);position:relative;isolation:isolate;overflow:hidden}
+/* ---------- CONTACT ---------- */
+.contact{
+  text-align:center;padding:100px 0;
+  background:radial-gradient(ellipse at 50% 110%,rgba(255,176,0,.05),transparent 60%),radial-gradient(ellipse at 50% 0%,rgba(255,45,74,.035),transparent 50%);
+  position:relative;isolation:isolate;overflow:hidden;
+}
 .contact .section-kicker{display:block}
 .contact h2{
-  font-size:clamp(42px,6.5vw,76px);letter-spacing:-.08em;line-height:1.02;margin:18px 0;
-  background:linear-gradient(110deg,#f6f9fc,#c4dbea);background-clip:text;-webkit-background-clip:text;color:transparent;
+  font-family:"VT323",monospace;
+  font-size:clamp(40px,6.5vw,70px);
+  letter-spacing:.02em;line-height:1.02;margin:16px 0;
+  color:var(--amber);
+  text-shadow:0 0 10px var(--amber),0 0 24px rgba(255,176,0,.35),0 0 45px rgba(255,176,0,.15);
 }
-.contact p{max-width:570px;margin:0 auto 30px;color:var(--muted);font-size:14px;line-height:1.9}
+.contact p{
+  max-width:580px;margin:0 auto 28px;
+  color:var(--white);font:13.5px/1.85 "JetBrains Mono",monospace;
+  text-shadow:0 0 2px rgba(255,45,74,.2);
+}
 
-/* ---------- Footer ---------- */
-footer{padding:27px 0;background:#040609;border-top:1px solid #b9d8ef18}
-.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.footer-brand{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.14em;transition:letter-spacing .5s,color .5s}
-.footer-brand:hover{letter-spacing:.2em;color:#bceeff}
-.footer-note,.footer-link{color:#7985a1;font:9px "DM Mono",monospace;letter-spacing:.1em}
-.footer-link{color:#c6c9e9}
+/* ---------- FOOTER ---------- */
+footer{
+  padding:22px 0;background:var(--bg-deep);
+  border-top:1px solid var(--line-bright);
+  box-shadow:inset 0 1px 0 rgba(255,45,74,.12);
+}
+.footer-row{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.footer-brand{
+  font:14px "VT323",monospace;letter-spacing:.1em;
+  color:var(--red-bright);text-shadow:0 0 5px var(--red);
+  transition:letter-spacing .3s,text-shadow .3s;
+}
+.footer-brand:hover{letter-spacing:.18em;text-shadow:0 0 12px var(--red)}
+.footer-note,.footer-link{color:var(--red-dim);font:9px "Share Tech Mono",monospace;letter-spacing:.15em;text-transform:uppercase}
+.footer-link{color:var(--amber);text-shadow:0 0 3px var(--amber)}
+.footer-link:hover{color:var(--red-bright);text-shadow:0 0 5px var(--red)}
 
-/* ---------- Scroll progress bar ---------- */
+/* ---------- SCROLL PROGRESS ---------- */
 body:after{
   content:"";position:fixed;z-index:5;pointer-events:none;
-  top:-2px;left:0;width:100%;height:2px;
-  background:linear-gradient(90deg,#9be6ff,#a78bfa,#ff8acb);
+  top:0;left:0;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--red),var(--amber));
   transform:scaleX(var(--scroll-progress,0));transform-origin:left;
-  box-shadow:0 0 12px #8deeff88;
+  box-shadow:0 0 8px var(--red);
 }
 
-/* ---------- Reveal-on-scroll ---------- */
-.reveal{opacity:0;transform:translateY(28px) scale(.985);filter:blur(5px);transition:opacity .58s var(--ease-out),transform .58s var(--ease-out),filter .58s ease}
-.reveal.is-visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(20px);filter:blur(4px);transition:opacity .5s var(--ease-out),transform .5s var(--ease-out),filter .5s ease}
+.reveal.is-visible{opacity:1;transform:translateY(0);filter:blur(0)}
 
-/* ---------- Responsive ---------- */
+/* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr .9fr;gap:10px}
-  .hero h1{font-size:clamp(52px,7vw,76px)}
+  .hero h1{font-size:clamp(46px,7vw,72px)}
   .repo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .universe-grid{grid-template-columns:1fr 1fr}
   .universe-card:last-child{grid-column:1/-1}
+  .sys-log,.radar{display:none}
 }
 @media(max-width:650px){
   body{cursor:auto}
-  .cosmic-cursor,.cosmic-trail,.cosmic-dot{display:none!important}
-  .wrap{width:calc(100% - 32px)}
-  .header{height:70px}
+  .cursor-ring,.cursor-dot,.cursor-ghost,.click-ripple,.access-flash,.hex-particle{display:none!important}
+  .wrap{width:calc(100% - 28px)}
+  .header{height:62px}
   .menu{display:block}
-  .nav-links{display:none;position:absolute;top:70px;left:0;right:0;padding:22px 20px;background:#080d13f7;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:22px}
+  .nav-links{
+    display:none;position:absolute;top:62px;left:0;right:0;
+    padding:18px;background:rgba(10,4,5,.97);
+    border-bottom:1px solid var(--line-bright);
+    flex-direction:column;align-items:flex-start;gap:18px;
+  }
   .nav-links.open{display:flex}
   .hero{min-height:auto}
-  .hero:before{background:linear-gradient(180deg,#020308c7,#02030870 58%,#020308b8)}
-  .hero-grid{grid-template-columns:1fr;padding:82px 0 82px;gap:12px}
-  .hero h1{font-size:clamp(49px,13vw,70px)}
-  .hero-copy{font-size:14px}
-  .hero-visual{min-height:340px}
-  .planet-system{width:min(390px,94vw)}
-  .visual-caption{bottom:-2px}
-  .hero-meta,.hero-scroll{display:none}
-  .section{padding:77px 0}
+  .hero-grid{grid-template-columns:1fr;padding:70px 0;gap:14px}
+  .hero h1{font-size:clamp(42px,12vw,64px)}
+  .hero-copy{font-size:12.5px}
+  .hero-visual{min-height:auto}
+  .terminal-window{width:100%}
+  .hero-scroll,.hero-meta{display:none}
+  .section{padding:60px 0}
   .section-head{display:block}
-  .section-intro{margin-top:16px}
-  .repo-toolbar{align-items:stretch;flex-direction:column}
+  .section-intro{margin-top:14px}
+  .repo-toolbar{flex-direction:column;align-items:stretch}
   .repo-search{width:100%}
   .repo-grid,.universe-grid{grid-template-columns:1fr}
-  .repo-card{min-height:230px}
+  .repo-card{min-height:200px}
+  .universe-card{min-height:200px}
   .universe-card:last-child{grid-column:auto}
-  .universe-card{min-height:225px}
-  .universe-card h3{margin-top:42px}
-  .contact{padding:86px 0}
-  .footer-row{align-items:flex-start;flex-direction:column}
-  .footer-note{line-height:1.8}
-  .aurora-svg{opacity:.25}
+  .contact{padding:70px 0}
+  .footer-row{flex-direction:column;align-items:flex-start}
+  .sys-hud{font-size:8px}
 }
 
-/* ---------- Reduced motion ---------- */
+/* ---------- REDUCED MOTION ---------- */
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .cosmic-cursor,.cosmic-trail,.cosmic-dot,.burst-particle,.portal-loader{display:none!important}
+  .cursor-ring,.cursor-dot,.cursor-ghost,.click-ripple,.access-flash,.hex-particle,.boot-loader{display:none!important}
   body{cursor:auto}
   .reveal{opacity:1;transform:none;filter:none}
 }
-
-/* ============================================================
-   ULTRA HEAVY ANIMATION LAYER — black hole, hyperdrive,
-   supernova, constellation web, energy pulses, distant galaxies
-   ============================================================ */
-
-/* Black hole at galaxy center with accretion disk */
-.black-hole{
-  position:fixed;top:50%;left:50%;
-  width:140px;height:140px;border-radius:50%;
-  transform:translate(-50%,-50%);
-  z-index:-1;pointer-events:none;
-  background:radial-gradient(circle,#000 0%,#000 38%,#0a0a18 50%,transparent 70%);
-  box-shadow:
-    0 0 80px 20px #000,
-    0 0 200px 60px #8bdcff10,
-    inset 0 0 60px #000;
-  opacity:0;transition:opacity 1s ease;
-  mix-blend-mode:multiply;
-}
-.black-hole.active{opacity:.85}
-.black-hole:before{
-  content:"";position:absolute;inset:-30px;border-radius:50%;
-  border:2px solid transparent;
-  border-top-color:#9be6ff44;border-right-color:#a78bfa33;
-  animation:blackHoleSpin 8s linear infinite;
-  filter:blur(2px);
-}
-.black-hole:after{
-  content:"";position:absolute;inset:-60px;border-radius:50%;
-  border:1px solid transparent;
-  border-bottom-color:#ff8acb22;border-left-color:#9be6ff22;
-  animation:blackHoleSpin 14s linear infinite reverse;
-  filter:blur(4px);
-}
-@keyframes blackHoleSpin{to{transform:rotate(360deg)}}
-
-/* Hyperdrive speed lines (activate on fast scroll) */
-.hyperdrive{
-  position:fixed;inset:0;z-index:-1;pointer-events:none;
-  opacity:0;transition:opacity .3s ease;
-  background:
-    repeating-linear-gradient(90deg,
-      transparent 0,
-      transparent 40px,
-      rgba(155,230,255,.04) 41px,
-      transparent 42px,
-      transparent 80px),
-    repeating-linear-gradient(0deg,
-      transparent 0,
-      transparent 60px,
-      rgba(167,139,250,.03) 61px,
-      transparent 62px,
-      transparent 120px);
-  mix-blend-mode:screen;
-}
-.hyperdrive.active{opacity:1;animation:hyperStreak .4s linear infinite}
-@keyframes hyperStreak{
-  from{background-position:0 0,0 0}
-  to{background-position:200px 0,0 200px}
-}
-
-/* Supernova flash overlay (periodic cosmic burst) */
-.supernova{
-  position:fixed;inset:0;z-index:-1;pointer-events:none;
-  opacity:0;
-  background:radial-gradient(circle at var(--nova-x,50%) var(--nova-y,30%),
-    rgba(255,255,255,.6) 0%,
-    rgba(155,230,255,.3) 12%,
-    rgba(167,139,250,.15) 28%,
-    transparent 50%);
-  mix-blend-mode:screen;
-}
-.supernova.flash{animation:novaBurst 2.4s ease-out forwards}
-@keyframes novaBurst{
-  0%{opacity:0;transform:scale(.2)}
-  8%{opacity:1}
-  100%{opacity:0;transform:scale(2.5)}
-}
-
-/* Energy pulse waves from galaxy center */
-.energy-pulse{
-  position:fixed;top:50%;left:50%;
-  width:100px;height:100px;border-radius:50%;
-  transform:translate(-50%,-50%);
-  border:1.5px solid #9be6ff;
-  z-index:-1;pointer-events:none;
-  opacity:0;
-  box-shadow:0 0 30px #8bdcff44,inset 0 0 20px #8bdcff22;
-}
-.energy-pulse.fire{animation:pulseExpand 4s ease-out forwards}
-@keyframes pulseExpand{
-  0%{opacity:.7;transform:translate(-50%,-50%) scale(.2)}
-  100%{opacity:0;transform:translate(-50%,-50%) scale(20)}
-}
-
-/* Distant galaxies (rotating discs far in background) */
-.distant-galaxy{
-  position:fixed;z-index:-2;pointer-events:none;
-  width:200px;height:200px;border-radius:50%;
-  opacity:.18;filter:blur(2px);
-  mix-blend-mode:screen;
-}
-.distant-galaxy.g1{
-  top:12%;right:8%;
-  background:
-    radial-gradient(ellipse 60% 20% at 50% 50%,#9be6ff66 0%,#a78bfa44 40%,transparent 70%),
-    radial-gradient(circle,#fff5 0%,transparent 30%);
-  transform:rotate(35deg);
-  animation:distantSpin 60s linear infinite;
-}
-.distant-galaxy.g2{
-  bottom:18%;left:6%;
-  background:
-    radial-gradient(ellipse 70% 18% at 50% 50%,#ff8acb55 0%,#f8d99533 40%,transparent 70%),
-    radial-gradient(circle,#fff3 0%,transparent 30%);
-  transform:rotate(-22deg);
-  animation:distantSpin 80s linear infinite reverse;
-  width:160px;height:160px;
-}
-@keyframes distantSpin{to{transform:rotate(360deg)}}
-
-/* Heavy vignette + atmospheric depth */
-.vignette{
-  position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(ellipse at center,transparent 30%,#020308aa 80%,#020308ee 100%);
-  mix-blend-mode:multiply;
-}
-
-/* Constellation web canvas */
-#constellations{
-  position:fixed;inset:0;z-index:-1;pointer-events:none;
-  opacity:.6;mix-blend-mode:screen;
-}
-
-/* Heavy text glow pulse for hero */
-.hero h1 .char.glow{
-  animation:charDrop .9s var(--ease-spring) both, charGlowPulse 3s ease-in-out infinite alternate;
-}
-@keyframes charGlowPulse{
-  0%{text-shadow:0 0 18px #9be6ffaa,0 0 36px #a78bfa88,0 0 60px #ff8acb44}
-  100%{text-shadow:0 0 28px #9be6ffdd,0 0 56px #a78bfaaa,0 0 100px #ff8acb66,0 0 140px #8bdcff33}
-}
-
-/* Cinematic IN-TAB portal navigation modal */
-.portal-modal{
-  position:fixed;inset:0;z-index:500;
-  background:radial-gradient(ellipse at center,#050a12ee,#020308ff 80%);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;
-  transition:opacity .5s var(--ease-out);
-}
-.portal-modal.open{opacity:1;pointer-events:auto}
-.portal-modal-box{
-  position:relative;
-  width:min(640px,90vw);
-  padding:60px 40px;
-  background:linear-gradient(145deg,#0b1424ee,#040810ee);
-  border:1px solid #9be6ff33;
-  border-radius:8px;
-  box-shadow:0 30px 100px #000e,0 0 80px #8bdcff22,inset 0 0 60px #8bdcff08;
-  text-align:center;
-  transform:scale(.85) translateY(20px);
-  opacity:0;
-  transition:transform .6s var(--ease-spring),opacity .5s var(--ease-out);
-  overflow:hidden;
-}
-.portal-modal.open .portal-modal-box{transform:scale(1) translateY(0);opacity:1}
-.portal-modal-box:before{
-  content:"";position:absolute;top:0;left:0;width:100%;height:3px;
-  background:linear-gradient(90deg,transparent,#9be6ff,#a78bfa,#ff8acb,transparent);
-  background-size:220% 100%;
-  animation:repoEnergy 3s linear infinite;
-}
-.portal-modal-box:after{
-  content:"";position:absolute;inset:-50%;pointer-events:none;
-  background:conic-gradient(from 0deg at 50% 50%,transparent,#9be6ff0a,#a78bfa0a,transparent);
-  animation:cosmicTurn 20s linear infinite;
-}
-.portal-jump-ring{
-  width:140px;height:140px;border-radius:50%;
-  border:2px solid transparent;
-  border-top-color:#9be6ff;border-right-color:#a78bfa;
-  margin:0 auto 28px;
-  animation:portalSpin 1.2s linear infinite;
-  position:relative;
-  box-shadow:0 0 60px #8bdcff66,inset 0 0 40px #8bdcff33;
-}
-.portal-jump-ring:before,.portal-jump-ring:after{
-  content:"";position:absolute;border-radius:50%;border:1.5px solid transparent;
-}
-.portal-jump-ring:before{
-  inset:14px;border-top-color:#ff8acb;border-left-color:#9be6ff;
-  animation:portalSpin 1.6s linear infinite reverse;
-}
-.portal-jump-ring:after{
-  inset:30px;border-top-color:#f8d995;border-right-color:#a78bfa;
-  animation:portalSpin .9s linear infinite;
-}
-.portal-jump-core{
-  position:absolute;top:50%;left:50%;width:40px;height:40px;border-radius:50%;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(circle,#fff,#9be6ff 30%,#a78bfa 70%,transparent);
-  filter:blur(6px);animation:portalPulse 1s ease-in-out infinite alternate;
-}
-.portal-modal h3{
-  font:11px "DM Mono",monospace;letter-spacing:.3em;text-transform:uppercase;
-  color:#9be6ff;margin:0 0 14px;position:relative;z-index:1;
-}
-.portal-destination{
-  font-size:22px;font-weight:700;letter-spacing:-.02em;
-  color:#f2f6fa;margin:0 0 8px;
-  word-break:break-all;position:relative;z-index:1;
-}
-.portal-status{
-  font:10px "DM Mono",monospace;letter-spacing:.18em;text-transform:uppercase;
-  color:#74809c;margin:0 0 28px;position:relative;z-index:1;
-}
-.portal-progress{
-  width:100%;height:2px;background:#1a2238;overflow:hidden;
-  margin:0 0 24px;border-radius:2px;position:relative;z-index:1;
-}
-.portal-progress-bar{
-  height:100%;width:0;
-  background:linear-gradient(90deg,#9be6ff,#a78bfa,#ff8acb);
-  box-shadow:0 0 12px #8bdcff;
-  transition:width 1.6s var(--ease-out);
-}
-.portal-modal.open .portal-progress-bar{width:100%}
-.portal-cancel{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:10px 22px;border:1px solid #8ca6ba55;
-  background:transparent;color:#aebbc8;
-  font:10px "DM Mono",monospace;letter-spacing:.15em;text-transform:uppercase;
-  cursor:none;border-radius:3px;
-  transition:all .25s var(--ease-out);position:relative;z-index:1;
-}
-.portal-cancel:hover{border-color:#ff8acb;color:#fff;background:#ff8acb11}
-
-/* FULL UNIVERSE OVERVIEW MODAL — cinematic galaxy map */
-.universe-modal{
-  position:fixed;inset:0;z-index:450;
-  background:radial-gradient(ellipse at center,#050a12f5,#020308ff);
-  backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;
-  transition:opacity .6s var(--ease-out);
-  overflow:auto;
-}
-.universe-modal.open{opacity:1;pointer-events:auto}
-.universe-modal-content{
-  width:min(1100px,94vw);max-height:92vh;overflow-y:auto;
-  padding:50px 50px 60px;
-  background:linear-gradient(160deg,#0a1220ee,#040810f5);
-  border:1px solid #9be6ff33;border-radius:10px;
-  box-shadow:0 30px 120px #000e,0 0 100px #8bdcff18,inset 0 0 80px #8bdcff08;
-  position:relative;
-  transform:scale(.9);opacity:0;
-  transition:transform .7s var(--ease-spring),opacity .5s var(--ease-out);
-}
-.universe-modal.open .universe-modal-content{transform:scale(1);opacity:1}
-.universe-modal-content::-webkit-scrollbar{width:6px}
-.universe-modal-content::-webkit-scrollbar-track{background:#0a1220}
-.universe-modal-content::-webkit-scrollbar-thumb{background:#9be6ff44;border-radius:3px}
-.universe-modal-close{
-  position:absolute;top:20px;right:24px;
-  width:38px;height:38px;border-radius:50%;
-  border:1px solid #8ca6ba55;background:transparent;
-  color:#aebbc8;cursor:none;font-size:14px;
-  transition:all .25s var(--ease-out);
-  display:flex;align-items:center;justify-content:center;
-  z-index:2;
-}
-.universe-modal-close:hover{border-color:#ff8acb;color:#fff;background:#ff8acb11;transform:rotate(90deg)}
-.um-eyebrow{
-  font:10px "DM Mono",monospace;letter-spacing:.25em;text-transform:uppercase;
-  color:#9be6ff;margin-bottom:14px;
-}
-.um-title{
-  font-size:clamp(34px,4vw,52px);font-weight:800;letter-spacing:-.05em;
-  line-height:1.05;margin:0 0 14px;
-  background:linear-gradient(110deg,#fff,#c8e7fa 48%,#91b9d6);
-  background-clip:text;-webkit-background-clip:text;color:transparent;
-}
-.um-sub{
-  color:#a4b1be;font-size:14px;line-height:1.8;
-  max-width:680px;margin:0 0 36px;
-}
-.um-stats{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-  margin-bottom:38px;
-}
-.um-stat{
-  padding:18px;border:1px solid #a4c4dc22;border-radius:6px;
-  background:linear-gradient(145deg,#0e1626cc,#060b14cc);
-  text-align:center;
-}
-.um-stat-value{
-  font:22px "DM Mono",monospace;color:#9be6ff;font-weight:500;
-  letter-spacing:.02em;
-}
-.um-stat-label{
-  font:9px "DM Mono",monospace;color:#74809c;letter-spacing:.18em;
-  text-transform:uppercase;margin-top:6px;
-}
-.um-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
-}
-.um-card{
-  position:relative;padding:24px;
-  background:linear-gradient(150deg,#0e1626cc,#060b14cc);
-  border:1px solid #a4c4dc22;border-radius:6px;overflow:hidden;
-}
-.um-card-orb{
-  width:54px;height:54px;border-radius:50%;
-  margin-bottom:14px;
-  background:radial-gradient(circle at 30% 28%,#fff,var(--p,#9be6ff) 22%,#2a3261 70%,#10162c);
-  box-shadow:0 0 26px color-mix(in srgb,var(--p,#9be6ff) 40%,transparent),inset -8px -5px 12px #050713;
-}
-.um-card-num{font:9px "DM Mono",monospace;color:var(--p,#9be6ff);letter-spacing:.15em;margin-bottom:6px}
-.um-card h4{font-size:17px;font-weight:700;letter-spacing:-.02em;margin:0 0 8px;color:#edf4f9}
-.um-card p{font-size:11.5px;line-height:1.7;color:#a4b1be;margin:0}
-.um-cta{
-  margin-top:36px;text-align:center;
-}
-.um-cta .button{margin:0 auto}
-@media(max-width:780px){
-  .um-stats{grid-template-columns:repeat(2,1fr)}
-  .um-grid{grid-template-columns:1fr}
-  .universe-modal-content{padding:36px 24px 48px}
-}
-
-/* View Full Universe button — special cosmic style */
-.button.universe{
-  border-color:#a78bfa55;
-  background:linear-gradient(110deg,#1a1230,#0a1428);
-  color:#c8b8ff;
-}
-.button.universe:hover{
-  border-color:#a78bfa;
-  box-shadow:0 8px 30px #a78bfa33,0 0 50px #a78bfa22;
-}
-.button.universe:before{
-  background:linear-gradient(110deg,transparent 20%,#a78bfa44 48%,transparent 72%);
-}
-
-/* Reduce motion: hide all heavy extras */
-@media(prefers-reduced-motion:reduce){
-  .black-hole,.hyperdrive,.supernova,.energy-pulse,.distant-galaxy,.vignette,#constellations{display:none!important}
-  .portal-modal,.universe-modal{display:none!important}
-}
-
-/* ============================================================
-   ARCTIC FOX // FROSTBYTE OVERRIDE — HACKING SNOW EDITION
-   Visual-only layer: preserves all existing content and logic.
-   ============================================================ */
-:root{
-  --bg:#02070c;--panel:#07131d;--line:#23465a;
-  --white:#effaff;--muted:#9bb8c8;
-  --cyan:#9beaff;--violet:#83cfff;--pink:#c7f4ff;
-  --ice:#dff8ff;--gold:#b9eaff;
-}
-html,body{background-color:#02070c}
-body{
-  background-image:
-    radial-gradient(ellipse at 50% -10%,#16445b35,transparent 48%),
-    linear-gradient(180deg,#02070c 0%,#06121c 48%,#02070c 100%);
-}
-body:before{
-  content:"";position:fixed;inset:0;z-index:2;pointer-events:none;
-  opacity:.13;
-  background-image:linear-gradient(#9beaff0c 1px,transparent 1px),linear-gradient(90deg,#9beaff0c 1px,transparent 1px);
-  background-size:58px 58px;
-  mask-image:linear-gradient(to bottom,black,transparent 88%);
-}
-body:after{
-  content:"";position:fixed;inset:0;z-index:9;pointer-events:none;
-  opacity:.12;
-  background:repeating-linear-gradient(to bottom,transparent 0 3px,#bceeff0c 4px,transparent 5px);
-  mix-blend-mode:screen;
-}
-#snow-hack-canvas{
-  position:fixed;inset:0;width:100%;height:100%;z-index:8;
-  pointer-events:none;opacity:.72;mix-blend-mode:screen;
-}
-.header{
-  background:linear-gradient(100deg,#030b12ed,#071a27e8,#030b12ed);
-  border-bottom-color:#8be6ff35;
-  box-shadow:0 8px 38px #0008,0 1px #a5ecff12;
-}
-.header.scrolled{background:#030b12f7;border-bottom-color:#9beaff66}
-.brand{color:#e8f9ff;text-shadow:0 0 22px #7bdcff25}
-.brand small{color:#78b5d0}
-.nav-links a:hover{color:#dffaff;text-shadow:0 0 14px #8beaff88}
-.nav-links .github{border-color:#7ddcff88;color:#dffaff;background:#6bcfff0b}
-.nav-links .github:hover{background:#75dfff20;box-shadow:0 0 28px #63d5ff35}
-.hero{
-  background:radial-gradient(ellipse at 78% 46%,#1c64812a,transparent 42%);
-}
-.hero:before{
-  background:linear-gradient(90deg,#02070cf5 0%,#02070cc7 43%,#02070c30 100%),
-  radial-gradient(ellipse at 76% 48%,transparent 8%,#02070c20 76%);
-}
-.eyebrow,.section-kicker{color:#9beaff;text-shadow:0 0 16px #66d8ff35}
-.eyebrow:before{background:linear-gradient(90deg,#d9f8ff,#54cfff)}
-.hero h1 span{
-  background:linear-gradient(105deg,#f7fdff 0%,#b9edff 36%,#65c8ef 70%,#d9f8ff 100%);
-  background-size:220% auto;animation:iceTextFlow 9s linear infinite;
-  background-clip:text;-webkit-background-clip:text;
-  filter:drop-shadow(0 0 28px #70dfff2b);
-}
-@keyframes iceTextFlow{to{background-position:220% center}}
-.hero-copy,.section p{color:#a9c1ce}
-.button{border-color:#74cce966;color:#e6f9ff;background:#0b26351c}
-.button:before{background:linear-gradient(110deg,transparent 15%,#b8f0ff38 48%,transparent 78%)}
-.button:hover{border-color:#a8edff;box-shadow:0 0 26px #5ccfff35,0 10px 28px #0005}
-.button.primary{
-  background:linear-gradient(115deg,#e5faff,#8edcff 52%,#c5f4ff);
-  color:#04121b;box-shadow:0 0 24px #66d5ff28;
-}
-.planet{
-  background:radial-gradient(circle at 27% 22%,#fff 0%,#e4faff 7%,#8ed6ed 18%,#477f9d 38%,#1c3e56 62%,#061522 88%);
-  box-shadow:inset -30px -18px 48px #02050ef0,inset 13px 8px 25px #ffffff85,0 0 65px #78dfff77,0 0 155px #4bc9f044,0 0 260px #3689b52b;
-}
-.ring{border-top-color:#e5fbff;border-right-color:#8bdfff88;border-bottom-color:#b5efffc2;box-shadow:0 0 20px #8bdcff66,0 0 48px #8bdcff2a,inset 0 0 18px #c2eaff30}
-.orbit-line{border-color:#9de8ff55}
-.orbit-line:before{background:#dffaff;box-shadow:0 0 24px 5px #68d9ff}
-.orbit-line.second{border-color:#8bdfff35}
-.moon{background:radial-gradient(circle at 30% 25%,#fff,#b9e8f6 48%,#355e78);box-shadow:0 0 30px #d4f7ffcc,0 0 80px #8bdcff55}
-.section,.contact{position:relative}
-.section-head h2,.contact h2{color:#eafaff;text-shadow:0 0 28px #55cfff20}
-.universe-card,.repo-card{
-  background:linear-gradient(145deg,#0a1b27dc,#06111bdc 65%,#081b29e8);
-  border:1px solid #6fc9e833;
-  box-shadow:inset 0 1px #d5f7ff0c,0 18px 55px #0005;
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  transition:border-color .35s,box-shadow .35s,background .35s,transform .35s;
-}
-.universe-card:hover,.repo-card:hover{
-  border-color:#83ddff99;
-  background:linear-gradient(145deg,#102c3be8,#071723ed 65%,#0b2636ed);
-  box-shadow:inset 0 1px #d5f7ff20,0 18px 65px #0008,0 0 32px #59cfff1c;
-}
-.repo-card h3,.universe-card h3{color:#e6f9ff}
-.repo-card p,.universe-card p{color:#9db8c8}
-.repo-meta,.micro,.footer-note{color:#7dbbd2}
-input,textarea,select{
-  background:#061722!important;color:#eafaff!important;
-  border-color:#39718a!important;
-}
-input:focus,textarea:focus,select:focus{outline:1px solid #85e2ff!important;box-shadow:0 0 0 3px #65d6ff1c!important}
-::selection{background:#a6edff;color:#03111b}
-.portal-loader{background:radial-gradient(ellipse at center,#0b2534,#02070c 68%)}
-.portal-ring{border-top-color:#c5f4ff;border-right-color:#56cfff;box-shadow:0 0 90px #6bdcff66,inset 0 0 60px #8bdcff33}
-.portal-text{color:#b9f1ff}
-@media(max-width:700px){
-  #snow-hack-canvas{opacity:.48}
-  body:before{background-size:42px 42px;opacity:.08}
-}
-@media(prefers-reduced-motion:reduce){
-  .hero h1 span{animation:none}
-}
-
 </style>
 </head>
 <body>
 
-<!-- ============ SVG Aurora Borealis ribbons (full-page flowing) ============ -->
-<svg class="aurora-svg" preserveAspectRatio="none" viewBox="0 0 1440 900" aria-hidden="true">
-  <defs>
-    <linearGradient id="auroraGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#9be6ff" stop-opacity="0"/>
-      <stop offset="40%" stop-color="#9be6ff" stop-opacity=".85"/>
-      <stop offset="70%" stop-color="#a78bfa" stop-opacity=".6"/>
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="auroraGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ff8acb" stop-opacity=".7"/>
-      <stop offset="100%" stop-color="#9be6ff" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="auroraGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f8d995" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#9be6ff" stop-opacity=".55"/>
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="auroraTurb">
-      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="3" seed="7" result="noise">
-        <animate attributeName="baseFrequency" dur="22s" values="0.012 0.018;0.018 0.012;0.012 0.018" repeatCount="indefinite"/>
-      </feTurbulence>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="60"/>
-    </filter>
-  </defs>
-  <g filter="url(#auroraTurb)">
-    <path class="aurora-path a1" d="M-50,180 Q360,80 720,200 T1490,160" stroke-dasharray="6 4"/>
-    <path class="aurora-path a2" d="M-50,420 Q360,320 720,440 T1490,400" stroke-dasharray="8 5"/>
-    <path class="aurora-path a3" d="M-50,680 Q360,580 720,700 T1490,660" stroke-dasharray="5 3"/>
-  </g>
-</svg>
+<!-- ============ MATRIX RAIN (3 red layers) ============ -->
+<canvas id="matrix1" aria-hidden="true"></canvas>
+<canvas id="matrix2" aria-hidden="true"></canvas>
+<canvas id="matrix3" aria-hidden="true"></canvas>
 
-<!-- ============ 3D Galaxy + 2D starfield canvases ============ -->
-<canvas id="galaxy" aria-hidden="true"></canvas>
-<canvas id="cosmos" aria-hidden="true"></canvas>
+<!-- ============ CRT OVERLAYS ============ -->
+<div class="crt-vignette" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="crt-flicker" aria-hidden="true"></div>
 
-<!-- ============ Atmospheric layers ============ -->
-<div class="space-wash"></div>
-<div class="nebula one"></div>
-<div class="nebula two"></div>
-<div class="nebula three"></div>
+<!-- ============ SYSTEM HUD ============ -->
+<div class="sys-hud" aria-hidden="true">
+  <div><span class="label">UPTIME</span> <span class="v" id="hudUptime">00:00:00</span></div>
+  <div><span class="label">IP</span> <span class="v" id="hudIp">10.0.0.0</span></div>
+  <div><span class="label">NODE</span> <span class="v">arctic-fox-01</span></div>
+  <div><span class="label">LAT</span> <span class="v" id="hudLat">0ms</span></div>
+  <div><span class="label">CLEARANCE</span> <span class="alert">RED TEAM</span></div>
+  <div><span class="label">STATUS</span> <span class="alert blink">ENGAGED</span></div>
+</div>
 
-<!-- ============ Custom cosmic cursor (hidden on touch) ============ -->
-<div class="cosmic-trail" id="trail" aria-hidden="true"></div>
-<div class="cosmic-cursor" id="cursor" aria-hidden="true"></div>
-<div class="cosmic-dot" id="cursorDot" aria-hidden="true"></div>
+<!-- ============ RADAR ============ -->
+<div class="radar" aria-hidden="true"></div>
 
-<!-- ============ HEAVY ANIMATION OVERLAYS — black hole, hyperdrive, supernova, distant galaxies, vignette ============ -->
-<div class="vignette" aria-hidden="true"></div>
-<div class="distant-galaxy g1" aria-hidden="true"></div>
-<div class="distant-galaxy g2" aria-hidden="true"></div>
-<canvas id="constellations" aria-hidden="true"></canvas>
-<div class="black-hole" id="blackHole" aria-hidden="true"></div>
-<div class="hyperdrive" id="hyperdrive" aria-hidden="true"></div>
-<div class="supernova" id="supernova" aria-hidden="true"></div>
-<div class="energy-pulse" id="energyPulse" aria-hidden="true"></div>
+<!-- ============ SYSTEM LOG ============ -->
+<div class="sys-log" id="sysLog" aria-hidden="true"></div>
 
-<!-- ============ Portal loader (intro) ============ -->
-<div class="portal-loader" id="portalLoader" aria-hidden="true">
-  <div class="portal-ring"></div>
-  <div class="portal-core"></div>
-  <div class="portal-text">ENTERING THE UNKNOWN</div>
+<!-- ============ SMOOTH MINIMAL CURSOR ============ -->
+<div class="cursor-ghost" id="cursorGhost" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- ============ ACCESS FLASH ============ -->
+<div class="access-flash" id="accessFlash" aria-hidden="true"></div>
+
+<!-- ============ BOOT LOADER ============ -->
+<div class="boot-loader" id="bootLoader" aria-hidden="true">
+  <div class="boot-terminal" id="bootTerminal"></div>
 </div>
 
 <header class="header"><div class="wrap nav">
-<a class="brand" href="#home" data-cursor-hover><span>ARCTIC FOX<small>CYBER · BEYOND LIMITS</small></span></a>
+<a class="brand" href="#home" data-cursor-hover>
+  <div class="brand-logo">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <path d="M11 2 L19 18 L11 14 L3 18 Z" stroke="#ff2d4a" stroke-width="1.5" fill="rgba(255,45,74,.15)"/>
+      <circle cx="11" cy="11" r="2" fill="#ff2d4a"/>
+    </svg>
+  </div>
+  <span class="brand-text">ARCTIC_FOX<small>RED TEAM OPERATOR<span class="brand-blink"></span></small></span>
+</a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="links">MENU &#9776;</button>
 <nav class="nav-links" id="links" aria-label="Main navigation">
-  <a href="#projects" data-cursor-hover>Missions</a>
-  <a href="#universe" data-cursor-hover>Our universe</a>
-  <a href="#contact" data-cursor-hover>Contact</a>
-  <a class="github" href="https://github.com/arcticfox-cyber" data-portal="https://github.com/arcticfox-cyber" data-cursor-hover>GitHub &#8599;</a>
+  <a href="#projects" data-cursor-hover>operations</a>
+  <a href="#universe" data-cursor-hover>capabilities</a>
+  <a href="#contact" data-cursor-hover>contact</a>
+  <a class="github" href="https://github.com/arcticfox-cyber" data-portal="https://github.com/arcticfox-cyber" data-cursor-hover>github &#8599;</a>
 </nav>
 </div></header>
 
 <main id="home">
 <section class="hero"><div class="wrap hero-grid">
 <div>
-  <div class="eyebrow reveal">A universe of independent creation</div>
-  <h1 id="heroTitle">Explore the<span data-text="unknown.">unknown.</span></h1>
-  <p class="hero-copy reveal">Beyond the ordinary. Into the unknown. Discover original cybersecurity tools, privacy-first ideas and Linux software — engineered independently by Arctic Fox Cyber.</p>
+  <div class="eyebrow reveal"><span class="dot"></span>offensive security · independent operator</div>
+  <h1 id="heroTitle">red_team@operator:~#<span>./engage --target=unknown</span></h1>
+  <p class="hero-copy reveal">Independent Red Team operator. Offensive security engineering, OSINT, privacy tooling and Linux software — built independently under the Arctic Fox banner. Every engagement is a new operation. Every tool, a step into hostile territory.</p>
   <div class="actions reveal">
-    <a class="button primary" href="#projects" data-cursor-hover data-magnetic>Explore our universe <span>&#8599;</span></a>
-    <a class="button universe" href="#universe-modal" id="viewUniverseBtn" data-cursor-hover data-magnetic>View full universe <span>&#9788;</span></a>
-    <a class="button" href="https://github.com/arcticfox-cyber" data-portal="https://github.com/arcticfox-cyber" data-cursor-hover data-magnetic>Enter GitHub <span>&#8599;</span></a>
+    <a class="button primary" href="#projects" data-cursor-hover data-magnetic>./list_operations <span>&#9656;</span></a>
+    <a class="button alert" href="#universe-modal" id="viewUniverseBtn" data-cursor-hover data-magnetic>./view_dossier <span>&#9788;</span></a>
+    <a class="button" href="https://github.com/arcticfox-cyber" data-portal="https://github.com/arcticfox-cyber" data-cursor-hover data-magnetic>./jack_in github <span>&#8599;</span></a>
   </div>
 </div>
 <div class="hero-visual">
-  <div class="planet-system" id="planetSystem">
-    <div class="planet-glow"></div>
-    <div class="orbit-line"></div>
-    <div class="orbit-line second"></div>
-    <div class="ring back"></div>
-    <div class="planet"></div>
-    <div class="ring"></div>
-    <div class="moon"></div>
+  <div class="terminal-window">
+    <div class="terminal-titlebar">
+      <div class="terminal-dots"><span></span><span></span><span></span></div>
+      <div class="terminal-title">red_team@arctic-fox:~/ops</div>
+      <div style="width:36px"></div>
+    </div>
+    <div class="terminal-body" id="terminalBody"></div>
+    <div class="terminal-statusbar">
+      <span><span class="blink-dot"></span>ENCRYPTED · OSSH</span>
+      <span>TTY/0 · 80x24</span>
+    </div>
   </div>
-  <div class="visual-caption">ARCTIC FOX · DEEP SPACE DIVISION</div>
+  <div class="visual-caption">// ARCTIC FOX · OFFENSIVE OPERATIONS</div>
 </div>
 </div>
-<div class="hero-scroll" aria-hidden="true">SCROLL TO EXPLORE <i></i></div>
-<div class="hero-meta"><div class="wrap"><span><i class="live-dot"></i>Independent digital universe</span><span>Curiosity has no boundaries</span></div></div>
+<div class="hero-scroll" aria-hidden="true">SCROLL TO ENGAGE <i></i></div>
+<div class="hero-meta"><div class="wrap"><span><i class="live-dot"></i>INDEPENDENT OPERATOR</span><span>NO BOUNDARIES</span></div></div>
 </section>
 
 <section class="section" id="projects"><div class="wrap">
 <div class="section-head">
   <div>
-    <div class="section-kicker reveal">01 / Mission control</div>
-    <h2 class="reveal glitch" data-text="Explore the projects.">Explore the projects.</h2>
+    <div class="section-kicker reveal">01 / operations log</div>
+    <h2 class="reveal glitch" data-text="// the operations."><span class="glitch-text">// the operations.</span></h2>
   </div>
-  <p class="section-intro reveal">Every repository is a new world to explore. Public projects are loaded directly from GitHub and updated automatically.</p>
+  <p class="section-intro reveal">Every repository is a declassified operation. Public tools loaded directly from GitHub and updated automatically.</p>
 </div>
 <div class="repo-toolbar">
-  <div class="repo-status" id="repoStatus">SCANNING THE GALAXY…</div>
-  <input class="repo-search" id="repoSearch" type="search" placeholder="Search missions..." aria-label="Search repositories" autocomplete="off" data-cursor-hover>
+  <div class="repo-status" id="repoStatus"><span class="blink"></span>SCANNING THE NETWORK…</div>
+  <input class="repo-search" id="repoSearch" type="search" placeholder="grep operations..." aria-label="Search repositories" autocomplete="off" data-cursor-hover>
 </div>
 <div class="repo-grid" id="repoGrid" aria-live="polite">
-  <div class="repo-empty">Establishing connection with GitHub…</div>
+  <div class="repo-empty">ESTABLISHING SECURE CONNECTION…</div>
 </div>
-<div class="repo-note">LIVE PUBLIC REPOSITORIES · GITHUB API · AUTOMATICALLY REFRESHED</div>
+<div class="repo-note">LIVE PUBLIC REPOSITORIES · GITHUB API · AUTO-REFRESHED</div>
 </div></section>
 
 <section class="section universe-section" id="universe"><div class="wrap">
 <div class="section-head">
   <div>
-    <div class="section-kicker reveal">02 / The dimensions</div>
-    <h2 class="reveal glitch" data-text="Three worlds. One vision.">Three worlds. One vision.</h2>
+    <div class="section-kicker reveal">02 / capabilities</div>
+    <h2 class="reveal glitch" data-text="// three disciplines. one operator."><span class="glitch-text">// three disciplines.<br>one operator.</span></h2>
   </div>
   <p class="section-intro reveal">Different disciplines, one independent mindset: build useful technology, explore difficult problems and put control in the hands of users.</p>
 </div>
 <div class="universe-grid">
-  <article class="universe-card reveal" style="--planet-color:#9be6ff" data-cursor-hover data-magnetic>
-    <div class="num">WORLD 01 · DISCOVERY</div>
-    <div class="card-orb"></div>
-    <h3>OSINT &amp; Research</h3>
-    <p>Explore public information, digital footprints and research workflows with responsible, purpose-built tools.</p>
+  <article class="universe-card reveal" style="--planet-color:#ff2d4a" data-cursor-hover data-magnetic>
+    <div class="num">CAPABILITY 01 · DISCOVERY</div>
+    <div class="card-target"><span class="x1"></span><span class="x2"></span></div>
+    <h3>OSINT &amp; Recon</h3>
+    <p>Public information, digital footprints and research workflows with responsible, purpose-built tools.</p>
   </article>
-  <article class="universe-card reveal" style="--planet-color:#ff8acb" data-cursor-hover data-magnetic>
-    <div class="num">WORLD 02 · DEFENCE</div>
-    <div class="card-orb"></div>
+  <article class="universe-card reveal" style="--planet-color:#ffb000" data-cursor-hover data-magnetic>
+    <div class="num">CAPABILITY 02 · DEFENCE</div>
+    <div class="card-target"><span class="x1"></span><span class="x2"></span></div>
     <h3>Privacy &amp; Security</h3>
-    <p>Build privacy-minded software and practical security utilities that help people understand and protect their digital world.</p>
+    <p>Privacy-minded software and practical security utilities that help people understand and protect their digital world.</p>
   </article>
-  <article class="universe-card reveal" style="--planet-color:#f8d995" data-cursor-hover data-magnetic>
-    <div class="num">WORLD 03 · CREATION</div>
-    <div class="card-orb"></div>
+  <article class="universe-card reveal" style="--planet-color:#ff5577" data-cursor-hover data-magnetic>
+    <div class="num">CAPABILITY 03 · CREATION</div>
+    <div class="card-target"><span class="x1"></span><span class="x2"></span></div>
     <h3>Linux &amp; Engineering</h3>
-    <p>Develop focused Linux applications, automation and original tools shaped by real-world needs.</p>
+    <p>Focused Linux applications, automation and original tools shaped by real-world operational needs.</p>
   </article>
 </div>
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap">
-  <div class="section-kicker reveal">03 / Beyond the horizon</div>
-  <h2 class="reveal glitch" data-text="The universe is waiting to be explored.">The universe is<br>waiting to be explored.</h2>
-  <p class="reveal">Follow the journey, discover the source code and see what is being built next by Arctic Fox Cyber.</p>
-  <a class="button primary reveal" href="https://github.com/arcticfox-cyber" data-portal="https://github.com/arcticfox-cyber" data-cursor-hover data-magnetic>Visit Arctic Fox on GitHub &#8599;</a>
+  <div class="section-kicker reveal">03 / exfiltration</div>
+  <h2 class="reveal glitch" data-text="// awaiting engagement."><span class="glitch-text">// awaiting<br>engagement.</span></h2>
+  <p class="reveal">Follow the operations, review the source code and see what is being built next by Arctic Fox Cyber.</p>
+  <a class="button primary reveal" href="https://github.com/arcticfox-cyber" data-portal="https://github.com/arcticfox-cyber" data-cursor-hover data-magnetic>./jack_in github &#8599;</a>
 </div></section>
 </main>
 
 <footer><div class="wrap footer-row">
-  <div class="footer-brand" data-cursor-hover>ARCTIC FOX CYBER</div>
-  <div class="footer-note">&copy; <span id="year"></span> · INDEPENDENT BY NATURE</div>
+  <div class="footer-brand" data-cursor-hover>ARCTIC_FOX // RED_TEAM</div>
+  <div class="footer-note">&copy; <span id="year"></span> · INDEPENDENT OPERATOR</div>
   <a class="footer-link" href="https://github.com/arcticfox-cyber" data-portal="https://github.com/arcticfox-cyber" data-cursor-hover>GITHUB &#8599;</a>
 </div></footer>
 
-<!-- ============ IN-TAB PORTAL NAVIGATION MODAL (opens external links in same tab as a box) ============ -->
+<!-- ============ PORTAL NAVIGATION MODAL (jack-in box) ============ -->
 <div class="portal-modal" id="portalModal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="portal-modal-box">
     <div class="portal-jump-ring"><div class="portal-jump-core"></div></div>
-    <h3>Initiating Hyperspace Jump</h3>
+    <h3>// INITIATING JACK-IN</h3>
     <p class="portal-destination" id="portalDest">—</p>
-    <p class="portal-status" id="portalStatus">CHARTING COORDINATES · CALIBRATING NAVIGATION</p>
+    <p class="portal-status" id="portalStatus">CHARTING COORDINATES · CALIBRATING</p>
     <div class="portal-progress"><div class="portal-progress-bar"></div></div>
-    <button class="portal-cancel" id="portalCancel" data-cursor-hover>Abort jump &#10005;</button>
+    <button class="portal-cancel" id="portalCancel" data-cursor-hover>abort jack-in &#10005;</button>
   </div>
 </div>
 
-<!-- ============ FULL UNIVERSE OVERVIEW MODAL ============ -->
+<!-- ============ DOSSIER / UNIVERSE MODAL ============ -->
 <div class="universe-modal" id="universeModal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="universe-modal-content">
-    <button class="universe-modal-close" id="universeClose" aria-label="Close universe overview" data-cursor-hover>&#10005;</button>
-    <div class="um-eyebrow">ARCTIC FOX CYBER · GALACTIC OVERVIEW</div>
-    <h2 class="um-title">The complete universe.</h2>
-    <p class="um-sub">An independent constellation of cybersecurity, privacy engineering and Linux software. Below is the full map of the worlds we are building, the missions in orbit and the philosophy that holds them together.</p>
+    <button class="universe-modal-close" id="universeClose" aria-label="Close dossier" data-cursor-hover>&#10005;</button>
+    <div class="um-eyebrow">// ARCTIC FOX · OPERATOR DOSSIER</div>
+    <h2 class="um-title">/root/dossier</h2>
+    <p class="um-sub">Independent Red Team operator. Below is the declassified summary of the operator's public record — operations logged, capabilities, and clearance level.</p>
     <div class="um-stats">
-      <div class="um-stat"><div class="um-stat-value" id="umStatRepos">—</div><div class="um-stat-label">Public missions</div></div>
-      <div class="um-stat"><div class="um-stat-value" id="umStatStars">—</div><div class="um-stat-label">Total stars</div></div>
-      <div class="um-stat"><div class="um-stat-value" id="umStatForks">—</div><div class="um-stat-label">Total forks</div></div>
-      <div class="um-stat"><div class="um-stat-value">3</div><div class="um-stat-label">Worlds</div></div>
+      <div class="um-stat"><div class="um-stat-value" id="umStatRepos">—</div><div class="um-stat-label">operations</div></div>
+      <div class="um-stat"><div class="um-stat-value" id="umStatStars">—</div><div class="um-stat-label">stars</div></div>
+      <div class="um-stat"><div class="um-stat-value" id="umStatForks">—</div><div class="um-stat-label">forks</div></div>
+      <div class="um-stat"><div class="um-stat-value">RED</div><div class="um-stat-label">clearance</div></div>
     </div>
     <div class="um-grid">
-      <div class="um-card" style="--p:#9be6ff">
+      <div class="um-card" style="--p:#ff2d4a">
         <div class="um-card-orb"></div>
-        <div class="um-card-num">WORLD 01 · DISCOVERY</div>
-        <h4>OSINT &amp; Research</h4>
-        <p>Explore public information, digital footprints and research workflows with responsible, purpose-built tools.</p>
+        <div class="um-card-num">// CAPABILITY 01</div>
+        <h4>OSINT &amp; Recon</h4>
+        <p>Public information, digital footprints and research workflows with responsible, purpose-built tools.</p>
       </div>
-      <div class="um-card" style="--p:#ff8acb">
+      <div class="um-card" style="--p:#ffb000">
         <div class="um-card-orb"></div>
-        <div class="um-card-num">WORLD 02 · DEFENCE</div>
+        <div class="um-card-num">// CAPABILITY 02</div>
         <h4>Privacy &amp; Security</h4>
-        <p>Build privacy-minded software and practical security utilities that help people understand and protect their digital world.</p>
+        <p>Privacy-minded software and practical security utilities that help people understand and protect their digital world.</p>
       </div>
-      <div class="um-card" style="--p:#f8d995">
+      <div class="um-card" style="--p:#ff5577">
         <div class="um-card-orb"></div>
-        <div class="um-card-num">WORLD 03 · CREATION</div>
+        <div class="um-card-num">// CAPABILITY 03</div>
         <h4>Linux &amp; Engineering</h4>
-        <p>Develop focused Linux applications, automation and original tools shaped by real-world needs.</p>
+        <p>Focused Linux applications, automation and original tools shaped by real-world operational needs.</p>
       </div>
     </div>
     <div class="um-cta">
-      <a class="button primary" href="https://github.com/arcticfox-cyber" data-portal="https://github.com/arcticfox-cyber" data-cursor-hover data-magnetic>Open the source universe &#8599;</a>
+      <a class="button primary" href="https://github.com/arcticfox-cyber" data-portal="https://github.com/arcticfox-cyber" data-cursor-hover data-magnetic>./open_operations &#8599;</a>
     </div>
   </div>
 </div>
 
-<!-- ============ Three.js for the 3D spiral galaxy ============ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- Portal + Universe modal CSS -->
+<style>
+.portal-modal{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(10,4,5,.92);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .4s var(--ease-out);
+}
+.portal-modal.open{opacity:1;pointer-events:auto}
+.portal-modal-box{
+  position:relative;width:min(540px,90vw);
+  padding:44px 34px;
+  background:rgba(10,4,5,.96);
+  border:1px solid var(--red);
+  box-shadow:0 0 50px rgba(255,45,74,.25),inset 0 0 35px rgba(255,45,74,.04);
+  text-align:center;overflow:hidden;
+  transform:scale(.85);opacity:0;
+  transition:transform .6s var(--ease-spring),opacity .4s var(--ease-out);
+}
+.portal-modal.open .portal-modal-box{transform:scale(1);opacity:1}
+.portal-modal-box:before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--red),var(--amber),transparent);
+  background-size:220% 100%;animation:cardScan 2.5s linear infinite;
+}
+.portal-modal-box:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,45,74,.025) 2px 3px);
+}
+.portal-jump-ring{
+  width:110px;height:110px;border-radius:50%;
+  border:2px solid var(--red);
+  margin:0 auto 20px;position:relative;
+  animation:portalSpin 1s linear infinite;
+  box-shadow:0 0 25px var(--red),inset 0 0 25px rgba(255,45,74,.18);
+}
+.portal-jump-ring:before{
+  content:"";position:absolute;inset:12px;border-radius:50%;
+  border:1.5px solid var(--amber);border-right-color:transparent;border-top-color:transparent;
+  animation:portalSpin 1.4s linear infinite reverse;
+}
+.portal-jump-ring:after{
+  content:"";position:absolute;inset:24px;border-radius:50%;
+  border:1.5px solid var(--white);border-left-color:transparent;border-bottom-color:transparent;
+  animation:portalSpin .8s linear infinite;
+}
+@keyframes portalSpin{to{transform:rotate(360deg)}}
+.portal-jump-core{
+  position:absolute;top:50%;left:50%;width:28px;height:28px;border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,var(--white),var(--red) 50%,transparent);
+  filter:blur(3px);animation:portalPulse 1s ease-in-out infinite alternate;
+  box-shadow:0 0 20px var(--red);
+}
+@keyframes portalPulse{from{transform:translate(-50%,-50%) scale(.6);opacity:.6}to{transform:translate(-50%,-50%) scale(1.2);opacity:1}}
+.portal-modal h3{
+  font:11px "Share Tech Mono",monospace;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--amber);margin:0 0 12px;position:relative;z-index:1;
+  text-shadow:0 0 5px var(--amber);
+}
+.portal-destination{
+  font:17px "Share Tech Mono",monospace;letter-spacing:.04em;
+  color:var(--red-bright);margin:0 0 6px;word-break:break-all;position:relative;z-index:1;
+  text-shadow:0 0 6px var(--red);
+}
+.portal-destination:before{content:"$ connect "}
+.portal-status{
+  font:10px "Share Tech Mono",monospace;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--red-dim);margin:0 0 22px;position:relative;z-index:1;
+}
+.portal-progress{
+  width:100%;height:2px;background:var(--bg-deep);overflow:hidden;
+  margin:0 0 20px;position:relative;z-index:1;border:1px solid var(--line-bright);
+}
+.portal-progress-bar{
+  height:100%;width:0;background:var(--red);
+  box-shadow:0 0 6px var(--red);
+  transition:width 1.6s var(--ease-out);
+}
+.portal-modal.open .portal-progress-bar{width:100%}
+.portal-cancel{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 20px;border:1px solid var(--amber);
+  background:transparent;color:var(--amber);
+  font:10px "Share Tech Mono",monospace;letter-spacing:.18em;text-transform:uppercase;
+  cursor:none;
+  transition:all .2s var(--ease-out);position:relative;z-index:1;
+  text-shadow:0 0 3px var(--amber);
+}
+.portal-cancel:hover{background:rgba(255,176,0,.1);box-shadow:0 0 10px rgba(255,176,0,.35)}
+
+.universe-modal{
+  position:fixed;inset:0;z-index:450;
+  background:rgba(10,4,5,.95);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .5s var(--ease-out);overflow:auto;
+}
+.universe-modal.open{opacity:1;pointer-events:auto}
+.universe-modal-content{
+  width:min(960px,94vw);max-height:92vh;overflow-y:auto;
+  padding:44px;padding:44px 44px 54px;
+  background:rgba(10,4,5,.96);
+  border:1px solid var(--red);
+  box-shadow:0 0 70px rgba(255,45,74,.18),inset 0 0 50px rgba(255,45,74,.03);
+  position:relative;
+  transform:scale(.9);opacity:0;
+  transition:transform .6s var(--ease-spring),opacity .4s var(--ease-out);
+}
+.universe-modal.open .universe-modal-content{transform:scale(1);opacity:1}
+.universe-modal-content::-webkit-scrollbar{width:6px}
+.universe-modal-content::-webkit-scrollbar-track{background:var(--bg-deep)}
+.universe-modal-content::-webkit-scrollbar-thumb{background:var(--red-dim)}
+.universe-modal-close{
+  position:absolute;top:16px;right:18px;
+  width:34px;height:34px;border:1px solid var(--amber);
+  background:transparent;color:var(--amber);cursor:none;font-size:14px;
+  transition:all .2s var(--ease-out);
+  display:flex;align-items:center;justify-content:center;z-index:2;
+}
+.universe-modal-close:hover{background:rgba(255,176,0,.1);transform:rotate(90deg);box-shadow:0 0 10px var(--amber)}
+.um-eyebrow{font:10px "Share Tech Mono",monospace;letter-spacing:.25em;text-transform:uppercase;color:var(--amber);margin-bottom:12px;text-shadow:0 0 3px var(--amber)}
+.um-title{
+  font-family:"VT323",monospace;
+  font-size:clamp(32px,4vw,46px);font-weight:400;letter-spacing:.02em;
+  line-height:1.05;margin:0 0 12px;color:var(--red-bright);
+  text-shadow:0 0 10px var(--red),0 0 22px rgba(255,45,74,.35);
+}
+.um-sub{color:var(--white);font:13px/1.85 "JetBrains Mono",monospace;max-width:680px;margin:0 0 32px;text-shadow:0 0 2px rgba(255,45,74,.15)}
+.um-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:32px}
+.um-stat{padding:16px;border:1px solid var(--line-bright);background:rgba(255,45,74,.03);text-align:center}
+.um-stat-value{font:20px "Share Tech Mono",monospace;color:var(--red-bright);text-shadow:0 0 5px var(--red)}
+.um-stat-label{font:9px "Share Tech Mono",monospace;color:var(--red-dim);letter-spacing:.18em;text-transform:uppercase;margin-top:5px}
+.um-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.um-card{position:relative;padding:22px;background:rgba(255,45,74,.03);border:1px solid var(--line-bright);overflow:hidden}
+.um-card-orb{
+  width:44px;height:44px;border-radius:50%;margin-bottom:12px;
+  background:radial-gradient(circle at 30% 28%,var(--white),var(--p,#ff2d4a) 50%,transparent);
+  box-shadow:0 0 20px var(--p,#ff2d4a);
+}
+.um-card-num{font:9px "Share Tech Mono",monospace;color:var(--p,#ff2d4a);letter-spacing:.15em;margin-bottom:6px;text-shadow:0 0 3px var(--p,#ff2d4a)}
+.um-card h4{font:15px "Share Tech Mono",monospace;letter-spacing:.02em;margin:0 0 8px;color:var(--red-bright);text-shadow:0 0 4px var(--red)}
+.um-card p{font:11px/1.7 "JetBrains Mono",monospace;color:var(--white);margin:0;text-shadow:0 0 2px rgba(255,45,74,.15)}
+.um-cta{margin-top:32px;text-align:center}
+@media(max-width:780px){
+  .um-stats{grid-template-columns:repeat(2,1fr)}
+  .um-grid{grid-template-columns:1fr}
+  .universe-modal-content{padding:32px 22px 44px}
+}
+</style>
 
 <script>
 "use strict";
 
 /* ============================================================
-   1) PORTAL LOADER — fades after first paint
+   1) BOOT SEQUENCE
    ============================================================ */
-window.addEventListener("load",()=>{
-  setTimeout(()=>{
-    const pl=document.getElementById("portalLoader");
-    pl.classList.add("done");
-    setTimeout(()=>pl.classList.add("gone"),1000);
-  },900);
-});
+(()=>{
+  const bootEl=document.getElementById("bootTerminal");
+  if(!bootEl) return;
+  const lines=[
+    {t:"ARCTIC FOX // OPERATOR BIOS v3.14.159",c:"ok"},
+    {t:"Copyright (c) 2026 Arctic Fox Cyber. Classified.",c:"dim"},
+    {t:"",c:""},
+    {t:"Performing power-on self test...",c:"dim"},
+    {t:"  CPU: AMD Ryzen Unknown @ 4.20GHz         [ OK ]",c:"ok"},
+    {t:"  Memory: 65536MB DDR5                     [ OK ]",c:"ok"},
+    {t:"  Network: eth0 link up                    [ OK ]",c:"ok"},
+    {t:"  Storage: nvme0n1 2TB encrypted           [ OK ]",c:"ok"},
+    {t:"  Cryptographic co-processor               [ OK ]",c:"ok"},
+    {t:"  TPM 2.0 sealed                           [ OK ]",c:"ok"},
+    {t:"",c:""},
+    {t:"Initializing red team modules...",c:"dim"},
+    {t:"  arctic_fox_core.ko                       [ OK ]",c:"ok"},
+    {t:"  offensive_toolkit.ko                     [ OK ]",c:"ok"},
+    {t:"  osint_recon.ko                           [ OK ]",c:"ok"},
+    {t:"  privacy_engine.ko                        [ OK ]",c:"ok"},
+    {t:"  linux_native_drv.ko                      [ OK ]",c:"ok"},
+    {t:"",c:""},
+    {t:"Mounting encrypted filesystems...",c:"dim"},
+    {t:"  /dev/mapper/arctic-root on /             [ OK ]",c:"ok"},
+    {t:"  /dev/nvme0n1p1 on /boot                  [ OK ]",c:"ok"},
+    {t:"  tmpfs on /tmp                            [ OK ]",c:"ok"},
+    {t:"  /dev/mapper/vault on /vault              [ OK ]",c:"ok"},
+    {t:"",c:""},
+    {t:"Establishing secure shell...",c:"dim"},
+    {t:"  SSH daemon started on port 22            [ OK ]",c:"ok"},
+    {t:"  Tor circuit established                  [WARN]",c:"warn"},
+    {t:"  VPN tunnel to unknown                    [ OK ]",c:"ok"},
+    {t:"  MAC address randomized                   [ OK ]",c:"ok"},
+    {t:"",c:""},
+    {t:"Loading operator profile...",c:"dim"},
+    {t:"  Clearance: RED TEAM                      [ OK ]",c:"ok"},
+    {t:"  Operations declassified                  [ OK ]",c:"ok"},
+    {t:"  Mission control online                   [ OK ]",c:"ok"},
+    {t:"  Offensive operations armed               [ OK ]",c:"ok"},
+    {t:"",c:""},
+    {t:"Welcome, operator.",c:"ok"},
+    {t:"",c:""},
+    {t:"red_team@arctic-fox:~# _",c:""}
+  ];
+  let idx=0;
+  function nextLine(){
+    if(idx>=lines.length){
+      setTimeout(()=>{
+        const bl=document.getElementById("bootLoader");
+        bl.classList.add("done");
+        setTimeout(()=>bl.classList.add("gone"),800);
+        startMainExperience();
+      },400);
+      return;
+    }
+    const l=lines[idx++];
+    const div=document.createElement("div");
+    div.className="boot-line "+l.c;
+    div.style.animationDelay=((idx-1)*55)+"ms";
+    div.textContent=l.t;
+    bootEl.appendChild(div);
+    setTimeout(nextLine,50+Math.random()*40);
+  }
+  const si=setInterval(()=>{bootEl.scrollTop=bootEl.scrollHeight},80);
+  setTimeout(()=>{clearInterval(si);nextLine();},150);
+})();
 
 /* ============================================================
-   2) CUSTOM COSMIC CURSOR + trailing particles
+   2) START MAIN EXPERIENCE
+   ============================================================ */
+function startMainExperience(){
+  /* ---- HERO TITLE typing ---- */
+  (()=>{
+    const title=document.getElementById("heroTitle");
+    if(!title || title._typed) return;
+    title._typed=true;
+    const finalHTML=title.innerHTML;
+    title.innerHTML="";
+    let i=0;
+    function typeChar(){
+      if(i>=finalHTML.length){
+        const c=document.createElement("span");
+        c.className="cursor";
+        title.appendChild(c);
+        return;
+      }
+      if(finalHTML[i]==="<"){
+        const end=finalHTML.indexOf(">",i);
+        if(end>-1){
+          title.insertAdjacentHTML("beforeend",finalHTML.slice(i,end+1));
+          i=end+1;
+          typeChar();
+          return;
+        }
+      }
+      const ch=finalHTML[i];
+      if(ch===" "){title.insertAdjacentHTML("beforeend"," ");}
+      else{
+        const span=document.createElement("span");
+        span.className="char";
+        span.textContent=ch;
+        span.style.setProperty("--d",(i*22)+"ms");
+        title.appendChild(span);
+      }
+      i++;
+      setTimeout(typeChar,30+Math.random()*25);
+    }
+    typeChar();
+  })();
+
+  /* ---- TERMINAL BODY typed sequence ---- */
+  (()=>{
+    const term=document.getElementById("terminalBody");
+    if(!term) return;
+    const seq=[
+      {t:"$ whoami",c:"prompt"},
+      {t:"red_team_operator",c:"out"},
+      {t:"$ id",c:"prompt"},
+      {t:"uid=1000(fox) gid=1000(fox) groups=red-team",c:"out"},
+      {t:"$ ls -la /operations/",c:"prompt"},
+      {t:"drwxr-xr-x  osint/",c:"out"},
+      {t:"drwxr-xr-x  privacy/",c:"out"},
+      {t:"drwxr-xr-x  linux-apps/",c:"out"},
+      {t:"$ ./recon --target=unknown",c:"prompt"},
+      {t:"[*] Initializing deep recon...",c:"ok"},
+      {t:"[*] Resolving target infrastructure",c:"out"},
+      {t:"[+] Host is up (0.042s latency)",c:"ok"},
+      {t:"[+] 7 open ports detected",c:"ok"},
+      {t:"[!] Anomaly at port 0x3F",c:"warn"},
+      {t:"$ ./engage --encrypt",c:"prompt"},
+      {t:"[*] Establishing encrypted tunnel",c:"ok"},
+      {t:"[*] Negotiating AES-256-GCM",c:"ok"},
+      {t:"[+] Tunnel established",c:"ok"},
+      {t:"$ ./engage --target=unknown",c:"prompt"},
+      {t:"[*] Engaging target...",c:"ok"}
+    ];
+    let i=0;
+    function typeLine(){
+      if(i>=seq.length){
+        const cursor=document.createElement("span");
+        cursor.className="terminal-cursor";
+        term.appendChild(cursor);
+        const fake=["[+] heartbeat ok","[*] monitoring traffic","[+] no anomalies detected","[*] rotating identity","[+] encryption rotation complete","[!] suspicious packet dropped","[+] firewall rules updated","[*] clearing logs","[+] proxy chain stable","[!] IDS evasion active"];
+        setInterval(()=>{
+          const line=document.createElement("div");
+          const pick=fake[Math.floor(Math.random()*fake.length)];
+          const cls=pick.startsWith("[+]")?"ok":pick.startsWith("[!]")?"warn":"out";
+          line.className=cls;
+          line.textContent=pick;
+          term.appendChild(line);
+          while(term.childNodes.length>28) term.removeChild(term.firstChild);
+          term.scrollTop=term.scrollHeight;
+        },2200);
+        return;
+      }
+      const l=seq[i++];
+      const line=document.createElement("div");
+      line.className=l.c;
+      let ci=0;
+      function typeChar(){
+        if(ci>=l.t.length){
+          term.appendChild(document.createElement("br"));
+          term.scrollTop=term.scrollHeight;
+          setTimeout(typeLine,230+Math.random()*180);
+          return;
+        }
+        line.textContent=l.t.slice(0,ci+1);
+        if(!line.parentNode) term.appendChild(line);
+        term.scrollTop=term.scrollHeight;
+        ci++;
+        setTimeout(typeChar,16+Math.random()*20);
+      }
+      typeChar();
+    }
+    setTimeout(typeLine,800);
+  })();
+
+  /* ---- Reveal observer ---- */
+  const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealTargets=document.querySelectorAll(".section-head,.universe-card,.contact .section-kicker,.contact h2,.contact p,.contact .button,.hero .eyebrow,.hero-copy,.hero .actions");
+  if(!reduceMotion){
+    revealTargets.forEach(el=>el.classList.add("reveal"));
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:"0px 0px -35px 0px"});
+    revealTargets.forEach(el=>io.observe(el));
+  } else {
+    revealTargets.forEach(el=>el.classList.add("is-visible"));
+  }
+
+  if(!reduceMotion){
+    window._cardObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          window._cardObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.1,rootMargin:"0px 0px -30px 0px"});
+  }
+}
+
+/* ============================================================
+   3) SMOOTH MINIMAL CURSOR — ring + dot + soft ghost trail
    ============================================================ */
 (()=>{
   if(matchMedia("(pointer:coarse)").matches) return;
-  const cursor=document.getElementById("cursor");
+  const ring=document.getElementById("cursorRing");
   const dot=document.getElementById("cursorDot");
-  const trail=document.getElementById("trail");
-  let cx=innerWidth/2, cy=innerHeight/2;
-  let tx=cx, ty=cy;
-  let dx=cx, dy=cy;
-  let lastTrail=0;
-  const trails=[];
-  const MAX_TRAILS=14;
+  const ghost=document.getElementById("cursorGhost");
+  let cx=innerWidth/2,cy=innerHeight/2;   // ring position (lags)
+  let tx=cx,ty=cy;                          // target
+  let dx=cx,dy=cy;                          // dot position (snappy)
+  let gx=cx,gy=cy;                          // ghost (very slow)
 
-  addEventListener("pointermove",e=>{
-    tx=e.clientX; ty=e.clientY;
-  },{passive:true});
+  addEventListener("pointermove",e=>{tx=e.clientX;ty=e.clientY;},{passive:true});
 
   function loop(){
-    // outer ring lags behind, dot snaps
-    cx+=(tx-cx)*.18; cy+=(ty-cy)*.18;
-    dx+=(tx-dx)*.55; dy+=(ty-dy)*.55;
-    cursor.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;
+    // Smooth lag for ring
+    cx+=(tx-cx)*0.18; cy+=(ty-cy)*0.18;
+    // Dot snaps quickly
+    dx+=(tx-dx)*0.55; dy+=(ty-dy)*0.55;
+    // Ghost trails slowly
+    gx+=(tx-gx)*0.08; gy+=(ty-gy)*0.08;
+    ring.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;
     dot.style.transform=`translate(${dx}px,${dy}px) translate(-50%,-50%)`;
-
-    // trailing particles spawn along the path
-    const now=performance.now();
-    if(now-lastTrail>22){
-      lastTrail=now;
-      const t=document.createElement("div");
-      t.className="cosmic-trail";
-      const hue=Math.random()<.5?"#9be6ff":(Math.random()<.5?"#a78bfa":"#ff8acb");
-      t.style.background=hue;
-      t.style.left=dx+"px"; t.style.top=dy+"px";
-      t.style.opacity=.8;
-      t.style.transform=`translate(-50%,-50%) scale(${0.8+Math.random()*0.8})`;
-      document.body.appendChild(t);
-      trails.push({el:t,life:1,x:dx,y:dy,vx:(Math.random()-0.5)*0.5,vy:(Math.random()-0.5)*0.5});
-      if(trails.length>MAX_TRAILS){
-        const old=trails.shift();
-        if(old.el.parentNode) old.el.remove();
-      }
-    }
-    // animate trail particles (fade + drift)
-    for(let i=trails.length-1;i>=0;i--){
-      const p=trails[i];
-      p.life-=0.045;
-      p.x+=p.vx; p.y+=p.vy;
-      if(p.life<=0){
-        if(p.el.parentNode) p.el.remove();
-        trails.splice(i,1);
-      } else {
-        p.el.style.left=p.x+"px";
-        p.el.style.top=p.y+"px";
-        p.el.style.opacity=p.life*0.8;
-        p.el.style.transform=`translate(-50%,-50%) scale(${p.life*1.3})`;
-      }
-    }
+    ghost.style.transform=`translate(${gx}px,${gy}px) translate(-50%,-50%)`;
     requestAnimationFrame(loop);
   }
   loop();
 
-  // hover-state for interactive targets
   document.addEventListener("pointerover",e=>{
-    if(e.target.closest("[data-cursor-hover],a,button,input,.repo-card,.universe-card")) cursor.classList.add("hover");
+    if(e.target.closest("[data-cursor-hover],a,button,input,.repo-card,.universe-card")) ring.classList.add("hover");
   });
   document.addEventListener("pointerout",e=>{
-    if(e.target.closest("[data-cursor-hover],a,button,input,.repo-card,.universe-card")) cursor.classList.remove("hover");
+    if(e.target.closest("[data-cursor-hover],a,button,input,.repo-card,.universe-card")) ring.classList.remove("hover");
   });
-  // click-state
-  addEventListener("pointerdown",e=>{
-    cursor.classList.add("click");
-    spawnBurst(e.clientX,e.clientY);
-  });
-  addEventListener("pointerup",()=>cursor.classList.remove("click"));
 
-  /* Click burst — cosmic particle explosion */
-  function spawnBurst(x,y){
-    const colors=["#9be6ff","#a78bfa","#ff8acb","#f8d995","#ffffff"];
-    const n=18;
-    for(let i=0;i<n;i++){
-      const p=document.createElement("div");
-      p.className="burst-particle";
-      const size=3+Math.random()*5;
-      p.style.width=size+"px"; p.style.height=size+"px";
-      const c=colors[Math.floor(Math.random()*colors.length)];
-      p.style.background=c;
-      p.style.boxShadow=`0 0 ${size*2}px ${c}`;
-      p.style.left=x+"px"; p.style.top=y+"px";
-      p.style.transform="translate(-50%,-50%)";
-      document.body.appendChild(p);
-      const angle=(Math.PI*2*i)/n+Math.random()*0.3;
-      const speed=80+Math.random()*120;
-      const vx=Math.cos(angle)*speed;
-      const vy=Math.sin(angle)*speed;
-      const life=700+Math.random()*300;
-      const start=performance.now();
-      function step(t){
-        const k=(t-start)/life;
-        if(k>=1){ if(p.parentNode) p.remove(); return; }
-        const ease=1-Math.pow(1-k,3);
-        const px=x+vx*ease;
-        const py=y+vy*ease + (k*k)*60; // slight gravity
-        p.style.left=px+"px"; p.style.top=py+"px";
-        p.style.opacity=1-k;
-        p.style.transform=`translate(-50%,-50%) scale(${1-k*0.6})`;
-        requestAnimationFrame(step);
-      }
+  /* Click: ring shrinks, dot turns white, ripple + access flash */
+  const flashEl=document.getElementById("accessFlash");
+  const flashes=["ACCESS GRANTED","JACK IN","EXECUTE","GRANTED","OK","CONNECTED","0x00 OK"];
+  addEventListener("pointerdown",e=>{
+    ring.classList.add("click");
+    dot.classList.add("click");
+    spawnRipple(e.clientX,e.clientY);
+    if(Math.random()<0.35){
+      const word=flashes[Math.floor(Math.random()*flashes.length)];
+      flashEl.textContent=word;
+      flashEl.style.color=Math.random()<.6?"#ff2d4a":(Math.random()<.5?"#ffb000":"#ff5577");
+      flashEl.classList.remove("show");
+      void flashEl.offsetWidth;
+      flashEl.classList.add("show");
+    }
+  });
+  addEventListener("pointerup",()=>{
+    ring.classList.remove("click");
+    dot.classList.remove("click");
+  });
+
+  function spawnRipple(x,y){
+    const r=document.createElement("div");
+    r.className="click-ripple";
+    r.style.left=x+"px";r.style.top=y+"px";
+    r.style.width="8px";r.style.height="8px";
+    r.style.opacity=.8;
+    document.body.appendChild(r);
+    const start=performance.now();
+    function step(t){
+      const k=(t-start)/600;
+      if(k>=1){if(r.parentNode)r.remove();return;}
+      const size=8+k*55;
+      r.style.width=size+"px";r.style.height=size+"px";
+      r.style.opacity=(1-k)*0.7;
+      r.style.borderWidth=(2-k*1.5)+"px";
       requestAnimationFrame(step);
     }
+    requestAnimationFrame(step);
   }
 })();
 
 /* ============================================================
-   3) MAGNETIC BUTTONS — pull toward cursor
+   4) MAGNETIC BUTTONS
    ============================================================ */
 (()=>{
   if(matchMedia("(pointer:coarse)").matches) return;
-  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(reduce) return;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   document.querySelectorAll("[data-magnetic]").forEach(el=>{
     let raf=0;
     el.addEventListener("pointermove",e=>{
@@ -1435,7 +1485,7 @@ window.addEventListener("load",()=>{
       const my=e.clientY-(r.top+r.height/2);
       if(raf) cancelAnimationFrame(raf);
       raf=requestAnimationFrame(()=>{
-        el.style.transform=`translate(${mx*0.35}px,${my*0.45}px) translateY(-2px)`;
+        el.style.transform=`translate(${mx*0.35}px,${my*0.45}px)`;
       });
     });
     el.addEventListener("pointerleave",()=>{
@@ -1446,280 +1496,178 @@ window.addEventListener("load",()=>{
 })();
 
 /* ============================================================
-   4) HERO TITLE — letter-by-letter stagger + chromatic glow
+   5) MATRIX RAIN — 3 red layers
    ============================================================ */
 (()=>{
-  const title=document.getElementById("heroTitle");
-  if(!title) return;
-  // Wrap each character in a span. Preserve the inner <span> (unknown.) too.
-  function wrapText(node){
-    if(node.nodeType===3){
-      const frag=document.createDocumentFragment();
-      const text=node.textContent;
-      for(let i=0;i<text.length;i++){
-        const ch=text[i];
-        if(ch===" "){ frag.appendChild(document.createTextNode(" ")); continue; }
-        const span=document.createElement("span");
-        span.className="char";
-        span.textContent=ch;
-        span.style.animationDelay=(100+i*45)+"ms";
-        frag.appendChild(span);
-      }
-      node.parentNode.replaceChild(frag,node);
-    } else if(node.nodeType===1){
-      [...node.childNodes].forEach(wrapText);
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce) return;
+  const chars="01ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ#@$%&*+=<>{}[]/\\|".split("");
+  const palette=["#ff2d4a","#ff2d4a","#ff2d4a","#ff2d4a","#ff2d4a","#ff5577","#ffb000","#f0d8d8"];
+
+  function setup(canvasId,fontSize,speed,density,alpha){
+    const canvas=document.getElementById(canvasId);
+    if(!canvas) return;
+    const ctx=canvas.getContext("2d");
+    let w=0,h=0,columns=0,drops=[];
+    function resize(){
+      w=innerWidth;h=innerHeight;
+      canvas.width=w;canvas.height=h;
+      columns=Math.ceil(w/fontSize);
+      drops=Array(columns).fill(0).map(()=>Math.random()*-h);
     }
-  }
-  wrapText(title);
-  // Add glow class to the chars inside the gradient span
-  setTimeout(()=>{
-    title.querySelectorAll("span span.char, .char").forEach((c,i)=>{
-      if(i%3===0) c.classList.add("glow");
+    resize();
+    addEventListener("resize",resize,{passive:true});
+    let last=0,rafId=null;
+    function draw(t){
+      if(document.hidden){rafId=requestAnimationFrame(draw);return;}
+      const dt=last?t-last:16;last=t;
+      ctx.fillStyle="rgba(10,4,5,"+(.06+speed*.04)+")";
+      ctx.fillRect(0,0,w,h);
+      ctx.font=fontSize+"px 'Share Tech Mono', monospace";
+      for(let i=0;i<columns;i++){
+        if(Math.random()>density) continue;
+        const ch=chars[Math.floor(Math.random()*chars.length)];
+        const col=palette[Math.floor(Math.random()*palette.length)];
+        const x=i*fontSize;
+        const y=drops[i];
+        ctx.fillStyle=col;
+        ctx.shadowColor=col;
+        ctx.shadowBlur=8*alpha;
+        ctx.globalAlpha=alpha;
+        ctx.fillText(ch,x,y);
+        ctx.shadowBlur=0;
+        ctx.globalAlpha=alpha*0.5;
+        ctx.fillStyle=col;
+        for(let k=1;k<4;k++){
+          if(y-k*fontSize>0){
+            const tch=chars[Math.floor(Math.random()*chars.length)];
+            ctx.fillText(tch,x,y-k*fontSize);
+          }
+        }
+        drops[i]+=fontSize*speed*dt*0.06;
+        if(drops[i]>h && Math.random()>0.975){
+          drops[i]=Math.random()*-100;
+        }
+      }
+      ctx.globalAlpha=1;
+      rafId=requestAnimationFrame(draw);
+    }
+    rafId=requestAnimationFrame(draw);
+    document.addEventListener("visibilitychange",()=>{
+      if(document.hidden){if(rafId)cancelAnimationFrame(rafId);last=0;}
+      else{last=0;rafId=requestAnimationFrame(draw);}
     });
-  },1000);
+  }
+  setup("matrix1",16,1.0,0.85,0.7);
+  setup("matrix2",20,1.5,0.5,0.35);
+  setup("matrix3",14,0.6,0.4,0.18);
 })();
 
 /* ============================================================
-   5) 3D GALAXY — Three.js spiral with shader points
+   6) SYSTEM HUD — live uptime/IP/latency
+   ============================================================ */
+(()=>{
+  const uptimeEl=document.getElementById("hudUptime");
+  const ipEl=document.getElementById("hudIp");
+  const latEl=document.getElementById("hudLat");
+  const startTime=Date.now();
+  function pad(n){return String(n).padStart(2,"0");}
+  function update(){
+    const s=Math.floor((Date.now()-startTime)/1000);
+    const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;
+    if(uptimeEl) uptimeEl.textContent=`${pad(h)}:${pad(m)}:${pad(sec)}`;
+    if(latEl) latEl.textContent=(20+Math.floor(Math.random()*40))+"ms";
+  }
+  if(ipEl){
+    ipEl.textContent=`10.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`;
+  }
+  setInterval(update,1000);
+  update();
+})();
+
+/* ============================================================
+   7) SYSTEM LOG — scrolling red team operations
+   ============================================================ */
+(()=>{
+  const log=document.getElementById("sysLog");
+  if(!log) return;
+  const events=[
+    {t:"CONN",c:"ok",m:"tunnel established"},
+    {t:"AUTH",c:"ok",m:"operator verified"},
+    {t:"SCAN",c:"out",m:"subnet 10.0.0.0/8"},
+    {t:"PORT",c:"ok",m:"22/ssh open"},
+    {t:"PORT",c:"ok",m:"443/https open"},
+    {t:"PKT",c:"out",m:"1284 rx / 902 tx"},
+    {t:"ENC",c:"ok",m:"aes-256-gcm rotated"},
+    {t:"ALRT",c:"warn",m:"port scan detected"},
+    {t:"DROP",c:"err",m:"malformed packet"},
+    {t:"FW",c:"ok",m:"ruleset updated"},
+    {t:"DNS",c:"out",m:"resolving unknown"},
+    {t:"TOR",c:"warn",m:"circuit rebuilt"},
+    {t:"SYNC",c:"ok",m:"repos updated"},
+    {t:"EXEC",c:"ok",m:"./recon complete"},
+    {t:"HBT",c:"ok",m:"heartbeat 0x00"},
+    {t:"IPT",c:"warn",m:"rate limit: 1.2.3.4"},
+    {t:"KEY",c:"ok",m:"ed25519 rotated"},
+    {t:"VPN",c:"ok",m:"tunnel stable"},
+    {t:"MAC",c:"ok",m:"address randomized"},
+    {t:"IDS",c:"warn",m:"evasion active"}
+  ];
+  function pad(n){return String(n).padStart(2,"0");}
+  function add(){
+    const now=new Date();
+    const ts=`${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+    const e=events[Math.floor(Math.random()*events.length)];
+    const line=document.createElement("div");
+    line.className="line";
+    line.innerHTML=`<span class="ts">[${ts}]</span> <span class="${e.c}">${e.t}</span> ${e.m}`;
+    log.appendChild(line);
+    while(log.childNodes.length>9) log.removeChild(log.firstChild);
+  }
+  setInterval(add,1200);
+  for(let i=0;i<5;i++) setTimeout(add,i*200);
+})();
+
+/* ============================================================
+   8) HEX PARTICLES
    ============================================================ */
 (()=>{
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(typeof THREE==="undefined" || reduce) return;
-  const canvas=document.getElementById("galaxy");
-  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:"high-performance"});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.6));
-  renderer.setSize(innerWidth,innerHeight);
-  renderer.setClearColor(0x000000,0);
-
-  const scene=new THREE.Scene();
-  scene.fog=new THREE.FogExp2(0x020308,0.0008);
-
-  const camera=new THREE.PerspectiveCamera(70,innerWidth/innerHeight,0.1,2000);
-  camera.position.set(0,40,180);
-  camera.lookAt(0,0,0);
-
-  /* ---- Build spiral galaxy points ---- */
-  const COUNT=60000;
-  const ARMS=4;
-  const RADIUS=180;
-  const SPIN=1.2;
-  const RANDOMNESS=0.55;
-  const positions=new Float32Array(COUNT*3);
-  const colors=new Float32Array(COUNT*3);
-  const sizes=new Float32Array(COUNT);
-
-  const innerColor=new THREE.Color(0xfff4e6);   // warm white core
-  const outerColor=new THREE.Color(0x4d7eff);   // cool blue rim
-  const dustColor=new THREE.Color(0xff7acb);    // pink dust
-
-  for(let i=0;i<COUNT;i++){
-    const i3=i*3;
-    const r=Math.pow(Math.random(),0.6)*RADIUS;
-    const branch=(i%ARMS)/ARMS*Math.PI*2;
-    const spinAngle=r*SPIN*0.018;
-    const rand=new THREE.Vector3(
-      (Math.random()-0.5)*RANDOMNESS*r*0.4,
-      (Math.random()-0.5)*RANDOMNESS*r*0.18,
-      (Math.random()-0.5)*RANDOMNESS*r*0.4
-    );
-    positions[i3]=Math.cos(branch+spinAngle)*r+rand.x;
-    positions[i3+1]=rand.y;
-    positions[i3+2]=Math.sin(branch+spinAngle)*r+rand.z;
-
-    const mixed=innerColor.clone().lerp(outerColor,r/RADIUS);
-    if(Math.random()<0.12) mixed.lerp(dustColor,0.5);
-    colors[i3]=mixed.r; colors[i3+1]=mixed.g; colors[i3+2]=mixed.b;
-    sizes[i]=Math.random()*2+0.4;
-  }
-
-  const geometry=new THREE.BufferGeometry();
-  geometry.setAttribute("position",new THREE.BufferAttribute(positions,3));
-  geometry.setAttribute("color",new THREE.BufferAttribute(colors,3));
-  geometry.setAttribute("size",new THREE.BufferAttribute(sizes,1));
-
-  const material=new THREE.ShaderMaterial({
-    uniforms:{ uTime:{value:0}, uPixelRatio:{value:renderer.getPixelRatio()} },
-    vertexShader:`
-      attribute float size;
-      varying vec3 vColor;
-      uniform float uTime;
-      uniform float uPixelRatio;
-      void main(){
-        vColor=color;
-        vec3 pos=position;
-        // slow rotation around y
-        float angle=uTime*0.05+length(pos.xz)*0.004;
-        float c=cos(angle),s=sin(angle);
-        pos.xz=mat2(c,-s,s,c)*pos.xz;
-        vec4 mv=modelViewMatrix*vec4(pos,1.0);
-        gl_Position=projectionMatrix*mv;
-        gl_PointSize=size*uPixelRatio*(300.0/-mv.z);
-      }
-    `,
-    fragmentShader:`
-      varying vec3 vColor;
-      void main(){
-        float d=length(gl_PointCoord-vec2(0.5));
-        if(d>0.5) discard;
-        float alpha=smoothstep(0.5,0.0,d);
-        // soft glow core
-        float core=smoothstep(0.18,0.0,d);
-        vec3 col=vColor+core*0.4;
-        gl_FragColor=vec4(col,alpha*0.9);
-      }
-    `,
-    vertexColors:true,
-    transparent:true,
-    depthWrite:false,
-    blending:THREE.AdditiveBlending
-  });
-
-  const galaxy=new THREE.Points(geometry,material);
-  galaxy.rotation.x=Math.PI*0.18;
-  scene.add(galaxy);
-
-  /* ---- Distant background star sphere ---- */
-  const bgCount=3000;
-  const bgPos=new Float32Array(bgCount*3);
-  const bgCol=new Float32Array(bgCount*3);
-  for(let i=0;i<bgCount;i++){
-    const i3=i*3;
-    const r=400+Math.random()*400;
-    const theta=Math.random()*Math.PI*2;
-    const phi=Math.acos(2*Math.random()-1);
-    bgPos[i3]=r*Math.sin(phi)*Math.cos(theta);
-    bgPos[i3+1]=r*Math.sin(phi)*Math.sin(theta);
-    bgPos[i3+2]=r*Math.cos(phi);
-    const c=new THREE.Color().setHSL(0.55+Math.random()*0.1,0.4,0.5+Math.random()*0.4);
-    bgCol[i3]=c.r;bgCol[i3+1]=c.g;bgCol[i3+2]=c.b;
-  }
-  const bgGeo=new THREE.BufferGeometry();
-  bgGeo.setAttribute("position",new THREE.BufferAttribute(bgPos,3));
-  bgGeo.setAttribute("color",new THREE.BufferAttribute(bgCol,3));
-  const bgMat=new THREE.PointsMaterial({size:1.2,vertexColors:true,transparent:true,opacity:0.6,depthWrite:false,blending:THREE.AdditiveBlending});
-  const bgStars=new THREE.Points(bgGeo,bgMat);
-  scene.add(bgStars);
-
-  /* ---- Mouse parallax + scroll-driven camera flight ---- */
-  let mouseX=0,mouseY=0;
-  let targetCamY=40,targetCamZ=180,targetCamX=0;
-  let curCamY=40,curCamZ=180,curCamX=0;
-  let scrollP=0;
-  addEventListener("pointermove",e=>{
-    mouseX=(e.clientX/innerWidth-0.5);
-    mouseY=(e.clientY/innerHeight-0.5);
-  },{passive:true});
-  addEventListener("scroll",()=>{
-    const max=Math.max(1,document.documentElement.scrollHeight-innerHeight);
-    scrollP=Math.max(0,Math.min(1,scrollY/max));
-  },{passive:true});
-
-  addEventListener("resize",()=>{
-    renderer.setSize(innerWidth,innerHeight);
-    camera.aspect=innerWidth/innerHeight;
-    camera.updateProjectionMatrix();
-  });
-
-  let last=0;
-  function render(t){
-    const dt=t-last; last=t;
-    material.uniforms.uTime.value=t*0.001;
-    galaxy.rotation.y+=0.0008;
-    bgStars.rotation.y-=0.00015;
-
-    // Scroll drives camera flight through the galaxy
-    // Start above, dive toward center plane as you scroll down, then rise past the rim
-    const phase=scrollP;
-    targetCamY = 40 - phase*70 + Math.sin(t*0.0003)*4;
-    targetCamZ = 180 - phase*120;
-    targetCamX = Math.sin(phase*Math.PI)*40 + mouseX*30;
-
-    curCamX+=(targetCamX-curCamX)*0.04;
-    curCamY+=(targetCamY-curCamY)*0.04;
-    curCamZ+=(targetCamZ-curCamZ)*0.04;
-    camera.position.x=curCamX;
-    camera.position.y=curCamY + mouseY*15;
-    camera.position.z=curCamZ;
-    camera.lookAt(0,Math.sin(t*0.0004)*5,0);
-
-    renderer.render(scene,camera);
-    requestAnimationFrame(render);
-  }
-  requestAnimationFrame(render);
-
-  // pause when tab is hidden
-  let rafId=null;
-  document.addEventListener("visibilitychange",()=>{
-    if(document.hidden){
-      if(rafId) cancelAnimationFrame(rafId);
-    } else {
-      last=0;
-      rafId=requestAnimationFrame(render);
+  if(reduce) return;
+  const hexChars="0123456789ABCDEF";
+  function spawn(){
+    const p=document.createElement("div");
+    p.className="hex-particle";
+    let s="";
+    const len=4+Math.floor(Math.random()*8);
+    for(let i=0;i<len;i++) s+=hexChars[Math.floor(Math.random()*16)];
+    p.textContent="0x"+s;
+    p.style.left=Math.random()*innerWidth+"px";
+    p.style.top=innerHeight+20+"px";
+    p.style.fontSize=(8+Math.random()*6)+"px";
+    p.style.color=Math.random()<.7?"#ff2d4a":(Math.random()<.5?"#ffb000":"#ff5577");
+    document.body.appendChild(p);
+    const dur=8000+Math.random()*6000;
+    const start=performance.now();
+    const startX=parseFloat(p.style.left);
+    function step(t){
+      const k=(t-start)/dur;
+      if(k>=1){if(p.parentNode)p.remove();return;}
+      const y=innerHeight+20-k*(innerHeight+40);
+      const x=startX+Math.sin(k*Math.PI*2)*15;
+      p.style.top=y+"px";
+      p.style.left=x+"px";
+      p.style.opacity=k<0.1?k*10:(k>0.85?(1-k)*6.7:1);
+      requestAnimationFrame(step);
     }
-  });
+    requestAnimationFrame(step);
+  }
+  setInterval(spawn,650);
+  for(let i=0;i<8;i++) setTimeout(spawn,i*200);
 })();
 
 /* ============================================================
-   6) FALLBACK 2D STARFIELD (subtle depth on top of galaxy)
-   ============================================================ */
-(()=>{
-  const canvas=document.getElementById("cosmos");
-  if(!canvas) return;
-  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const ctx=canvas.getContext("2d");
-  let stars=[],w=0,h=0,raf=0,lastFrame=0;
-  function resetStar(s){
-    s.x=(Math.random()*2-1)*1.35;
-    s.y=(Math.random()*2-1)*1.35;
-    s.z=Math.random()*.98+.025;
-    s.p=Math.random()*Math.PI*2;
-    s.c=Math.random()<.16?"178,224,255":Math.random()<.38?"127,207,255":"242,248,255";
-    return s;
-  }
-  function seed(){
-    const dpr=Math.min(window.devicePixelRatio||1,1.5);
-    w=innerWidth;h=innerHeight;
-    canvas.width=w*dpr;canvas.height=h*dpr;
-    canvas.style.width=w+"px";canvas.style.height=h+"px";
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    const count=Math.min(360,Math.max(180,Math.floor(w*h/3500)));
-    stars=Array.from({length:count},()=>resetStar({}));
-  }
-  function draw(t){
-    if(!w||!h){raf=requestAnimationFrame(draw);return;}
-    const dt=Math.min(32,lastFrame?t-lastFrame:16);lastFrame=t;
-    ctx.clearRect(0,0,w,h);
-    const cx=w*.5,cy=h*.49,focal=Math.min(w,h)*.6;
-    const pulse=reduce?.06:(.5+.5*Math.sin(t*.00034));
-    const velocity=reduce?.000018:(.00018+pulse*.00028);
-    for(const s of stars){
-      const oldZ=s.z;s.z-=velocity*dt;
-      if(s.z<=.018){resetStar(s);continue;}
-      const x=cx+s.x*focal/s.z,y=cy+s.y*focal/s.z;
-      if(x<-45||x>w+45||y<-45||y>h+45){resetStar(s);continue;}
-      const radius=Math.min(2.6,Math.max(.4,(1-s.z)*1.8));
-      const alpha=Math.min(.9,(.2+(1-s.z)*.78)*(.84+.16*Math.sin(t*.0018+s.p)));
-      if(!reduce&&s.z<.78){
-        const px=cx+s.x*focal/oldZ,py=cy+s.y*focal/oldZ;
-        ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(x,y);
-        ctx.strokeStyle="rgba("+s.c+","+Math.min(.5,alpha*.4)+")";
-        ctx.lineWidth=radius*0.6;ctx.stroke();
-      }
-      ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);
-      ctx.fillStyle="rgba("+s.c+","+alpha+")";ctx.fill();
-    }
-    raf=requestAnimationFrame(draw);
-  }
-  seed();raf=requestAnimationFrame(draw);
-  addEventListener("resize",seed,{passive:true});
-  document.addEventListener("visibilitychange",()=>{
-    if(document.hidden){cancelAnimationFrame(raf);lastFrame=0;}
-    else{lastFrame=0;raf=requestAnimationFrame(draw);}
-  });
-})();
-
-/* ============================================================
-   7) MENU, YEAR, REPO LOADING (preserved from original)
+   9) MENU + YEAR
    ============================================================ */
 const menu=document.getElementById("menu"),links=document.getElementById("links");
 menu.addEventListener("click",()=>{
@@ -1734,26 +1682,28 @@ links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
 }));
 document.getElementById("year").textContent=String(new Date().getFullYear());
 
-const USER="arcticfox-cyber",CACHE="arcticfox_universe_repos_v4",TTL=600000;
+/* ============================================================
+   10) GITHUB REPO LOADING (preserved)
+   ============================================================ */
+const USER="arcticfox-cyber",CACHE="arcticfox_redteam_v1",TTL=600000;
 const grid=document.getElementById("repoGrid"),status=document.getElementById("repoStatus"),search=document.getElementById("repoSearch");
 let repos=[];
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function date(v){const d=new Date(v);return Number.isNaN(d.getTime())?"Date unavailable":"Updated "+d.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});}
+function date(v){const d=new Date(v);return Number.isNaN(d.getTime())?"unknown":"updated "+d.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});}
 function render(){
   const q=search.value.trim().toLowerCase();
   const items=repos.filter(r=>(r.name+" "+(r.description||"")+" "+(r.language||"")).toLowerCase().includes(q));
   if(!items.length){
-    grid.innerHTML='<div class="repo-empty">'+(repos.length?"No missions match your search.":"No public repositories found.")+"</div>";
+    grid.innerHTML='<div class="repo-empty">'+(repos.length?"// no operations match your grep.":"// no public repositories found.")+"</div>";
     return;
   }
-  grid.innerHTML=items.map(r=>'<article class="repo-card reveal" data-cursor-hover><div class="repo-top"><span class="repo-language">'+esc(r.language||"General")+'</span><span class="repo-type">PUBLIC MISSION</span></div><h3>'+esc(r.name)+'</h3><p>'+esc(r.description||"A new project in the Arctic Fox universe.")+'</p><div class="repo-meta"><span>\u2605 '+Number(r.stargazers_count||0)+'</span><span>\u2386 '+Number(r.forks_count||0)+'</span><span>'+esc(date(r.updated_at))+'</span><a class="source" href="'+esc(r.html_url)+'" data-portal="'+esc(r.html_url)+'" data-cursor-hover>EXPLORE \u2197</a></div></article>').join("");
-  // observe newly added cards for reveal + tilt
+  grid.innerHTML=items.map(r=>'<article class="repo-card reveal" data-cursor-hover><div class="repo-top"><span class="repo-language">'+esc(r.language||"general")+'</span><span class="repo-type">PUBLIC</span></div><h3>'+esc(r.name)+'</h3><p>'+esc(r.description||"A new operation in the Arctic Fox dossier.")+'</p><div class="repo-meta"><span>\u2605 '+Number(r.stargazers_count||0)+'</span><span>\u2386 '+Number(r.forks_count||0)+'</span><span>'+esc(date(r.updated_at))+'</span><a class="source" href="'+esc(r.html_url)+'" data-portal="'+esc(r.html_url)+'" data-cursor-hover>EXPLORE \u2197</a></div></article>').join("");
   observeRevealCards();
   setupCardTilt();
 }
 function apply(items,cached){
   repos=items.slice().sort((a,b)=>new Date(b.updated_at)-new Date(a.updated_at));
-  status.innerHTML="<strong>"+repos.length+" PUBLIC PROJECTS</strong> · "+(cached?"SAVED DATA":"LIVE GITHUB CONNECTION");
+  status.innerHTML="<span class='blink'></span><strong>"+repos.length+" OPERATIONS</strong> · "+(cached?"SAVED DATA":"LIVE GITHUB");
   render();
 }
 search.addEventListener("input",render);
@@ -1775,10 +1725,10 @@ async function load(){
     apply(all,false);
   }catch(e){
     if(!repos.length){
-      status.textContent="GITHUB CONNECTION UNAVAILABLE";
-      grid.innerHTML='<div class="repo-empty">The project feed is temporarily offline. Please refresh in a little while.</div>';
+      status.innerHTML="<span class='blink'></span>GITHUB CONNECTION UNAVAILABLE";
+      grid.innerHTML='<div class="repo-empty">// THE OPERATION FEED IS TEMPORARILY OFFLINE. PLEASE REFRESH IN A LITTLE WHILE.</div>';
     } else {
-      status.textContent="SHOWING SAVED PROJECT DATA · LIVE REFRESH UNAVAILABLE";
+      status.innerHTML="<span class='blink'></span>SHOWING SAVED DATA · LIVE REFRESH UNAVAILABLE";
     }
   }
 }
@@ -1786,56 +1736,37 @@ load();
 setInterval(load,TTL);
 
 /* ============================================================
-   8) REVEAL OBSERVER (incl. dynamically injected repo cards)
+   11) CARD REVEAL OBSERVER (dynamic)
    ============================================================ */
-const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
-const revealTargetsStatic=document.querySelectorAll(".section-head,.universe-card,.contact .section-kicker,.contact h2,.contact p,.contact .button,.hero .eyebrow,.hero-copy,.hero .actions");
-if(!reduceMotion){
-  revealTargetsStatic.forEach(el=>el.classList.add("reveal"));
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("is-visible");
-        io.unobserve(entry.target);
-      }
-    });
-  },{threshold:.12,rootMargin:"0px 0px -35px 0px"});
-  revealTargetsStatic.forEach(el=>io.observe(el));
-} else {
-  revealTargetsStatic.forEach(el=>el.classList.add("is-visible"));
-}
-
-let cardObserver=null;
 function observeRevealCards(){
-  if(reduceMotion){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){
     document.querySelectorAll("#repoGrid .repo-card").forEach(c=>c.classList.add("is-visible"));
     return;
   }
-  if(!cardObserver){
-    cardObserver=new IntersectionObserver(entries=>{
+  if(!window._cardObserver){
+    window._cardObserver=new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
           entry.target.classList.add("is-visible");
-          cardObserver.unobserve(entry.target);
+          window._cardObserver.unobserve(entry.target);
         }
       });
     },{threshold:.1,rootMargin:"0px 0px -30px 0px"});
   }
-  document.querySelectorAll("#repoGrid .repo-card:not(.is-visible)").forEach(c=>cardObserver.observe(c));
+  document.querySelectorAll("#repoGrid .repo-card:not(.is-visible)").forEach(c=>window._cardObserver.observe(c));
 }
 
 /* ============================================================
-   9) 3D CARD TILT — pointer-driven depth
+   12) CARD 3D TILT
    ============================================================ */
 function setupCardTilt(){
-  if(matchMedia("(pointer:coarse)").matches || reduceMotion) return;
+  if(matchMedia("(pointer:coarse)").matches) return;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const tilt=(card,e)=>{
     const r=card.getBoundingClientRect();
     const x=(e.clientX-r.left)/r.width;
     const y=(e.clientY-r.top)/r.height;
-    card.style.setProperty("--card-x",(x*100)+"%");
-    card.style.setProperty("--card-y",(y*100)+"%");
-    card.style.transform=`perspective(900px) rotateX(${(.5-y)*6}deg) rotateY(${(x-.5)*7}deg) translateY(-5px)`;
+    card.style.transform=`perspective(900px) rotateX(${(.5-y)*5}deg) rotateY(${(x-.5)*6}deg)`;
   };
   document.querySelectorAll(".repo-card,.universe-card").forEach(card=>{
     if(card._tiltBound) return;
@@ -1847,22 +1778,7 @@ function setupCardTilt(){
 setupCardTilt();
 
 /* ============================================================
-   10) POINTER-PARALLAX on hero planet system
-   ============================================================ */
-(()=>{
-  if(matchMedia("(pointer:coarse)").matches || reduceMotion) return;
-  const visual=document.getElementById("planetSystem");
-  if(!visual) return;
-  addEventListener("pointermove",e=>{
-    const dx=(e.clientX/innerWidth-.5)*14;
-    const dy=(e.clientY/innerHeight-.5)*-10;
-    visual.style.transform=`translate3d(${dx}px,${dy}px,0) rotate(${dx*.18}deg)`;
-  },{passive:true});
-  document.addEventListener("pointerleave",()=>{visual.style.transform="translate3d(0,0,0)";});
-})();
-
-/* ============================================================
-   11) SCROLL PROGRESS + HEADER SCROLLED STATE
+   13) SCROLL PROGRESS + HEADER STATE
    ============================================================ */
 let scrollTick=false;
 addEventListener("scroll",()=>{
@@ -1878,133 +1794,7 @@ addEventListener("scroll",()=>{
 },{passive:true});
 
 /* ============================================================
-   12) HEAVY ANIMATION LAYER — black hole, hyperdrive, supernova,
-       energy pulses, constellation web
-   ============================================================ */
-(()=>{
-  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(reduce) return;
-
-  /* ---- Hyperdrive: trigger on fast scroll ---- */
-  const hyper=document.getElementById("hyperdrive");
-  const blackHole=document.getElementById("blackHole");
-  let lastScrollY=scrollY,lastScrollT=performance.now();
-  let hyperTimer=0;
-  addEventListener("scroll",()=>{
-    const now=performance.now();
-    const dt=Math.max(8,now-lastScrollT);
-    const dy=Math.abs(scrollY-lastScrollY);
-    const velocity=dy/dt; // px per ms
-    lastScrollY=scrollY;lastScrollT=now;
-    if(velocity>2.2){
-      if(!hyper.classList.contains("active")) hyper.classList.add("active");
-      clearTimeout(hyperTimer);
-      hyperTimer=setTimeout(()=>hyper.classList.remove("active"),280);
-    }
-    // Black hole appears when we are deep in the page (galaxy core approached)
-    const max=Math.max(1,document.documentElement.scrollHeight-innerHeight);
-    const p=scrollY/max;
-    if(p>0.35) blackHole.classList.add("active");
-    else blackHole.classList.remove("active");
-  },{passive:true});
-
-  /* ---- Supernova flash — random cosmic bursts ---- */
-  const nova=document.getElementById("supernova");
-  function fireNova(){
-    const x=10+Math.random()*80;
-    const y=10+Math.random()*60;
-    nova.style.setProperty("--nova-x",x+"%");
-    nova.style.setProperty("--nova-y",y+"%");
-    nova.classList.remove("flash");
-    void nova.offsetWidth; // reflow to restart animation
-    nova.classList.add("flash");
-    firePulse();
-  }
-  function scheduleNova(){
-    const delay=8000+Math.random()*12000; // 8-20s
-    setTimeout(()=>{fireNova();scheduleNova();},delay);
-  }
-  setTimeout(scheduleNova,4000);
-
-  /* ---- Energy pulse waves ---- */
-  const pulse=document.getElementById("energyPulse");
-  let pulseTimer=0;
-  function firePulse(){
-    const clone=pulse.cloneNode(false);
-    pulse.parentNode.appendChild(clone);
-    clone.classList.add("fire");
-    setTimeout(()=>clone.remove(),4200);
-  }
-  pulseTimer=setInterval(firePulse,6500);
-
-  /* ---- Constellation web: connect bright stars on a canvas ---- */
-  const cCanvas=document.getElementById("constellations");
-  const cCtx=cCanvas.getContext("2d");
-  let cW=0,cH=0,cStars=[];
-  function seedConst(){
-    const dpr=Math.min(window.devicePixelRatio||1,1.5);
-    cW=innerWidth;cH=innerHeight;
-    cCanvas.width=cW*dpr;cCanvas.height=cH*dpr;
-    cCanvas.style.width=cW+"px";cCanvas.style.height=cH+"px";
-    cCtx.setTransform(dpr,0,0,dpr,0,0);
-    const n=Math.min(80,Math.max(40,Math.floor(cW*cH/22000)));
-    cStars=Array.from({length:n},()=>({
-      x:Math.random()*cW,
-      y:Math.random()*cH,
-      r:Math.random()*1.2+0.4,
-      vx:(Math.random()-0.5)*0.15,
-      vy:(Math.random()-0.5)*0.15,
-      tw:Math.random()*Math.PI*2
-    }));
-  }
-  function drawConst(t){
-    if(!cW){requestAnimationFrame(drawConst);return;}
-    cCtx.clearRect(0,0,cW,cH);
-    for(const s of cStars){
-      s.x+=s.vx;s.y+=s.vy;s.tw+=0.02;
-      if(s.x<0||s.x>cW) s.vx*=-1;
-      if(s.y<0||s.y>cH) s.vy*=-1;
-    }
-    const maxDist=140;
-    for(let i=0;i<cStars.length;i++){
-      for(let j=i+1;j<cStars.length;j++){
-        const a=cStars[i],b=cStars[j];
-        const dx=a.x-b.x,dy=a.y-b.y;
-        const d=Math.sqrt(dx*dx+dy*dy);
-        if(d<maxDist){
-          const alpha=(1-d/maxDist)*0.18*(0.6+0.4*Math.sin(t*0.001+a.tw));
-          cCtx.strokeStyle="rgba(155,230,255,"+alpha.toFixed(3)+")";
-          cCtx.lineWidth=0.6;
-          cCtx.beginPath();cCtx.moveTo(a.x,a.y);cCtx.lineTo(b.x,b.y);cCtx.stroke();
-        }
-      }
-    }
-    for(const s of cStars){
-      const tw=0.5+0.5*Math.sin(s.tw);
-      const alpha=0.4+tw*0.6;
-      cCtx.fillStyle="rgba(200,235,255,"+alpha.toFixed(3)+")";
-      cCtx.beginPath();cCtx.arc(s.x,s.y,s.r,0,Math.PI*2);cCtx.fill();
-      if(s.r>0.9){
-        cCtx.fillStyle="rgba(155,230,255,"+(alpha*0.18).toFixed(3)+")";
-        cCtx.beginPath();cCtx.arc(s.x,s.y,s.r*3.5,0,Math.PI*2);cCtx.fill();
-      }
-    }
-    requestAnimationFrame(drawConst);
-  }
-  seedConst();
-  requestAnimationFrame(drawConst);
-  addEventListener("resize",seedConst,{passive:true});
-
-  document.addEventListener("visibilitychange",()=>{
-    if(document.hidden){clearInterval(pulseTimer);}
-    else{pulseTimer=setInterval(firePulse,6500);}
-  });
-})();
-
-/* ============================================================
-   13) IN-TAB PORTAL NAVIGATION — external links open as a box
-       overlay inside the same tab, then navigate. Never opens
-       a new tab.
+   14) PORTAL NAVIGATION (in-tab box)
    ============================================================ */
 (()=>{
   const modal=document.getElementById("portalModal");
@@ -2013,31 +1803,22 @@ addEventListener("scroll",()=>{
   const cancelBtn=document.getElementById("portalCancel");
   let jumpTimeout=0;
   let isJumping=false;
-
   function prettyUrl(u){
-    try{
-      const url=new URL(u);
-      return url.hostname.replace(/^www\./,"")+url.pathname;
-    }catch(e){return u;}
+    try{const url=new URL(u);return url.hostname.replace(/^www\./,"")+url.pathname;}
+    catch(e){return u;}
   }
-
   function openPortal(url){
     if(isJumping) return;
     isJumping=true;
     destEl.textContent=prettyUrl(url);
-    statusEl.textContent="CHARTING COORDINATES \u00b7 CALIBRATING NAVIGATION";
+    statusEl.textContent="CHARTING COORDINATES · CALIBRATING";
     modal.classList.add("open");
     modal.setAttribute("aria-hidden","false");
     document.body.style.overflow="hidden";
-
-    setTimeout(()=>{ if(isJumping) statusEl.textContent="WARP DRIVE ENGAGED \u00b7 LOCKING ONTO TARGET"; },700);
-    setTimeout(()=>{ if(isJumping) statusEl.textContent="FINAL APPROACH \u00b7 ENTERING HYPERSPACE"; },1300);
-
-    jumpTimeout=setTimeout(()=>{
-      window.location.href=url;
-    },1900);
+    setTimeout(()=>{ if(isJumping) statusEl.textContent="WARP DRIVE ENGAGED · LOCKING ONTO TARGET"; },700);
+    setTimeout(()=>{ if(isJumping) statusEl.textContent="FINAL APPROACH · JACKING IN"; },1300);
+    jumpTimeout=setTimeout(()=>{ window.location.href=url; },1900);
   }
-
   function closePortal(){
     if(!isJumping) return;
     isJumping=false;
@@ -2046,14 +1827,8 @@ addEventListener("scroll",()=>{
     modal.setAttribute("aria-hidden","true");
     document.body.style.overflow="";
   }
-
   cancelBtn.addEventListener("click",e=>{e.preventDefault();closePortal();});
-
-  addEventListener("keydown",e=>{
-    if(e.key==="Escape" && isJumping){closePortal();}
-  });
-
-  // Intercept ALL clicks on links carrying data-portal
+  addEventListener("keydown",e=>{ if(e.key==="Escape" && isJumping) closePortal(); });
   document.addEventListener("click",e=>{
     const link=e.target.closest("[data-portal]");
     if(!link) return;
@@ -2065,7 +1840,7 @@ addEventListener("scroll",()=>{
 })();
 
 /* ============================================================
-   14) FULL UNIVERSE OVERVIEW MODAL — open/close + live stats
+   15) DOSSIER / UNIVERSE MODAL
    ============================================================ */
 (()=>{
   const modal=document.getElementById("universeModal");
@@ -2074,7 +1849,6 @@ addEventListener("scroll",()=>{
   const statRepos=document.getElementById("umStatRepos");
   const statStars=document.getElementById("umStatStars");
   const statForks=document.getElementById("umStatForks");
-
   function open(){
     modal.classList.add("open");
     modal.setAttribute("aria-hidden","false");
@@ -2088,14 +1862,10 @@ addEventListener("scroll",()=>{
         statStars.textContent=stars;
         statForks.textContent=forks;
       } else {
-        statRepos.textContent="\u2014";
-        statStars.textContent="\u2014";
-        statForks.textContent="\u2014";
+        statRepos.textContent="\u2014";statStars.textContent="\u2014";statForks.textContent="\u2014";
       }
     }catch(e){
-      statRepos.textContent="\u2014";
-      statStars.textContent="\u2014";
-      statForks.textContent="\u2014";
+      statRepos.textContent="\u2014";statStars.textContent="\u2014";statForks.textContent="\u2014";
     }
   }
   function close(){
@@ -2105,77 +1875,25 @@ addEventListener("scroll",()=>{
   }
   if(openBtn) openBtn.addEventListener("click",e=>{e.preventDefault();open();});
   if(closeBtn) closeBtn.addEventListener("click",e=>{e.preventDefault();close();});
-  addEventListener("keydown",e=>{
-    if(e.key==="Escape" && modal.classList.contains("open")) close();
-  });
-  modal.addEventListener("click",e=>{
-    if(e.target===modal) close();
-  });
+  addEventListener("keydown",e=>{ if(e.key==="Escape" && modal.classList.contains("open")) close(); });
+  modal.addEventListener("click",e=>{ if(e.target===modal) close(); });
 })();
 
-</script>
-<script>
-
-/* FROSTBYTE SNOWFALL: lightweight, responsive, reduced-motion aware */
-(()=> {
-  if(document.getElementById("snow-hack-canvas")) return;
-  const canvas=document.createElement("canvas");
-  canvas.id="snow-hack-canvas";
-  canvas.setAttribute("aria-hidden","true");
-  document.body.appendChild(canvas);
-  const ctx=canvas.getContext("2d",{alpha:true});
-  if(!ctx) return;
-  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let w=0,h=0,dpr=1,flakes=[],raf=0,last=0;
-  const glyphs=["0","1","/","\\","<",">","+","*"];
-  function resize(){
-    dpr=Math.min(devicePixelRatio||1,1.5);w=innerWidth;h=innerHeight;
-    canvas.width=Math.floor(w*dpr);canvas.height=Math.floor(h*dpr);
-    canvas.style.width=w+"px";canvas.style.height=h+"px";
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    const count=reduced?0:Math.min(115,Math.max(42,Math.floor(w*h/14500)));
-    flakes=Array.from({length:count},()=>({
-      x:Math.random()*w,y:Math.random()*h,
-      r:.55+Math.random()*2.1,
-      vy:.22+Math.random()*.8,
-      vx:(Math.random()-.5)*.38,
-      sway:Math.random()*6.28,
-      alpha:.18+Math.random()*.58,
-      glyph:Math.random()<.13?glyphs[Math.floor(Math.random()*glyphs.length)]:null,
-      size:8+Math.random()*5
-    }));
-  }
-  function draw(t){
-    if(document.hidden){raf=0;return;}
-    if(t-last<28){raf=requestAnimationFrame(draw);return;}
-    last=t;ctx.clearRect(0,0,w,h);
-    for(const p of flakes){
-      p.sway+=.012;p.x+=p.vx+Math.sin(p.sway)*.25;p.y+=p.vy;
-      if(p.y>h+8){p.y=-8;p.x=Math.random()*w;}
-      if(p.x<-8)p.x=w+8;if(p.x>w+8)p.x=-8;
-      ctx.globalAlpha=p.alpha;
-      if(p.glyph){
-        ctx.font=p.size+"px monospace";
-        ctx.fillStyle="#a8edff";
-        ctx.shadowColor="#69d9ff";ctx.shadowBlur=8;
-        ctx.fillText(p.glyph,p.x,p.y);
-      }else{
-        ctx.fillStyle="#e4faff";ctx.shadowColor="#9beaff";ctx.shadowBlur=p.r*5;
-        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
-      }
-    }
-    ctx.globalAlpha=1;ctx.shadowBlur=0;
-    raf=requestAnimationFrame(draw);
-  }
-  resize();
-  if(!reduced) raf=requestAnimationFrame(draw);
-  addEventListener("resize",resize,{passive:true});
-  document.addEventListener("visibilitychange",()=>{
-    if(document.hidden){if(raf)cancelAnimationFrame(raf);raf=0;}
-    else if(!reduced&&!raf)raf=requestAnimationFrame(draw);
-  });
+/* ============================================================
+   16) HERO PARALLAX
+   ============================================================ */
+(()=>{
+  if(matchMedia("(pointer:coarse)").matches) return;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const visual=document.querySelector(".terminal-window");
+  if(!visual) return;
+  addEventListener("pointermove",e=>{
+    const dx=(e.clientX/innerWidth-.5)*8;
+    const dy=(e.clientY/innerHeight-.5)*-6;
+    visual.style.transform=`translate(${dx}px,${dy}px)`;
+  },{passive:true});
+  document.addEventListener("pointerleave",()=>{visual.style.transform="";});
 })();
-
 </script>
 </body>
 </html>
