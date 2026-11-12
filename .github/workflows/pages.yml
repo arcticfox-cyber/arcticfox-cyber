@@ -3,10 +3,6 @@ name: Deploy Arctic Fox website to GitHub Pages
 on:
   push:
     branches: ["main"]
-    paths:
-      - "index.html"
-      - "arctic-fox-logo.png"
-      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -27,19 +23,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Prepare website
         run: |
           mkdir -p _site
           cp index.html _site/index.html
-          cp arctic-fox-logo.png _site/arctic-fox-logo.png
+          if [ -f arctic-fox-logo.png ]; then cp arctic-fox-logo.png _site/; fi
+          if [ -d assets ]; then cp -R assets _site/assets; fi
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "_site"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
