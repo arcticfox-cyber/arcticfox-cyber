@@ -352,6 +352,18 @@ body{background:#020409}
 @media(max-width:650px){.hero-grid>div:first-child{translate:0 calc(var(--hero-depth)*-22px)}.hero-visual{translate:0 calc(var(--hero-depth)*-45px);scale:calc(1 + var(--hero-depth)*.08)}.planet{rotate:calc(var(--hero-depth)*18deg)}.ring{rotate:calc(var(--hero-depth)*-10deg)}.scroll-cinema-light{opacity:.34}}
 @media(prefers-reduced-motion:reduce){.scroll-cinema-light{display:none}.hero-grid>div:first-child,.hero-visual,.planet,.ring,.orbit-line,.universe-card{translate:none!important;rotate:none!important;scale:1!important}}
 
+
+/* Cross-browser scroll variable values (no experimental CSS arithmetic). */
+.hero-grid>div:first-child{translate:0 var(--hero-text-y,0px)}
+.hero-visual{translate:0 var(--hero-visual-y,0px);scale:var(--hero-scale,1)}
+.planet{rotate:var(--planet-rotation,0deg)}
+.ring{rotate:var(--ring-rotation,0deg)}
+.orbit-line{rotate:var(--orbit-rotation,0deg)}
+.section:before,.contact:before{opacity:var(--scene-opacity,.08);transform:scale(1)}
+.section-head,.universe-card{translate:0 var(--scene-offset,0px)}
+.contact h2{text-shadow:0 0 18px #9bdcff20}
+@media(max-width:650px){.hero-grid>div:first-child{translate:0 calc(var(--hero-text-y,0px)*.4)}.hero-visual{translate:0 calc(var(--hero-visual-y,0px)*.43);scale:var(--hero-scale,1)}}
+
 </style>
 </head>
 <body>
@@ -471,12 +483,12 @@ window.addEventListener("scroll",()=>{
    target=clamp(scrollY/max);
    const heroRect=hero.getBoundingClientRect();
    const heroP=clamp((0-heroRect.top)/Math.max(1,heroRect.height*.88));
-   root.style.setProperty("--hero-depth",heroP.toFixed(4));
+   root.style.setProperty("--hero-depth",heroP.toFixed(4));root.style.setProperty("--hero-text-y",(-heroP*54)+"px");root.style.setProperty("--hero-visual-y",(-heroP*105)+"px");root.style.setProperty("--hero-scale",(1+heroP*.18).toFixed(4));root.style.setProperty("--planet-rotation",(heroP*32)+"deg");root.style.setProperty("--ring-rotation",(-heroP*19)+"deg");root.style.setProperty("--orbit-rotation",(heroP*12)+"deg");
    root.style.setProperty("--page-depth",target.toFixed(4));
    sections.forEach((section,i)=>{
      const r=section.getBoundingClientRect();
      const p=clamp((innerHeight-r.top)/(innerHeight+r.height));
-     section.style.setProperty("--scene-progress",p.toFixed(4));
+     section.style.setProperty("--scene-progress",p.toFixed(4));section.style.setProperty("--scene-offset",((1-p)*18)+"px");section.style.setProperty("--scene-opacity",(.08+p*.2).toFixed(3));
      if(r.top<innerHeight*.8&&r.bottom>innerHeight*.2){
        const x=50+Math.sin((i+1)*1.7)*24;
        const y=38+p*24;
