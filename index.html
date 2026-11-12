@@ -146,10 +146,29 @@ body{isolation:isolate}
 @media(max-width:650px){.space-depth{opacity:.13}.hero-visual:after{inset:2%}}
 @media(prefers-reduced-motion:reduce){.space-wash:before,.space-depth,.hero-visual:after,.section:after{animation:none!important}}
 
+
+/* DEEP SPACE EXPANSION — layered starfield, cosmic dust and warp trails */
+#cosmos{z-index:-3}
+.deep-cosmos{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;opacity:.78}
+.deep-cosmos:before,.deep-cosmos:after{content:"";position:absolute;inset:-35%;background-repeat:repeat;background-size:460px 390px,620px 510px,780px 660px;background-image:radial-gradient(1px 1px at 40px 70px,#fff 98%,transparent),radial-gradient(1.5px 1.5px at 180px 210px,#a8dfff 98%,transparent),radial-gradient(1px 1px at 330px 120px,#d7c7ff 98%,transparent);animation:deepStarTravel 95s linear infinite;opacity:.46}
+.deep-cosmos:after{background-size:330px 290px,540px 460px,710px 600px;background-position:90px 30px,240px 160px,390px 260px;opacity:.27;animation-duration:145s;animation-direction:reverse;filter:blur(.35px)}
+@keyframes deepStarTravel{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(-7%,5%,0) rotate(2deg)}}
+.cosmic-dust{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.42;background-image:radial-gradient(2px 2px at 12% 24%,#8deeff88 50%,transparent 100%),radial-gradient(1px 1px at 78% 18%,#fff9 50%,transparent 100%),radial-gradient(2px 2px at 62% 72%,#c4a5ff88 50%,transparent 100%),radial-gradient(1px 1px at 28% 84%,#fff9 50%,transparent 100%),radial-gradient(1px 1px at 91% 58%,#ff9bdc99 50%,transparent 100%);background-size:100% 100%;animation:dustDrift 24s ease-in-out infinite alternate}
+@keyframes dustDrift{to{transform:translate3d(1.5%,-2%,0) scale(1.025);opacity:.7}}
+.warp-lane{position:fixed;z-index:-1;pointer-events:none;left:50%;top:50%;width:150vmax;height:150vmax;transform:translate(-50%,-50%);opacity:.12;border-radius:50%;background:repeating-radial-gradient(ellipse at center,transparent 0 54px,#9deaff18 55px 56px,transparent 57px 112px);mask-image:radial-gradient(ellipse,transparent 18%,#000 48%,transparent 75%);animation:warpRotation 100s linear infinite}
+@keyframes warpRotation{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.shooting-star.s4{top:30%;width:240px;animation-delay:1.8s;animation-duration:14s}
+.shooting-star.s5{top:83%;width:115px;animation-delay:6.2s;animation-duration:12s;filter:drop-shadow(0 0 5px #c39aff)}
+.shooting-star.s5:after{box-shadow:0 0 14px 4px #c39aff}
+.hero-visual .planet-system{animation:systemFloat 9s ease-in-out infinite}
+@keyframes systemFloat{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@media(max-width:650px){.deep-cosmos:before,.deep-cosmos:after{opacity:.24}.warp-lane{opacity:.07}.cosmic-dust{opacity:.2}}
+@media(prefers-reduced-motion:reduce){.deep-cosmos:before,.deep-cosmos:after,.cosmic-dust,.warp-lane,.hero-visual .planet-system{animation:none!important}}
+
 </style>
 </head>
 <body>
-<canvas id="cosmos" aria-hidden="true"></canvas><div class="aurora-ribbon" aria-hidden="true"></div><div class="pointer-aura" aria-hidden="true"></div><div class="space-comet" aria-hidden="true"></div><div class="shooting-star" aria-hidden="true"></div><div class="shooting-star s2" aria-hidden="true"></div><div class="shooting-star s3" aria-hidden="true"></div><div class="space-depth" aria-hidden="true"></div><div class="space-wash"></div><div class="nebula one"></div><div class="nebula two"></div><div class="nebula three"></div>
+<canvas id="cosmos" aria-hidden="true"></canvas><div class="aurora-ribbon" aria-hidden="true"></div><div class="pointer-aura" aria-hidden="true"></div><div class="space-comet" aria-hidden="true"></div><div class="shooting-star" aria-hidden="true"></div><div class="shooting-star s2" aria-hidden="true"></div><div class="shooting-star s3" aria-hidden="true"></div><div class="space-depth" aria-hidden="true"></div><div class="deep-cosmos" aria-hidden="true"></div><div class="cosmic-dust" aria-hidden="true"></div><div class="warp-lane" aria-hidden="true"></div><div class="shooting-star s4" aria-hidden="true"></div><div class="shooting-star s5" aria-hidden="true"></div><div class="space-wash"></div><div class="nebula one"></div><div class="nebula two"></div><div class="nebula three"></div>
 <header class="header"><div class="wrap nav">
 <a class="brand" href="#home"><span>ARCTIC FOX<small>CYBER · BEYOND LIMITS</small></span></a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="links">MENU ☰</button>
