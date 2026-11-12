@@ -286,6 +286,52 @@ body{background:#020409}
 @media(max-width:650px){.hero{min-height:auto}.planet-system{width:min(390px,94vw)}.deep-cosmos{opacity:.4}.space-wash:after{opacity:.13}}
 @media(prefers-reduced-motion:reduce){.space-wash:after,.planet-glow{animation:none!important}}
 
+
+/* ARCTIC FOX CINEMA — make the first screen feel like entering deep space */
+:root{--cinema-cyan:#9be6ff;--cinema-blue:#7dbce7}
+#cosmos{z-index:-3;opacity:1}
+.space-wash{background:
+ radial-gradient(ellipse at 50% 52%,#142c4355 0%,transparent 37%),
+ radial-gradient(ellipse at 14% 18%,#152d4938 0%,transparent 33%),
+ radial-gradient(ellipse at 85% 80%,#172d4430 0%,transparent 35%),
+ linear-gradient(180deg,#010308 0%,#050b13 52%,#010308 100%)}
+.space-wash:after{opacity:.38;filter:blur(16px);background:
+ radial-gradient(ellipse at 50% 50%,transparent 0 18%,#8bdcff0a 29%,transparent 49%),
+ repeating-conic-gradient(from 12deg at 50% 50%,transparent 0deg 17deg,#a9dfff06 18deg 19deg,transparent 20deg 35deg);
+ animation:galaxyCloud 30s ease-in-out infinite alternate}
+.deep-cosmos{opacity:.75}
+.deep-cosmos:before{opacity:.42;animation-duration:160s}
+.deep-cosmos:after{opacity:.25;animation-duration:220s}
+.cosmic-dust{opacity:.32;animation-duration:18s}
+.warp-lane{opacity:.12;animation-duration:95s;background:repeating-radial-gradient(ellipse at center,transparent 0 42px,#9deaff19 43px 44px,transparent 45px 88px)}
+.hero{min-height:min(960px,calc(100svh - 78px));}
+.hero:after{opacity:.42;animation-duration:6s}
+.hero-visual:before{width:138%;opacity:.8;filter:blur(.2px);background:repeating-radial-gradient(ellipse at center,transparent 0 35px,#b7e6ff10 36px 37px,transparent 38px 74px);animation-duration:75s}
+.planet-system{width:min(540px,96vw);animation:cinemaFloat 8s ease-in-out infinite;filter:drop-shadow(0 24px 85px #020713cc)}
+@keyframes cinemaFloat{0%,100%{translate:0 0;scale:1}50%{translate:0 -14px;scale:1.025}}
+.planet-glow{width:88%;background:radial-gradient(circle,#a2e6ff2a 0%,#729bd51a 36%,transparent 72%);filter:blur(38px);animation:planetPulse 5s ease-in-out infinite}
+.planet{background:radial-gradient(circle at 27% 22%,#fff 0%,#d9efff 7%,#9bbbd5 18%,#587796 38%,#2b435f 62%,#0b1728 88%);box-shadow:inset -30px -18px 48px #02050ef0,inset 13px 8px 25px #ffffff85,0 0 55px #9bdcff66,0 0 145px #72b9e540,0 0 250px #4a8cb526}
+.planet:before{animation:planetBands 48s linear infinite}
+@keyframes planetBands{to{transform:rotate(336deg)}}
+.planet:after{box-shadow:inset -18px 0 32px #02071399,0 0 30px #bfeaff12}
+.ring{width:112%;height:35%;border-width:2px;border-color:#d4efffc2;border-left-color:#8bdcff4a;border-bottom-color:#a6d8f4c2;box-shadow:0 0 16px #8bdcff4b,0 0 42px #8bdcff20,inset 0 0 18px #c2eaff25}
+.ring.back{width:115%;height:38%;border-color:#8cb8d888 transparent #d0eaffb0 transparent}
+.orbit-line{width:110%;border-color:#b4d8f044}
+.orbit-line.second{width:132%;border-color:#c3d5e936}
+.orbit-line:before{width:13px;height:13px;box-shadow:0 0 22px 4px #8bdcff}
+.orbit-line.second:before{width:9px;height:9px;box-shadow:0 0 18px 3px #d0dced}
+.moon{width:8%;right:8%;top:17%;box-shadow:0 0 30px #d4eaffaa,0 0 80px #8bdcff35}
+.shooting-star{height:2px;opacity:.68;filter:drop-shadow(0 0 7px #b6eaff)}
+.shooting-star:after{box-shadow:0 0 18px 5px #a9e4ff}
+.shooting-star.s4{width:320px;animation-duration:9s}
+.shooting-star.s5{width:180px;animation-duration:8s}
+.space-comet{width:260px;height:2px;box-shadow:0 0 18px #8deeff;animation-duration:7s}
+.hero-scroll i{width:58px}
+.section:before{opacity:.16}
+.repo-card,.universe-card{background:linear-gradient(145deg,#101d2be8,#050a12f5);border-color:#a4c4dc38}
+@media(max-width:650px){.planet-system{width:min(410px,96vw)}.deep-cosmos{opacity:.52}.warp-lane{opacity:.075}.cosmic-dust{opacity:.2}.hero-visual{min-height:360px}}
+@media(prefers-reduced-motion:reduce){.planet-system,.planet:before{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -318,13 +364,13 @@ body{background:#020409}
 <footer><div class="wrap footer-row"><div class="footer-brand"> ARCTIC FOX CYBER</div><div class="footer-note">© <span id="year"></span> · INDEPENDENT BY NATURE</div><a class="footer-link" href="https://github.com/arcticfox-cyber" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></div></footer>
 <script>
 "use strict";
-/* 3D starfield: stars travel through depth toward the viewer. */
+/* CINEMATIC WARP STARFIELD — accelerated depth and visible light trails */
 const canvas=document.getElementById("cosmos"),ctx=canvas.getContext("2d");let stars=[],w=0,h=0,raf=0,lastFrame=0;
 const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
-function resetStar(s,spread){s.x=(Math.random()*2-1)*(spread||1);s.y=(Math.random()*2-1)*(spread||1);s.z=Math.random()*.98+.02;s.p=Math.random()*Math.PI*2;s.c=Math.random()<.13?"190,220,255":Math.random()<.42?"141,220,255":"235,243,255";return s;}
-function seedStars(){const dpr=Math.min(window.devicePixelRatio||1,1.7);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+"px";canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(430,Math.max(190,Math.floor(w*h/3300)));stars=Array.from({length:count},()=>resetStar({}));}
-function drawStars(t){if(!w||!h){raf=requestAnimationFrame(drawStars);return;}const dt=Math.min(34,lastFrame?t-lastFrame:16);lastFrame=t;ctx.clearRect(0,0,w,h);const cx=w*.5,cy=h*.49,focal=Math.min(w,h)*.62,velocity=reducedMotion?.000035:.00023;
-for(const s of stars){const oldZ=s.z;s.z-=velocity*dt;if(s.z<=.025){resetStar(s);continue;}const x=cx+s.x*focal/s.z,y=cy+s.y*focal/s.z;if(x<-30||x>w+30||y<-30||y>h+30){resetStar(s);continue;}const radius=Math.min(2.5,Math.max(.35,(1-s.z)*1.8));const alpha=Math.min(.9,(.22+(1-s.z)*.72)*(.78+.22*Math.sin(t*.0014+s.p)));if(!reducedMotion&&s.z<.42){const px=cx+s.x*focal/oldZ,py=cy+s.y*focal/oldZ;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(x,y);ctx.strokeStyle="rgba("+s.c+","+alpha*.22+")";ctx.lineWidth=radius*.8;ctx.stroke();}ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+alpha+")";ctx.fill();if(radius>1.7){ctx.beginPath();ctx.arc(x,y,radius*3,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+alpha*.08+")";ctx.fill();}}
+function resetStar(s){s.x=(Math.random()*2-1)*1.35;s.y=(Math.random()*2-1)*1.35;s.z=Math.random()*.98+.025;s.p=Math.random()*Math.PI*2;s.c=Math.random()<.16?"178,224,255":Math.random()<.38?"127,207,255":"242,248,255";return s;}
+function seedStars(){const dpr=Math.min(window.devicePixelRatio||1,1.6);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+"px";canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(560,Math.max(260,Math.floor(w*h/2500)));stars=Array.from({length:count},()=>resetStar({}));}
+function drawStars(t){if(!w||!h){raf=requestAnimationFrame(drawStars);return;}const dt=Math.min(32,lastFrame?t-lastFrame:16);lastFrame=t;ctx.clearRect(0,0,w,h);const cx=w*.5,cy=h*.49,focal=Math.min(w,h)*.67;const pulse=reducedMotion?.06:(.5+.5*Math.sin(t*.00034));const velocity=reducedMotion?.000025:(.00032+pulse*.00048);
+for(const s of stars){const oldZ=s.z;s.z-=velocity*dt;if(s.z<=.018){resetStar(s);continue;}const x=cx+s.x*focal/s.z,y=cy+s.y*focal/s.z;const px=cx+s.x*focal/oldZ,py=cy+s.y*focal/oldZ;if(x<-45||x>w+45||y<-45||y>h+45){resetStar(s);continue;}const radius=Math.min(3.1,Math.max(.45,(1-s.z)*2.15));const alpha=Math.min(.96,(.2+(1-s.z)*.82)*(.84+.16*Math.sin(t*.0018+s.p)));if(!reducedMotion&&s.z<.78){ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(x,y);ctx.strokeStyle="rgba("+s.c+","+Math.min(.72,alpha*(.16+(1-s.z)*.7))+")";ctx.lineWidth=radius*(s.z<.32?1.25:.7);ctx.stroke();}ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+alpha+")";ctx.fill();if(radius>1.55){ctx.beginPath();ctx.arc(x,y,radius*3.4,0,Math.PI*2);ctx.fillStyle="rgba("+s.c+","+alpha*.11+")";ctx.fill();}}
 raf=requestAnimationFrame(drawStars);}
 seedStars();raf=requestAnimationFrame(drawStars);addEventListener("resize",seedStars,{passive:true});document.addEventListener("visibilitychange",()=>{if(document.hidden){cancelAnimationFrame(raf);lastFrame=0;}else{lastFrame=0;raf=requestAnimationFrame(drawStars);}});
 const menu=document.getElementById("menu"),links=document.getElementById("links");menu.addEventListener("click",()=>{const open=links.classList.toggle("open");menu.setAttribute("aria-expanded",String(open));menu.textContent=open?"CLOSE ×":"MENU ☰";});links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{links.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.textContent="MENU ☰";}));
