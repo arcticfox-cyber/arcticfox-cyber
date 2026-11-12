@@ -332,6 +332,26 @@ body{background:#020409}
 @media(max-width:650px){.planet-system{width:min(410px,96vw)}.deep-cosmos{opacity:.52}.warp-lane{opacity:.075}.cosmic-dust{opacity:.2}.hero-visual{min-height:360px}}
 @media(prefers-reduced-motion:reduce){.planet-system,.planet:before{animation:none!important}}
 
+
+/* SCROLL CINEMA — scroll is the camera, each section is a new scene */
+:root{--hero-depth:0;--page-depth:0;--scene-progress:0;--light-x:50%;--light-y:48%}
+.scroll-cinema-light{position:fixed;inset:-12%;z-index:-1;pointer-events:none;opacity:.62;mix-blend-mode:screen;background:radial-gradient(ellipse 34% 27% at var(--light-x) var(--light-y),rgba(111,205,255,.13),transparent 72%),radial-gradient(ellipse 48% 38% at calc(100% - var(--light-x)) calc(100% - var(--light-y)),rgba(155,119,255,.09),transparent 75%);will-change:background}
+.hero{perspective:1100px}
+.hero-grid{transform-style:preserve-3d}
+.hero-grid>div:first-child{translate:0 calc(var(--hero-depth)*-54px);opacity:calc(1 - var(--hero-depth)*.32);transition:opacity .12s linear}
+.hero-visual{translate:0 calc(var(--hero-depth)*-105px);scale:calc(1 + var(--hero-depth)*.18);transform-style:preserve-3d;will-change:translate,scale}
+.planet{rotate:calc(var(--hero-depth)*32deg);will-change:rotate;box-shadow:inset -30px -18px 48px #02050ef0,inset 13px 8px 25px #ffffff85,0 0 55px #9bdcff66,0 0 145px #72b9e540,0 0 250px #4a8cb526}
+.ring{rotate:calc(var(--hero-depth)*-19deg)}
+.orbit-line{rotate:calc(var(--hero-depth)*12deg)}
+.hero:before{background:linear-gradient(90deg,#050713e8 0%,#0507138c 53%,transparent 100%),radial-gradient(ellipse at calc(75% - var(--hero-depth)*15%) 50%,transparent 10%,#05071330 72%)}
+.section,.contact{isolation:isolate;overflow:hidden}
+.section:before,.contact:before{content:"";position:absolute;inset:-25%;z-index:-1;pointer-events:none;opacity:calc(.08 + var(--scene-progress)*.2);background:radial-gradient(ellipse at 50% calc(100% - var(--scene-progress)*70%),rgba(115,193,255,.19),transparent 48%),radial-gradient(ellipse at 80% 20%,rgba(166,125,255,.10),transparent 42%);transform:scale(calc(.9 + var(--scene-progress)*.18));transition:opacity .15s linear}
+.section-head{translate:0 calc((1 - var(--scene-progress))*12px)}
+.universe-card{translate:0 calc((1 - var(--scene-progress))*18px);transition:translate .18s linear,transform .5s var(--ease-out),border-color .35s,box-shadow .35s}
+.contact h2{ text-shadow:0 0 calc(8px + var(--scene-progress)*22px) #9bdcff20}
+@media(max-width:650px){.hero-grid>div:first-child{translate:0 calc(var(--hero-depth)*-22px)}.hero-visual{translate:0 calc(var(--hero-depth)*-45px);scale:calc(1 + var(--hero-depth)*.08)}.planet{rotate:calc(var(--hero-depth)*18deg)}.ring{rotate:calc(var(--hero-depth)*-10deg)}.scroll-cinema-light{opacity:.34}}
+@media(prefers-reduced-motion:reduce){.scroll-cinema-light{display:none}.hero-grid>div:first-child,.hero-visual,.planet,.ring,.orbit-line,.universe-card{translate:none!important;rotate:none!important;scale:1!important}}
+
 </style>
 </head>
 <body>
@@ -436,5 +456,55 @@ window.addEventListener("scroll",()=>{
  let ticking=false;
  addEventListener("scroll",()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{header.classList.toggle("scrolled",scrollY>24);ticking=false;});},{passive:true});
 })();</script>
+
+<script>
+/* Scroll camera: smoothly maps document position into cinematic scene motion. */
+(()=> {
+ const root=document.documentElement, hero=document.querySelector(".hero");
+ const sections=[...document.querySelectorAll(".section,.contact")];
+ const light=document.createElement("div");light.className="scroll-cinema-light";light.setAttribute("aria-hidden","true");document.body.prepend(light);
+ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ let busy=false, current=0, target=0;
+ const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+ function measure(){
+   const max=Math.max(1,document.documentElement.scrollHeight-innerHeight);
+   target=clamp(scrollY/max);
+   const heroRect=hero.getBoundingClientRect();
+   const heroP=clamp((0-heroRect.top)/Math.max(1,heroRect.height*.88));
+   root.style.setProperty("--hero-depth",heroP.toFixed(4));
+   root.style.setProperty("--page-depth",target.toFixed(4));
+   sections.forEach((section,i)=>{
+     const r=section.getBoundingClientRect();
+     const p=clamp((innerHeight-r.top)/(innerHeight+r.height));
+     section.style.setProperty("--scene-progress",p.toFixed(4));
+     if(r.top<innerHeight*.8&&r.bottom>innerHeight*.2){
+       const x=50+Math.sin((i+1)*1.7)*24;
+       const y=38+p*24;
+       root.style.setProperty("--light-x",x+"%");
+       root.style.setProperty("--light-y",y+"%");
+     }
+   });
+ }
+ function frame(){
+   current+=(target-current)*.12;
+   root.style.setProperty("--page-depth",current.toFixed(4));
+   busy=false;
+ }
+ addEventListener("scroll",()=>{measure();if(!busy){busy=true;requestAnimationFrame(frame)}},{passive:true});
+ addEventListener("resize",measure,{passive:true});
+ if(!reduce){measure();addEventListener("load",measure,{once:true});}
+ else{light.remove();}
+ // GitHub cards are injected after the initial page load: reveal them as they enter.
+ if(!reduce&&"IntersectionObserver"in window){
+   const observer=new IntersectionObserver(entries=>entries.forEach(e=>{
+     if(e.isIntersecting){e.target.classList.add("is-visible");observer.unobserve(e.target);}
+   }),{threshold:.1,rootMargin:"0px 0px -30px 0px"});
+   const watch=()=>document.querySelectorAll("#repoGrid .repo-card:not(.reveal)").forEach(el=>{el.classList.add("reveal");observer.observe(el)});
+   new MutationObserver(watch).observe(document.getElementById("repoGrid"),{childList:true});
+   watch();
+ }
+})();
+</script>
+
 </body>
 </html>
