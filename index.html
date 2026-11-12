@@ -371,6 +371,77 @@ body{background:#020409}
 .scroll-cinema-light{background:radial-gradient(ellipse 38% 30% at var(--light-x,50%) var(--light-y,48%),rgba(111,205,255,.13),transparent 72%)}
 @media(max-width:650px){.hero-grid>div:first-child{translate:0 var(--hero-text-y,0px)}}
 
+
+
+/* ARCTIC FOX — living universe motion pass */
+:root{--motion-x:0px;--motion-y:0px;--scroll-drift:0px;--scene-bloom:0}
+body{background-attachment:fixed}
+.header{transition:background .5s,border-color .5s,box-shadow .5s}
+.header.scrolled{background:#030711e8;border-bottom-color:#8deeff38;box-shadow:0 12px 50px #0008,0 1px #8deeff12}
+.brand{transition:letter-spacing .5s,text-shadow .5s}
+.brand:hover{text-shadow:0 0 22px #8deeff88;letter-spacing:.22em}
+.hero-visual{transform-style:preserve-3d}
+.planet-system{transform-style:preserve-3d}
+.planet-glow{animation:livingGlow 5.5s ease-in-out infinite alternate}
+@keyframes livingGlow{0%{transform:scale(.82);opacity:.42;filter:blur(32px)}100%{transform:scale(1.22);opacity:.9;filter:blur(48px)}}
+.planet{animation:planetHover 7s ease-in-out infinite,planetLight 9s ease-in-out infinite alternate}
+@keyframes planetHover{0%,100%{translate:0 0}50%{translate:0 -13px}}
+@keyframes planetLight{0%{filter:brightness(.88) saturate(.9)}100%{filter:brightness(1.16) saturate(1.18)}}
+.ring{animation:ringDrift 24s linear infinite}
+.ring.back{animation:ringDriftBack 31s linear infinite}
+@keyframes ringDrift{to{transform:rotate(336deg)}}
+@keyframes ringDriftBack{to{transform:rotate(336deg)}}
+.orbit-line{animation:orbit 36s linear infinite}
+.orbit-line.second{animation:orbit 52s linear infinite reverse}
+.moon{transform-origin:-190% 150%;animation:moonJourney 19s linear infinite;will-change:transform}
+@keyframes moonJourney{from{transform:rotate(0deg) translateX(0)}25%{transform:rotate(90deg) translateX(24px)}50%{transform:rotate(180deg) translateX(0)}75%{transform:rotate(270deg) translateX(-18px)}to{transform:rotate(360deg) translateX(0)}}
+.planet-system:before,.planet-system:after{content:"";position:absolute;inset:4%;border:1px solid #9bdcff20;border-radius:50%;pointer-events:none;animation:systemPulse 8s ease-in-out infinite}
+.planet-system:after{inset:-5%;border-color:#bda8ff18;animation-delay:-4s;animation-duration:11s}
+@keyframes systemPulse{0%,100%{transform:scale(.94) rotate(0);opacity:.18}50%{transform:scale(1.08) rotate(16deg);opacity:.7}}
+.hero-visual:after{content:"";position:absolute;inset:4% -10%;pointer-events:none;background:linear-gradient(110deg,transparent 35%,#b9eaff12 48%,transparent 61%);transform:translateX(-120%) skewX(-16deg);animation:solarSweep 9s ease-in-out infinite}
+@keyframes solarSweep{0%,48%{transform:translateX(-120%) skewX(-16deg)}78%,100%{transform:translateX(120%) skewX(-16deg)}}
+.nebula{will-change:transform;animation:nebulaDrift 20s ease-in-out infinite alternate}
+.nebula.two{animation-duration:27s}
+.nebula.three{animation-duration:32s}
+.space-wash:before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 0deg at 50% 50%,transparent 0 20%,#6bbbe509 25%,transparent 35% 58%,#a88cff0a 64%,transparent 75%);filter:blur(50px);animation:galaxyRotation 90s linear infinite}
+@keyframes galaxyRotation{to{transform:rotate(360deg) scale(1.12)}}
+.section,.contact{transform-style:preserve-3d}
+.section:after,.contact:after{content:"";position:absolute;left:-20%;right:-20%;top:0;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent,#8deeff55,#c5a5ff66,#8deeff55,transparent);opacity:.4;animation:sceneLine 12s ease-in-out infinite}
+@keyframes sceneLine{0%,100%{transform:translateX(-15%);opacity:.12}50%{transform:translateX(15%);opacity:.7}}
+.section-head h2,.contact h2{animation:headingBreath 8s ease-in-out infinite}
+@keyframes headingBreath{0%,100%{filter:drop-shadow(0 0 0 #8deeff00)}50%{filter:drop-shadow(0 0 16px #8deeff22)}}
+.card-orb{animation:cardPlanetFloat 6s ease-in-out infinite,cardPlanetGlow 5s ease-in-out infinite alternate}
+.universe-card:nth-child(2) .card-orb{animation-delay:-2s,-1s}
+.universe-card:nth-child(3) .card-orb{animation-delay:-4s,-2s}
+@keyframes cardPlanetFloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@keyframes cardPlanetGlow{from{filter:brightness(.85)}to{filter:brightness(1.3) drop-shadow(0 0 13px var(--planet-color))}}
+.universe-card{overflow:hidden}
+.universe-card:after{content:"";position:absolute;inset:-40%;pointer-events:none;background:linear-gradient(115deg,transparent 42%,#c7edff0c 50%,transparent 58%);transform:translateX(-65%) rotate(8deg);animation:cardNebulaPass 11s ease-in-out infinite}
+.universe-card:nth-child(2):after{animation-delay:-3.5s}.universe-card:nth-child(3):after{animation-delay:-7s}
+@keyframes cardNebulaPass{0%,55%{transform:translateX(-65%) rotate(8deg)}85%,100%{transform:translateX(65%) rotate(8deg)}}
+.repo-card{isolation:isolate}
+.repo-card:before{height:2px;animation:repoEnergy 6s linear infinite;background:linear-gradient(90deg,transparent,#8deeff,#b89aff,#ff8acb,transparent);background-size:220% 100%}
+@keyframes repoEnergy{0%{background-position:100% 0;opacity:.18}50%{opacity:.8}100%{background-position:-120% 0;opacity:.18}}
+.repo-card:after{transition:opacity .5s;opacity:.22}
+.repo-card:hover:after{opacity:.9}
+.button{position:relative;overflow:hidden;isolation:isolate}
+.button:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,transparent 25%,#fff5 50%,transparent 75%);transform:translateX(-130%);transition:transform .8s}
+.button:hover:after{transform:translateX(130%)}
+.hero-scroll i:after{animation-duration:1.5s}
+.live-dot{animation:liveSignal 2.2s ease-out infinite}
+@keyframes liveSignal{0%{box-shadow:0 0 0 0 #a4f3bd88}70%{box-shadow:0 0 0 10px #a4f3bd00}100%{box-shadow:0 0 0 0 #a4f3bd00}}
+.footer-brand{transition:letter-spacing .5s,color .5s}.footer-brand:hover{letter-spacing:.2em;color:#bceeff}
+@media(max-width:650px){
+ .planet-system:before{inset:1%}.planet-system:after{inset:-7%}
+ .moon{transform-origin:-130% 130%}
+ .section-head h2,.contact h2{animation:none}
+ .universe-card:after{opacity:.45}
+}
+@media(prefers-reduced-motion:reduce){
+ .space-wash:before,.planet-glow,.planet,.ring,.orbit-line,.moon,.planet-system:before,.planet-system:after,.hero-visual:after,.section:after,.contact:after,.section-head h2,.contact h2,.card-orb,.universe-card:after,.repo-card:before,.live-dot{animation:none!important}
+ .button:after{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -522,6 +593,39 @@ window.addEventListener("scroll",()=>{
    new MutationObserver(watch).observe(document.getElementById("repoGrid"),{childList:true});
    watch();
  }
+})();
+</script>
+
+
+<script>
+/* Living-scene director: gentle camera drift follows scroll and pointer. */
+(()=> {
+ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ if(reduce)return;
+ const root=document.documentElement, hero=document.querySelector(".hero"), system=document.querySelector(".planet-system");
+ const scenes=[...document.querySelectorAll(".section,.contact")];
+ let sx=0,sy=0,tx=0,ty=0,scroll=0,frame=0,last=0;
+ const fine=matchMedia("(pointer:fine)").matches;
+ if(fine)addEventListener("pointermove",e=>{tx=(e.clientX/innerWidth-.5)*18;ty=(e.clientY/innerHeight-.5)*14},{passive:true});
+ addEventListener("pointerleave",()=>{tx=0;ty=0},{passive:true});
+ const update=()=>{
+   const now=performance.now();if(now-last<24){frame=requestAnimationFrame(update);return;}last=now;
+   sx+=(tx-sx)*.045;sy+=(ty-sy)*.045;
+   const max=Math.max(1,document.documentElement.scrollHeight-innerHeight);
+   scroll+=(scrollY/max-scroll)*.12;
+   root.style.setProperty("--motion-x",sx.toFixed(2)+"px");
+   root.style.setProperty("--motion-y",sy.toFixed(2)+"px");
+   root.style.setProperty("--scroll-drift",(scroll*90).toFixed(2)+"px");
+   if(system&&fine)system.style.transform="translate3d("+sx.toFixed(2)+"px,"+(sy- Math.sin(now*.00045)*5).toFixed(2)+"px,0)";
+   scenes.forEach((scene,i)=>{
+     const r=scene.getBoundingClientRect(),p=Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight+r.height)));
+     scene.style.setProperty("--scene-travel",((.5-p)*22).toFixed(2)+"px");
+     scene.style.setProperty("--scene-glow",(Math.sin(now*.0005+i)*.5+.5).toFixed(3));
+   });
+   frame=requestAnimationFrame(update);
+ };
+ frame=requestAnimationFrame(update);
+ document.addEventListener("visibilitychange",()=>{if(document.hidden)cancelAnimationFrame(frame);else{last=0;frame=requestAnimationFrame(update)}});
 })();
 </script>
 
